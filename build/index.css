@@ -1,0 +1,63 @@
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/editor.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+button.btnAdd {
+  height: 25px;
+  width: 45px;
+  background-color: #77d8ff;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!../Components/BDevice.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+.bPlPanelBody .bDevicePopup,
+.bPlDropdownPopover .components-popover__content .bDevicePopup {
+  position: absolute;
+  width: 30px;
+  z-index: 999;
+  top: -11px;
+}
+.bPlPanelBody .bDevice button,
+.bPlDropdownPopover .components-popover__content .bDevice button {
+  cursor: pointer;
+  padding: 1px 6px;
+}
+.bPlPanelBody .bDevice,
+.bPlDropdownPopover .components-popover__content .bDevice {
+  width: 30px;
+  position: relative;
+}
+.bPlPanelBody .bDevice + div,
+.bPlDropdownPopover .components-popover__content .bDevice + div {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+.bPlPanelBody .iconButton,
+.bPlDropdownPopover .components-popover__content .iconButton {
+  background: #ffffff;
+  border: 1px solid #4527a4;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 !important;
+  margin-left: 3px;
+  height: 22px;
+  width: 26px;
+}
+.bPlPanelBody .iconButton span,
+.bPlDropdownPopover .components-popover__content .iconButton span {
+  font-size: 14px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+.bPlPanelBody .iconButton svg,
+.bPlDropdownPopover .components-popover__content .iconButton svg {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+.bPlPanelBody .iconButton span:before,
+.bPlDropdownPopover .components-popover__content .iconButton span:before {
+  font-size: inherit;
+}
+
+/*# sourceMappingURL=index.css.map*/

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "icb/cards",
+  "version": "0.1.0",
+  "title": "Info Cards",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "cId": {
+      "type": "string",
+      "default": ""
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "background": {
+            "color": "blue"
+          },
+          "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
+          "title": "This Is My Title",
+          "desc": "This Is My New Description",
+          "btnLabal": "Button",
+          "titleColor": "#69f70c",
+          "descColor": "#69f70c",
+          "btnUrl": "https://www.google.com/",
+          "btnColor": {
+            "color": "#d82e2e"
+          }
+        },
+        {
+          "background": {
+            "color": "blue"
+          },
+          "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
+          "title": "This Is My Title 2",
+          "desc": "This Is My New Description",
+          "btnLabal": "Button",
+          "titleColor": "#69f70c",
+          "descColor": "#69f70c",
+          "btnUrl": "https://www.google.com/",
+          "btnColor": {
+            "color": "#d82e2e"
+          }
+        },
+        {
+          "background": {
+            "color": "blue"
+          },
+          "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
+          "title": "This Is My Title",
+          "desc": "This Is My New Description",
+          "btnLabal": "Button",
+          "titleColor": "#69f70c",
+          "descColor": "#69f70c",
+          "btnUrl": "https://www.google.com/",
+          "btnColor": {
+            "color": "#d82e2e"
+          }
+        }
+      ]
+    },
+    "titleTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": "20px"
+      }
+    },
+    "descTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": "15px"
+      }
+    },
+    "contentPadding": {
+      "type": "object",
+      "default": {
+        "top": "10px",
+        "right": "15px",
+        "bottom": "10px",
+        "left": "15px"
+      }
+    },
+    "btnPadding": {
+      "type": "object",
+      "default": {
+        "top": "10px",
+        "right": "15px",
+        "bottom": "10px",
+        "left": "15px"
+      }
+    },
+    "columnGap": {
+      "type": "string",
+      "default": "20px"
+    },
+    "rowGap": {
+      "type": "string",
+      "default": "20px"
+    },
+    "gridColumns": {
+      "type": "string",
+      "default": {
+        "desktop": 3,
+        "tablet": 2,
+        "mobile": 1
+      }
+    }
+  },
+  "textdomain": "info-cards",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "script": "file:./script.js",
+  "style": "file:./style-index.css"
+}

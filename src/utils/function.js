@@ -1,0 +1,1 @@
+export const getBoxValue = object => Object.values(object).join(" ");

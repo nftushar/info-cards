@@ -1,0 +1,35 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-icb-cards .main {
+  display: grid;
+  box-sizing: border-box;
+}
+.wp-block-icb-cards .main .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+}
+.wp-block-icb-cards .main .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.wp-block-icb-cards .main img.card-img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.wp-block-icb-cards .main .container button {
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
