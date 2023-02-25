@@ -11,7 +11,7 @@
     "html": false
   },
   "attributes": {
-    "cId": {
+    "clientId": {
       "type": "string",
       "default": ""
     },
@@ -20,47 +20,62 @@
       "default": [
         {
           "background": {
-            "color": "blue"
+            "color": "#0000"
           },
           "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
           "title": "This Is My Title",
-          "desc": "This Is My New Description",
-          "btnLabal": "Button",
           "titleColor": "#69f70c",
+          "desc": "This Is My New Description",
           "descColor": "#69f70c",
+          "btnLabal": "Button",
           "btnUrl": "https://www.google.com/",
-          "btnColor": {
-            "color": "#d82e2e"
+          "btnColors": {
+            "color": "#fff",
+            "bg": "#4527a4"
+          },
+          "btnHovColors": {
+            "color": "#fff",
+            "bg": "#fe6601"
           }
         },
         {
           "background": {
-            "color": "blue"
+            "color": "#0000"
           },
           "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
-          "title": "This Is My Title 2",
-          "desc": "This Is My New Description",
-          "btnLabal": "Button",
+          "title": "This Is My Title",
           "titleColor": "#69f70c",
+          "desc": "This Is My New Description",
           "descColor": "#69f70c",
+          "btnLabal": "Button",
           "btnUrl": "https://www.google.com/",
-          "btnColor": {
-            "color": "#d82e2e"
+          "btnColors": {
+            "color": "#fff",
+            "bg": "#4527a4"
+          },
+          "btnHovColors": {
+            "color": "#fff",
+            "bg": "#fe6601"
           }
         },
         {
           "background": {
-            "color": "blue"
+            "color": "#0000"
           },
           "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
           "title": "This Is My Title",
-          "desc": "This Is My New Description",
-          "btnLabal": "Button",
           "titleColor": "#69f70c",
+          "desc": "This Is My New Description",
           "descColor": "#69f70c",
+          "btnLabal": "Button",
           "btnUrl": "https://www.google.com/",
-          "btnColor": {
-            "color": "#d82e2e"
+          "btnColors": {
+            "color": "#fff",
+            "bg": "#4527a4"
+          },
+          "btnHovColors": {
+            "color": "#fff",
+            "bg": "#fe6601"
           }
         }
       ]
@@ -103,8 +118,8 @@
       "type": "string",
       "default": "20px"
     },
-    "gridColumns": {
-      "type": "string",
+    "columns": {
+      "type": "object",
       "default": {
         "desktop": 3,
         "tablet": 2,

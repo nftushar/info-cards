@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 
-import { getBoxValue } from "./utils/function";
+import Cards from "./Components/Cards";
 
 window.addEventListener('DOMContentLoaded', () => {
     const allCards = document.querySelectorAll('.wp-block-icb-cards');
@@ -16,51 +16,24 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 const CardsRender = ({ attributes }) => {
-    const { cId: clientId, cards, btnPadding, gridColumns, titleTypo, descTypo, contentPadding, columnGap, rowGap } = attributes;
+    return (
 
-    return <div className={`main main-${clientId}`}>
-        <style>
-            {` 
-                .main-${clientId}{
-                    grid-template-columns: repeat(${gridColumns['desktop']}, auto);
-                    column-gap: ${columnGap};
-                    row-gap: ${rowGap};
-                    padding: ${getBoxValue(btnPadding)};
-                }
-                .main-${clientId} .container button{
-                    padding: ${getBoxValue(btnPadding)};
-                }
-                .main-${clientId}  .container {
-                    padding: ${getBoxValue(contentPadding)};
-                }
-            `}
-        </style>
-        {cards.map((card, index) => (
-            <div className={`card card-${index}`} key={index} >
-                <style>
-                    {`
-                        .main-${clientId} .card-${index} .container h2 {
-                            color: ${card.titleColor};
-                            font-size: ${titleTypo.fontSize}
-                        }
-                        .main-${clientId} .card-${index} .container p {
-                            color: ${card.descColor};
-                            font-size: ${descTypo.fontSize}
-                        }
-                        .main-${clientId} .card-${index} .container button{
-                            background-color: ${card.btnColor?.color}
-                        }
-				    `}
-                </style>
-             
-                <img src={card.img} alt="img" />
+        <Cards attributes={attributes} clientId={attributes.clientId} >
+            {attributes.cards.map((card, index) => (
+                <div className={`card card-${index}`} key={index} >
+                    <img src={card.img} alt="img" />
+                    <div className="content">
+                        <h2>{card.title}</h2>
+                        <p>{card.desc}</p>
 
-                <div className="container">
-                    <h2>{card.title}</h2>
-                    <p>{card.desc}</p>
-                    <button>{card.btnLabal}</button>
+                        <form action={card.btnUrl}>
+                            <button>{card.btnLabal}</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        ))}
-    </div>
+            ))}
+        </Cards>
+    )
+
+
 }

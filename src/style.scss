@@ -5,17 +5,54 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+// Columns
+@for $i from 1 through 12 {
+	.columns-#{$i} {
+		grid-template-columns: repeat(#{$i}, 1fr);
+	}
+
+	.cols-#{$i} {
+		columns: #{$i};
+	}
+}
+
+@media (max-width: 768px) {
+	@for $i from 1 through 12 {
+		.columns-tablet-#{$i} {
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+
+		.cols-tablet-#{$i} {
+			columns: #{$i};
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	@for $i from 1 through 12 {
+		.columns-mobile-#{$i} {
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+
+		.cols-mobile-#{$i} {
+			columns: #{$i};
+		}
+	}
+}
+
 .wp-block-icb-cards {
+	* {
+		box-sizing: border-box;
+	}
 
-
-	.main {
+	.icbCards {
 		display: grid;
 		box-sizing: border-box;
 
 		.card {
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 			transition: 0.3s;
-			width: 100%;
+			// width: 100%;
 			border-radius: 8px;
 			margin: 0;
 			padding: 0;
@@ -25,12 +62,13 @@
 			}
 		}
 
-		img.card-img {
-			border-top-left-radius: 8px;
-			border-top-right-radius: 8px;
+		img {
+			width: 100%;
+			max-width: 100%;
+			border-radius: 8px 8px 0px 0px;
 		}
 
-		.container {
+		.content {
 			// padding: 25px 30px;
 
 			h2 {}
