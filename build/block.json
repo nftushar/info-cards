@@ -20,7 +20,7 @@
       "default": [
         {
           "background": {
-            "color": "#0000"
+            "color": "#fff"
           },
           "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
           "title": "This Is My Title",
@@ -40,7 +40,7 @@
         },
         {
           "background": {
-            "color": "#0000"
+            "color": "#fff"
           },
           "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
           "title": "This Is My Title",
@@ -60,7 +60,7 @@
         },
         {
           "background": {
-            "color": "#0000"
+            "color": "#fff"
           },
           "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
           "title": "This Is My Title",
@@ -80,6 +80,46 @@
         }
       ]
     },
+    "columns": {
+      "type": "object",
+      "default": {
+        "desktop": 3,
+        "tablet": 2,
+        "mobile": 1
+      }
+    },
+    "columnGap": {
+      "type": "string",
+      "default": "20px"
+    },
+    "rowGap": {
+      "type": "string",
+      "default": "20px"
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "color": "#0000"
+      }
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "10px",
+        "right": "15px",
+        "bottom": "10px",
+        "left": "15px"
+      }
+    },
+    "contentPadding": {
+      "type": "object",
+      "default": {
+        "top": "10px",
+        "right": "15px",
+        "bottom": "10px",
+        "left": "15px"
+      }
+    },
     "titleTypo": {
       "type": "object",
       "default": {
@@ -92,15 +132,6 @@
         "fontSize": "15px"
       }
     },
-    "contentPadding": {
-      "type": "object",
-      "default": {
-        "top": "10px",
-        "right": "15px",
-        "bottom": "10px",
-        "left": "15px"
-      }
-    },
     "btnPadding": {
       "type": "object",
       "default": {
@@ -108,22 +139,6 @@
         "right": "15px",
         "bottom": "10px",
         "left": "15px"
-      }
-    },
-    "columnGap": {
-      "type": "string",
-      "default": "20px"
-    },
-    "rowGap": {
-      "type": "string",
-      "default": "20px"
-    },
-    "columns": {
-      "type": "object",
-      "default": {
-        "desktop": 3,
-        "tablet": 2,
-        "mobile": 1
       }
     }
   },

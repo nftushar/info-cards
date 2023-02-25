@@ -50,9 +50,9 @@
 		box-sizing: border-box;
 
 		.card {
+			min-width: auto;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 			transition: 0.3s;
-			// width: 100%;
 			border-radius: 8px;
 			margin: 0;
 			padding: 0;
@@ -69,14 +69,13 @@
 		}
 
 		.content {
-			// padding: 25px 30px;
 
 			h2 {}
 
 			p {}
 
-			button {
-				// background-color: blue;
+			a {
+				text-decoration: none !important;
 				color: #fff;
 				border: none;
 				border-radius: 8px;

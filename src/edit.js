@@ -49,9 +49,8 @@ export default function ({ attributes, setAttributes, clientId, ...rest }) {
 									onChange={(content) => updateCard(index, 'desc', content)}
 									placeholder={__("Description...")}
 								/>
-								<form>
-									<button>{card.btnLabal}</button>
-								</form>
+								<a href={card.btnUrl}>{card.btnLabal}</a>
+
 							</div>
 						</div>
 					))}

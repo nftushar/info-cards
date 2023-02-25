@@ -852,6 +852,7 @@
   box-sizing: border-box;
 }
 .wp-block-icb-cards .icbCards .card {
+  min-width: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 8px;
@@ -866,7 +867,8 @@
   max-width: 100%;
   border-radius: 8px 8px 0px 0px;
 }
-.wp-block-icb-cards .icbCards .content button {
+.wp-block-icb-cards .icbCards .content a {
+  text-decoration: none !important;
   color: #fff;
   border: none;
   border-radius: 8px;

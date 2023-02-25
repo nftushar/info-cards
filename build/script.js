@@ -217,30 +217,36 @@ const Cards = props => {
   } = props;
   const {
     cards,
+    background,
     btnPadding,
     columns,
+    padding,
     titleTypo,
     descTypo,
     contentPadding,
     columnGap,
     rowGap
   } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, ` 
+  // {console.log({padding})}
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
+
                 #icbCards-${clientId} .icbCards{
+                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background)}
                     column-gap: ${columnGap};
                     row-gap: ${rowGap};
-                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)};
+                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(padding)};
+                    
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
                 }
                 #icbCards-${clientId} .icbCards .content h2{
-                    
+                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.styles}
                 }
                 #icbCards-${clientId} .icbCards .content p{
-                    
+                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.styles}
                 }
-                #icbCards-${clientId} .icbCards .content button{
+                #icbCards-${clientId} .icbCards .content a{
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)};
                 }
             `, cards.map((card, index) => {
@@ -250,6 +256,7 @@ const Cards = props => {
       title,
       titleColor,
       desc,
+      btnHovColors,
       descColor,
       btnLabal,
       btnUrl,
@@ -265,8 +272,11 @@ const Cards = props => {
                 #icbCards-${clientId} .icbCards .card-${index} .content p {
                     color: ${descColor};
                 }
-                #icbCards-${clientId} .icbCards .card-${index} .content button{
+                #icbCards-${clientId} .icbCards .card-${index} .content a{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)}
+                }
+                 #icbCards-${clientId} .icbCards .card-${index} .content a:hover{
+                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnHovColors)}
                 }
             `;
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -418,9 +428,9 @@ const CardsRender = _ref => {
     alt: "img"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, card.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, card.desc), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
-    action: card.btnUrl
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", null, card.btnLabal))))));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, card.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, card.desc), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: card.btnUrl
+  }, card.btnLabal)))));
 };
 }();
 /******/ })()

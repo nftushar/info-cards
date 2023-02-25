@@ -94,6 +94,61 @@ button.btnAdd {
 .bPlPanelBody .bplMediaPlaceholder .bplUrlInput input {
   width: 100%;
 }
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!../Components/Typography.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+.bPlDropdown .dashicon {
+  margin-right: 0 !important;
+}
+
+.bPlDropdownPopover .bPlTypoFontTitle p:last-child {
+  width: 73px;
+  margin-right: 0;
+}
+.bPlDropdownPopover .bPlTypoFont {
+  margin-top: 0;
+}
+.bPlDropdownPopover .bPlTypoFont .bPlTypoFontSelect {
+  position: relative;
+  margin-right: 8px;
+  width: 175px;
+}
+.bPlDropdownPopover .bPlTypoFont .bPlTypoFontSelect input {
+  width: 100%;
+}
+.bPlDropdownPopover .bPlTypoFont .bPlTypoFontSelect .bPlTypoFontLists {
+  position: absolute;
+  height: 200px;
+  background: #fff;
+  width: 100%;
+  overflow-y: scroll;
+  z-index: 99;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px 0 rgba(69, 39, 164, 0.5019607843);
+}
+.bPlDropdownPopover .bPlTypoFont .bPlTypoFontSelect .bPlTypoFontLists li {
+  margin: 0;
+  padding: 3px 10px;
+}
+.bPlDropdownPopover .bPlTypoFont .bPlTypoFontSelect .bPlTypoFontLists li:hover {
+  background-color: rgba(69, 39, 164, 0.0588235294);
+  cursor: pointer;
+}
+.bPlDropdownPopover .bPlTypoFont .bPlTypoFontSelect .dashicon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bPlDropdownPopover .bPlTypoFont > div.components-base-control > div.components-base-control__field {
+  margin-bottom: 0 !important;
+  border-radius: 4px;
+}
+.bPlDropdownPopover .bPlTypoFont > div.components-base-control > div.components-base-control__field select {
+  height: 32px;
+  width: 73px;
+}
 /*!*************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!../Components/BDevice.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************/

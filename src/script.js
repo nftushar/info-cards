@@ -25,10 +25,7 @@ const CardsRender = ({ attributes }) => {
                     <div className="content">
                         <h2>{card.title}</h2>
                         <p>{card.desc}</p>
-
-                        <form action={card.btnUrl}>
-                            <button>{card.btnLabal}</button>
-                        </form>
+                        <a href={card.btnUrl}>{card.btnLabal}</a>
                     </div>
                 </div>
             ))}
