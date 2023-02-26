@@ -4,13 +4,15 @@ import { getBoxValue } from "../utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, background, btnPadding, columns, padding, titleTypo, descTypo, contentPadding, columnGap, rowGap } = attributes;
-    // {console.log({padding})}
+    const { cards, layout, background, btnPadding, columns, padding, titleTypo, descTypo, btnTypo, contentPadding, columnGap, rowGap ,btnAlign} = attributes;
+
     return <>
 
-            {/* ${getTypoCSS(titleTypo)?.googleFontLink} */}
         <style>
             {`
+                ${getTypoCSS(titleTypo)?.googleFontLink}
+                ${getTypoCSS(descTypo)?.googleFontLink}
+                ${getTypoCSS(btnTypo)?.googleFontLink}
 
                 #icbCards-${clientId} .icbCards{
                     ${getBackgroundCSS(background)}
@@ -28,7 +30,11 @@ const Cards = (props) => {
                 #icbCards-${clientId} .icbCards .content p{
                     ${getTypoCSS(descTypo)?.styles}
                 }
+                #icbCards-${clientId} .icbCards .content .btnWrapper{
+                    text-align: ${btnAlign}
+                }
                 #icbCards-${clientId} .icbCards .content a{
+                    ${getTypoCSS(btnTypo)?.styles}
                     padding: ${getBoxValue(btnPadding)};
                 }
             `}
@@ -55,7 +61,7 @@ const Cards = (props) => {
             `})}
         </style>
         {/* {console.log(getColorsCSS(btnHovColors))} */}
-        <div className={`icbCards columns-${columns.desktop} columns-tablet-${columns.tablet} columns-mobile-${columns.mobile}`}>
+        <div className={`icbCards columns-${columns.desktop} columns-tablet-${columns.tablet} columns-mobile-${columns.mobile} ${layout}`}>
             {children}
         </div>
     </>

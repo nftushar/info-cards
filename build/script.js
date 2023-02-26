@@ -173,8 +173,9 @@ const getTypoCSS = function (typo) {
     letterSpace = '0px'
   } = typo;
   const generateCss = (value, cssProperty) => !value ? '' : `${cssProperty}: ${value};`;
+  const isEmptyFamily = !isFamily || !fontFamily || 'Default' === fontFamily;
   const styles = `
-		${!isFamily || !fontFamily || 'Default' === fontFamily ? '' : `font-family: '${fontFamily}', ${fontCategory};`}
+		${isEmptyFamily ? '' : `font-family: '${fontFamily}', ${fontCategory};`}
 		${generateCss(fontWeight, 'font-weight')}
 		${!fontSize ? '' : `font-size: ${fontSize}px;`}
 		${generateCss(fontStyle, 'font-style')}
@@ -186,10 +187,10 @@ const getTypoCSS = function (typo) {
 
   // Google font link
   const linkQuery = !fontVariant || 400 === fontVariant ? '' : '400i' === fontVariant ? ':ital@1' : fontVariant?.includes('00i') ? `: ital, wght@1, ${fontVariant?.replace('00i', '00')} ` : `: wght@${fontVariant} `;
-  const link = 'Default' === fontFamily || !fontFamily ? '' : `https://fonts.googleapis.com/css2?family=${fontFamily?.split(' ').join('+')}${linkQuery.replace(/ /g, '')}&display=swap`;
+  const link = isEmptyFamily ? '' : `https://fonts.googleapis.com/css2?family=${fontFamily?.split(' ').join('+')}${linkQuery.replace(/ /g, '')}&display=swap`;
   return {
     styles: styles.replace(/\s+/g, ' ').trim(),
-    googleFontLink: isUploadFont ? link : ''
+    googleFontLink: !isUploadFont || isEmptyFamily ? '' : `@import url(${link});`
   };
 };
 
@@ -217,18 +218,23 @@ const Cards = props => {
   } = props;
   const {
     cards,
+    layout,
     background,
     btnPadding,
     columns,
     padding,
     titleTypo,
     descTypo,
+    btnTypo,
     contentPadding,
     columnGap,
-    rowGap
+    rowGap,
+    btnAlign
   } = attributes;
-  // {console.log({padding})}
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
+                ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
+                ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.googleFontLink}
+                ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(btnTypo)?.googleFontLink}
 
                 #icbCards-${clientId} .icbCards{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background)}
@@ -246,7 +252,11 @@ const Cards = props => {
                 #icbCards-${clientId} .icbCards .content p{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.styles}
                 }
+                #icbCards-${clientId} .icbCards .content .btnWrapper{
+                    text-align: ${btnAlign}
+                }
                 #icbCards-${clientId} .icbCards .content a{
+                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(btnTypo)?.styles}
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)};
                 }
             `, cards.map((card, index) => {
@@ -280,7 +290,7 @@ const Cards = props => {
                 }
             `;
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `icbCards columns-${columns.desktop} columns-tablet-${columns.tablet} columns-mobile-${columns.mobile}`
+    className: `icbCards columns-${columns.desktop} columns-tablet-${columns.tablet} columns-mobile-${columns.mobile} ${layout}`
   }, children));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Cards);
@@ -417,20 +427,45 @@ const CardsRender = _ref => {
   let {
     attributes
   } = _ref;
+  const {
+    imgPos
+  } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Cards__WEBPACK_IMPORTED_MODULE_2__["default"], {
     attributes: attributes,
     clientId: attributes.clientId
-  }, attributes.cards.map((card, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `card card-${index}`,
-    key: index
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: card.img,
-    alt: "img"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, card.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, card.desc), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: card.btnUrl
-  }, card.btnLabal)))));
+  }, attributes.cards.map((card, index) => {
+    const {
+      img,
+      title,
+      desc,
+      btnLabal,
+      btnUrl
+    } = card;
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: `card card-${index}`,
+      key: index
+    }, img && 'first' === imgPos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: img,
+      alt: title
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "content"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+      dangerouslySetInnerHTML: {
+        __html: title
+      }
+    }), desc && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      dangerouslySetInnerHTML: {
+        __html: desc
+      }
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "btnWrapper"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: btnUrl
+    }, btnLabal))), img && 'last' === imgPos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: img,
+      alt: title
+    }));
+  }));
 };
 }();
 /******/ })()

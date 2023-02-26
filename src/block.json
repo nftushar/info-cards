@@ -24,9 +24,9 @@
 					},
 					"img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
 					"title": "This Is My Title",
-					"titleColor": "#69f70c",
+					"titleColor": "#000",
 					"desc": "This Is My New Description",
-					"descColor": "#69f70c",
+					"descColor": "#000",
 					"btnLabal": "Button",
 					"btnUrl": "https://www.google.com/",
 					"btnColors": {
@@ -43,9 +43,9 @@
 					},
 					"img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
 					"title": "This Is My Title",
-					"titleColor": "#69f70c",
+					"titleColor": "#000",
 					"desc": "This Is My New Description",
-					"descColor": "#69f70c",
+					"descColor": "#0000",
 					"btnLabal": "Button",
 					"btnUrl": "https://www.google.com/",
 					"btnColors": {
@@ -62,9 +62,9 @@
 					},
 					"img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
 					"title": "This Is My Title",
-					"titleColor": "#69f70c",
+					"titleColor": "#000",
 					"desc": "This Is My New Description",
-					"descColor": "#69f70c",
+					"descColor": "#000",
 					"btnLabal": "Button",
 					"btnUrl": "https://www.google.com/",
 					"btnColors": {
@@ -77,6 +77,14 @@
 					}
 				}
 			]
+		},
+		"layout": {
+			"type": "string",
+			"default": "vertical"
+		},
+		"theme": {
+			"type": "string",
+			"default": "default"
 		},
 		"columns": {
 			"type": "object",
@@ -93,6 +101,10 @@
 		"rowGap": {
 			"type": "string",
 			"default": "20px"
+		},
+		"imgPos": {
+			"type": "string",
+			"default": "first"
 		},
 		"background": {
 			"type": "object",
@@ -121,16 +133,26 @@
 		"titleTypo": {
 			"type": "object",
 			"default": {
-				"fontSize": "20px"
+				"fontSize": 20
 			}
 		},
 		"descTypo": {
 			"type": "object",
 			"default": {
-				"fontSize": "15px"
+				"fontSize": 15
 			}
 		},
-
+		"btnAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"btnTypo": {
+			"type": "object",
+			"default": {
+				"fontSize": 15,
+				"textDecoration": "none"
+			}
+		},
 		"btnPadding": {
 			"type": "object",
 			"default": {

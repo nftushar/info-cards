@@ -1,0 +1,4 @@
+static text translatable
+button label is not changing fix this
+
+attributes: cardPadding

@@ -13,47 +13,60 @@ import "./editor.scss";
 
 
 export default function ({ attributes, setAttributes, clientId, ...rest }) {
-	const { cards } = attributes;
+	const { cards, imgPos } = attributes;
 
 	useEffect(() => {
 		clientId && setAttributes({ clientId: clientId })
 	}, [clientId]);
 
-	const [device, setDevice] = useState("desktop");
+	function updateCard(index, property, value) {
+		const newCrads = [...cards];
+		newCrads[index][property] = value;
+		setAttributes({ cards: newCrads });
+	}
 
 	return (
 		<div {...useBlockProps()}>
-			<Settings attributes={attributes} setAttributes={setAttributes} clientId={clientId} />
+			<Settings attributes={attributes} setAttributes={setAttributes} updateCard={updateCard} clientId={clientId} />
 
 			<div className="wp-block-icb-cards" id={`icbCards-${clientId}`}>
 
 				<Cards attributes={attributes} clientId={clientId} >
-					{cards.map((card, index) => (
-						<div className={`card card-${index}`} key={index} >
-							<img src={card.img} alt="img" />
+					{cards.map((card, index) => {
+						const { img, title, desc, btnLabal, btnUrl } = card;
+
+						return <div className={`card card-${index}`} key={index} >
+							{img && 'first' === imgPos && <img src={img} alt={title} />}
+
 							<div className="content">
 								<RichText
 									{...blockProps}
 									tagName="h2"
-									value={card.title}
+									value={title}
 									allowedFormats={["core/bold", "core/italic"]}
 									onChange={(content) => updateCard(index, "title", content)}
 									placeholder={__("Heading...")}
+									inlineToolbar
 								/>
 
 								<RichText
 									{...blockProps}
 									tagName="p"
-									value={card.desc}
+									value={desc}
 									allowedFormats={["core/bold", "core/italic"]}
 									onChange={(content) => updateCard(index, 'desc', content)}
 									placeholder={__("Description...")}
+									inlineToolbar
 								/>
-								<a href={card.btnUrl}>{card.btnLabal}</a>
 
+								<div className="btnWrapper">
+									<a href={btnUrl}>{btnLabal}</a>
+								</div>
 							</div>
+
+							{img && 'last' === imgPos && <img src={img} alt={title} />}
 						</div>
-					))}
+					})}
 				</Cards>
 			</div>
 		</div>

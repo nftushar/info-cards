@@ -19,7 +19,7 @@ function create_block_card_block_init() {
             extract( $attributes );
         
             ob_start(); ?>
-            <div class="wp-block-icb-cards" id='icbCards-<?php echo esc_attr( $clientId ); ?>' data-attributes='<?php echo wp_json_encode( $attributes ); ?>'></div>
+            <div class="wp-block-icb-cards" id='icbCards-<?php echo esc_attr( $clientId ); ?>' data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'></div>
 
             <?php return ob_get_clean();
         },
