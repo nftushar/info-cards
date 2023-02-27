@@ -54,13 +54,21 @@ export default function ({ attributes, setAttributes, clientId, ...rest }) {
 									tagName="p"
 									value={desc}
 									allowedFormats={["core/bold", "core/italic"]}
-									onChange={(content) => updateCard(index, 'desc', content)}
+									onChange={(content) => updateCard(index, "desc", content)}
 									placeholder={__("Description...")}
 									inlineToolbar
 								/>
 
 								<div className="btnWrapper">
-									<a href={btnUrl}>{btnLabal}</a>
+									<RichText
+										{...blockProps}
+										tagName="a"
+										value={btnLabal}
+										href={btnUrl}
+										allowedFormats={["core/bold", "core/italic"]}
+										onChange={(content) => updateCard(index, "btnLabal", content)}
+										inlineToolbar
+									/>
 								</div>
 							</div>
 

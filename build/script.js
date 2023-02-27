@@ -227,6 +227,7 @@ const Cards = props => {
     descTypo,
     btnTypo,
     contentPadding,
+    cardPadding,
     columnGap,
     rowGap,
     btnAlign
@@ -241,7 +242,9 @@ const Cards = props => {
                     column-gap: ${columnGap};
                     row-gap: ${rowGap};
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(padding)};
-                    
+                }
+                #icbCards-${clientId} .icbCards .card{
+                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(cardPadding)};
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
@@ -449,7 +452,7 @@ const CardsRender = _ref => {
       alt: title
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "content"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    }, title && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
       dangerouslySetInnerHTML: {
         __html: title
       }
@@ -459,9 +462,12 @@ const CardsRender = _ref => {
       }
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "btnWrapper"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-      href: btnUrl
-    }, btnLabal))), img && 'last' === imgPos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    }, btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: btnUrl,
+      dangerouslySetInnerHTML: {
+        __html: btnLabal
+      }
+    }))), img && 'last' === imgPos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: img,
       alt: title
     }));

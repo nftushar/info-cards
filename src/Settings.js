@@ -18,7 +18,7 @@ import { InlineMediaUpload } from "../../Components/MediaControl";
 import { gearIcon } from "../../Components/Helper/icons";
 
 export default function ({ attributes, setAttributes, updateCard }) {
-    const { cards, layout, theme, columns, columnGap, rowGap, imgPos, background, padding, contentPadding, titleTypo, descTypo, btnAlign, btnTypo, btnPadding } = attributes;
+    const { cards, layout, theme, columns, columnGap, rowGap, imgPos, background, padding, cardPadding, contentPadding, titleTypo, descTypo, btnAlign, btnTypo, btnPadding } = attributes;
 
     const [device, setDevice] = useState("desktop");
 
@@ -58,7 +58,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
         e.preventDefault();
         const newCards = [...cards]
         newCards.splice(index, 0, cards[index]);
-        setAttributes({ cards: newCards })
+        setAttributes({ cards: newCards });
     }
 
     return <InspectorControls>
@@ -72,7 +72,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
         >
             {(tab) => <>
                 {'general' === tab.name && <>
-                    <PanelBody className='bPlPanelBody' title="Add or Remove Cards">
+                    <PanelBody className='bPlPanelBody' title={__("Add or Remove Cards", "info-cards")}>
                         {cards.map((card, index) => {
                             const { background, img, titleColor, descColor, btnUrl, btnHovColors, btnColors } = card;
 
@@ -112,7 +112,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
                         </div>
                     </PanelBody>
 
-                    <PanelBody title="Layout">
+                    <PanelBody title={__("Layout", "info-cards")} className='bPlPanelBody'>
                         <SelectControl
                             label={__("Layout", 'info-cards')}
                             labelPosition='left'
@@ -128,7 +128,33 @@ export default function ({ attributes, setAttributes, updateCard }) {
                             label={__("Theme", 'info-cards')}
                             labelPosition='left'
                             value={theme}
-                            onChange={(newTheme) => setTheme(newSize)}
+                            onChange={val => {
+                                setAttributes({ theme: val });
+                                'default' === val && setAttributes({
+                                    columns: { ...columns, desktop: 3 },
+                                    layout: 'vertical',
+                                    imgPos: 'first',
+                                    cardPadding: { top: '0', right: '0', bottom: '0', left: '0' }
+                                });
+                                'theme1' === val && setAttributes({
+                                    columns: { ...columns, desktop: 3 },
+                                    layout: 'vertical',
+                                    imgPos: 'last',
+                                    cardPadding: { top: '0', right: '0', bottom: '0', left: '0' }
+                                });
+                                'theme2' === val && setAttributes({
+                                    columns: { ...columns, desktop: 3 },
+                                    layout: 'vertical',
+                                    imgPos: 'first',
+                                    cardPadding: { top: '15px', right: '15px', bottom: '15px', left: '15px' }
+                                });
+                                'theme3' === val && setAttributes({
+                                    columns: { ...columns, desktop: 2 },
+                                    layout: 'horizontal',
+                                    imgPos: 'first',
+                                    cardPadding: { top: '0', right: '0', bottom: '0', left: '0' }
+                                });
+                            }}
                             options={[
                                 { label: 'Default', value: 'default' },
                                 { label: 'Theme 1', value: 'theme1' },
@@ -145,7 +171,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
                         <UnitControl
                             className='mt20'
-                            label={__("Column Gap", 'info-cards')}
+                            label={__("Column Gap", "info-cards")}
                             labelPosition='left'
                             value={columnGap}
                             onChange={(val) => setAttributes({ columnGap: val })}
@@ -153,7 +179,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
                         <UnitControl
                             className='mt20'
-                            label={__("Row Gap", 'info-cards')}
+                            label={__("Row Gap", "info-cards")}
                             labelPosition='left'
                             value={rowGap}
                             onChange={(val) => setAttributes({ rowGap: val })}
@@ -161,7 +187,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
                         <SelectControl
                             className="mt20"
-                            label={__("Image Position", 'info-cards')}
+                            label={__("Image Position", "info-cards")}
                             labelPosition='left'
                             value={imgPos}
                             onChange={(val) => setAttributes({ imgPos: val })}
@@ -173,9 +199,8 @@ export default function ({ attributes, setAttributes, updateCard }) {
                     </PanelBody>
                 </>}
 
-
                 {'style' === tab.name && <>
-                    <PanelBody title='Cards' className='bPlPanelBody'>
+                    <PanelBody title={__("Cards", "info-cards")} className='bPlPanelBody'>
                         <Background label={__('background', 'info-cards')} value={background} onChange={(val) => setAttributes({ background: val })} />
 
                         <BoxControl
@@ -184,10 +209,17 @@ export default function ({ attributes, setAttributes, updateCard }) {
                             onChange={(value) =>
                                 setAttributes({ padding: value })
                             } />
+
+                        <BoxControl
+                            label={__("Card Paddign", "info-cards")}
+                            values={cardPadding}
+                            onChange={(value) =>
+                                setAttributes({ cardPadding: value })
+                            } />
+
                     </PanelBody>
 
-
-                    <PanelBody title='Content'>
+                    <PanelBody title={__("Content", "info-cards")} className='bPlPanelBody'>
                         <BoxControl
                             label={__("Content Paddign", "info-cards")}
                             values={contentPadding}
@@ -195,14 +227,12 @@ export default function ({ attributes, setAttributes, updateCard }) {
                                 setAttributes({ contentPadding: value })
                             }
                         />
-
-                        <Typography className='mt20' label={__('Title Typography', "info-cards")} value={titleTypo} onChange={val => setAttributes({ titleTypo: val })} />
-
+                        <Typography className='mt20' label={__("Title Typography", "info-cards")} value={titleTypo} onChange={val => setAttributes({ titleTypo: val })} />
                         <Typography className='mt20' label={__('Description Typography', "info-cards")} value={descTypo} onChange={val => setAttributes({ descTypo: val })} />
                     </PanelBody>
 
 
-                    <PanelBody title={__('Button')}>
+                    <PanelBody title={__("Button", "info-cards")} className='bPlPanelBody'>
                         <SelectControl
                             className="mt20"
                             label={__("Align", "info-cards")}
@@ -216,7 +246,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
                             ]}
                         />
 
-                        <Typography className='mt20' label={__('Typography', "info-cards")} value={btnTypo} onChange={val => setAttributes({ btnTypo: val })} />
+                        <Typography className='mt20' label={__("Typography", "info-cards")} value={btnTypo} onChange={val => setAttributes({ btnTypo: val })} />
 
                         <PanelRow className='mt20'>
                             <BoxControl

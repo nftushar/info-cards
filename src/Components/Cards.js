@@ -4,7 +4,7 @@ import { getBoxValue } from "../utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, layout, background, btnPadding, columns, padding, titleTypo, descTypo, btnTypo, contentPadding, columnGap, rowGap ,btnAlign} = attributes;
+    const { cards, layout, background, btnPadding, columns, padding, titleTypo, descTypo, btnTypo, contentPadding, cardPadding, columnGap, rowGap, btnAlign } = attributes;
 
     return <>
 
@@ -19,7 +19,9 @@ const Cards = (props) => {
                     column-gap: ${columnGap};
                     row-gap: ${rowGap};
                     padding: ${getBoxValue(padding)};
-                    
+                }
+                #icbCards-${clientId} .icbCards .card{
+                    padding: ${getBoxValue(cardPadding)};
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${getBoxValue(contentPadding)};

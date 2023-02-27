@@ -1,4 +1,4 @@
-static text translatable
-button label is not changing fix this
+static text translatable // hoini // hoini
 
-attributes: cardPadding
+if title is empty hide the h2 tag in frontend
+if button label is empty hide the button in frontend

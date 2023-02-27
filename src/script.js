@@ -27,11 +27,11 @@ const CardsRender = ({ attributes }) => {
                     {img && 'first' === imgPos && <img src={img} alt={title} />}
 
                     <div className="content">
-                        <h2 dangerouslySetInnerHTML={{ __html: title }} />
+                        {title && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
                         {desc && <p dangerouslySetInnerHTML={{ __html: desc }} />}
 
                         <div className="btnWrapper">
-                            <a href={btnUrl}>{btnLabal}</a>
+                            {btnLabal && <a href={btnUrl} dangerouslySetInnerHTML={{ __html: btnLabal }} />}
                         </div>
                     </div>
 
@@ -40,6 +40,4 @@ const CardsRender = ({ attributes }) => {
             })}
         </Cards>
     )
-
-
 }
