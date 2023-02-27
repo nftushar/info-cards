@@ -164,7 +164,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
                         />
 
                         <PanelRow>
-                            <Title className='mb5'>{__('Columns:', 'info-cards')}</Title>
+                            <Title className="mb5">{__("Columns:", "info-cards")}</Title>
                             <BDevice device={device} onChange={val => setDevice(val)} />
                         </PanelRow>
                         <RangeControl value={columns[device]} onChange={val => { setAttributes({ columns: { ...columns, [device]: val } }) }} min={1} max={6} step={1} beforeIcon='grid-view' />

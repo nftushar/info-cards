@@ -6147,7 +6147,7 @@ __webpack_require__.r(__webpack_exports__);
     }]
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Title__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: "mb5"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Columns:', 'info-cards')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BDevice__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Columns:", "info-cards")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BDevice__WEBPACK_IMPORTED_MODULE_11__["default"], {
     device: device,
     onChange: val => setDevice(val)
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
