@@ -6234,7 +6234,7 @@ __webpack_require__.r(__webpack_exports__);
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
     className: "mt20",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Description Typography', "info-cards"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Typography", "info-cards"),
     value: descTypo,
     onChange: val => setAttributes({
       descTypo: val

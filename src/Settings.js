@@ -228,7 +228,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
                             }
                         />
                         <Typography className='mt20' label={__("Title Typography", "info-cards")} value={titleTypo} onChange={val => setAttributes({ titleTypo: val })} />
-                        <Typography className='mt20' label={__('Description Typography', "info-cards")} value={descTypo} onChange={val => setAttributes({ descTypo: val })} />
+                        <Typography className='mt20' label={__("Description Typography", "info-cards")} value={descTypo} onChange={val => setAttributes({ descTypo: val })} />
                     </PanelBody>
 
 
