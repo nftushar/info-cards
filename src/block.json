@@ -6,7 +6,7 @@
 	"title": "Info Cards",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "info-card block plugin",
 	"supports": {
 		"html": false
 	},

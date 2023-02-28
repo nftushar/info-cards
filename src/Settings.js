@@ -205,28 +205,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
                                     updateAllCard('btnColors', { color: '#fff', bg: '#000' }),
                                     updateAllCard('btnHovColors', { color: '#ffffffb3', bg: '#000000b3' })
                                 );
-                                'theme5' === val && (
-                                    setAttributes({
-                                        columns: { ...columns, desktop: 3 },
-                                        layout: 'vertical',
-                                        isImg: true,
-                                        imgPos: 'first',
-                                        cardPadding: { top: '0', right: '0', bottom: '0', left: '0' }
-                                    }),
-                                    updateAllCard('background', { color: '#570dfb' }),
-                                    updateAllCard('titleColor', '#fff'),
-                                    updateAllCard('descColor', '#fff'),
-                                    updateAllCard('btnColors', { color: '#fff', bg: '#000' }),
-                                    updateAllCard('btnHovColors', { color: '#ffffffb3', bg: '#000000b3' })
-                                );
                             }}
                             options={[
                                 { label: 'Default', value: 'default' },
                                 { label: 'Theme 1', value: 'theme1' },
                                 { label: 'Theme 2', value: 'theme2' },
                                 { label: 'Theme 3', value: 'theme3' },
-                                { label: 'Theme 4', value: 'theme4' },
-                                { label: 'Theme 5', value: 'theme5' }
+                                { label: 'Theme 4', value: 'theme4' }
                             ]}
                         />
 
