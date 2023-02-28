@@ -13,7 +13,7 @@ import "./editor.scss";
 
 
 export default function ({ attributes, setAttributes, clientId, ...rest }) {
-	const { cards, imgPos } = attributes;
+	const { cards, imgPos, isImg } = attributes;
 
 	useEffect(() => {
 		clientId && setAttributes({ clientId: clientId })
@@ -35,44 +35,44 @@ export default function ({ attributes, setAttributes, clientId, ...rest }) {
 					{cards.map((card, index) => {
 						const { img, title, desc, btnLabal, btnUrl } = card;
 
+						const imgEl = isImg && img && <img src={img} alt={title} />
+
 						return <div className={`card card-${index}`} key={index} >
-							{img && 'first' === imgPos && <img src={img} alt={title} />}
+							{'first' === imgPos && imgEl}
 
 							<div className="content">
 								<RichText
-									{...blockProps}
 									tagName="h2"
 									value={title}
-									allowedFormats={["core/bold", "core/italic"]}
 									onChange={(content) => updateCard(index, "title", content)}
-									placeholder={__("Heading...")}
+									placeholder={__("Enter Title", 'info-cards')}
 									inlineToolbar
+									allowedFormats={["core/bold", "core/italic"]}
 								/>
 
 								<RichText
-									{...blockProps}
 									tagName="p"
 									value={desc}
-									allowedFormats={["core/bold", "core/italic"]}
 									onChange={(content) => updateCard(index, "desc", content)}
-									placeholder={__("Description...")}
+									placeholder={__("Enter Description", 'info-cards')}
 									inlineToolbar
+									allowedFormats={["core/bold", "core/italic"]}
 								/>
 
 								<div className="btnWrapper">
 									<RichText
-										{...blockProps}
 										tagName="a"
-										value={btnLabal}
 										href={btnUrl}
-										allowedFormats={["core/bold", "core/italic"]}
+										value={btnLabal}
 										onChange={(content) => updateCard(index, "btnLabal", content)}
+										placeholder={__("Button", 'info-cards')}
 										inlineToolbar
+										allowedFormats={["core/bold", "core/italic"]}
 									/>
 								</div>
 							</div>
 
-							{img && 'last' === imgPos && <img src={img} alt={title} />}
+							{'last' === imgPos && imgEl}
 						</div>
 					})}
 				</Cards>

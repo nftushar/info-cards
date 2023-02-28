@@ -1,5 +1,4 @@
 import ReactDOM from "react-dom";
-
 import Cards from "./Components/Cards";
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -16,26 +15,28 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 const CardsRender = ({ attributes }) => {
-    const { imgPos } = attributes;
+    const { clientId, cards, isImg, imgPos } = attributes;
 
     return (
-        <Cards attributes={attributes} clientId={attributes.clientId} >
-            {attributes.cards.map((card, index) => {
+        <Cards attributes={attributes} clientId={clientId}>
+            {cards.map((card, index) => {
                 const { img, title, desc, btnLabal, btnUrl } = card;
 
+                const imgEl = isImg && img && <img src={img} alt={title} />
+
                 return <div className={`card card-${index}`} key={index} >
-                    {img && 'first' === imgPos && <img src={img} alt={title} />}
+                    {'first' === imgPos && imgEl}
 
                     <div className="content">
                         {title && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
                         {desc && <p dangerouslySetInnerHTML={{ __html: desc }} />}
 
-                        <div className="btnWrapper">
-                            {btnLabal && <a href={btnUrl} dangerouslySetInnerHTML={{ __html: btnLabal }} />}
-                        </div>
+                        {btnLabal && <div className="btnWrapper">
+                            <a href={btnUrl} dangerouslySetInnerHTML={{ __html: btnLabal }} />
+                        </div>}
                     </div>
 
-                    {img && 'last' === imgPos && <img src={img} alt={title} />}
+                    {'last' === imgPos && imgEl}
                 </div>
             })}
         </Cards>

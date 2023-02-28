@@ -22,7 +22,7 @@
           "background": {
             "color": "#fff"
           },
-          "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
+          "img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
           "title": "This Is My Title",
           "titleColor": "#000",
           "desc": "This Is My New Description",
@@ -42,11 +42,11 @@
           "background": {
             "color": "#fff"
           },
-          "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
+          "img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
           "title": "This Is My Title",
           "titleColor": "#000",
           "desc": "This Is My New Description",
-          "descColor": "#0000",
+          "descColor": "#000",
           "btnLabal": "Button",
           "btnUrl": "https://www.google.com/",
           "btnColors": {
@@ -62,7 +62,7 @@
           "background": {
             "color": "#fff"
           },
-          "img": "https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png",
+          "img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
           "title": "This Is My Title",
           "titleColor": "#000",
           "desc": "This Is My New Description",
@@ -104,6 +104,10 @@
       "type": "string",
       "default": "20px"
     },
+    "isImg": {
+      "type": "boolean",
+      "default": true
+    },
     "imgPos": {
       "type": "string",
       "default": "first"
@@ -131,6 +135,18 @@
         "bottom": "0px",
         "left": "0px"
       }
+    },
+    "cardShadow": {
+      "type": "array",
+      "default": [
+        {
+          "hOffset": "0px",
+          "vOffset": "4px",
+          "blur": "8px",
+          "spreed": "0px",
+          "color": "#0003"
+        }
+      ]
     },
     "contentPadding": {
       "type": "object",

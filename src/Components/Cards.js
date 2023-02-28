@@ -1,10 +1,10 @@
-import { getBackgroundCSS, getColorsCSS, getTypoCSS } from '../../../Components/Helper/getCSS';
+import { getBackgroundCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS } from '../../../Components/Helper/getCSS';
 
 import { getBoxValue } from "../utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, layout, background, btnPadding, columns, padding, titleTypo, descTypo, btnTypo, contentPadding, cardPadding, columnGap, rowGap, btnAlign } = attributes;
+    const { cards, layout, background, btnPadding, columns, padding, titleTypo, descTypo, btnTypo, contentPadding, cardPadding, cardShadow, columnGap, rowGap, btnAlign } = attributes;
 
     return <>
 
@@ -22,6 +22,7 @@ const Cards = (props) => {
                 }
                 #icbCards-${clientId} .icbCards .card{
                     padding: ${getBoxValue(cardPadding)};
+                    box-shadow: ${getMultiShadowCSS(cardShadow)};
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${getBoxValue(contentPadding)};
@@ -42,7 +43,7 @@ const Cards = (props) => {
             `}
 
             {cards.map((card, index) => {
-                const { background, img, title, titleColor, desc, btnHovColors, descColor, btnLabal, btnUrl, btnColors } = card;
+                const { background, titleColor, btnHovColors, descColor, btnColors } = card;
 
                 return `
                 #icbCards-${clientId} .icbCards .card-${index}{

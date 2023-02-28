@@ -228,6 +228,7 @@ const Cards = props => {
     btnTypo,
     contentPadding,
     cardPadding,
+    cardShadow,
     columnGap,
     rowGap,
     btnAlign
@@ -245,6 +246,7 @@ const Cards = props => {
                 }
                 #icbCards-${clientId} .icbCards .card{
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(cardPadding)};
+                    box-shadow: ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)};
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
@@ -265,14 +267,9 @@ const Cards = props => {
             `, cards.map((card, index) => {
     const {
       background,
-      img,
-      title,
       titleColor,
-      desc,
       btnHovColors,
       descColor,
-      btnLabal,
-      btnUrl,
       btnColors
     } = card;
     return `
@@ -431,12 +428,15 @@ const CardsRender = _ref => {
     attributes
   } = _ref;
   const {
+    clientId,
+    cards,
+    isImg,
     imgPos
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Cards__WEBPACK_IMPORTED_MODULE_2__["default"], {
     attributes: attributes,
-    clientId: attributes.clientId
-  }, attributes.cards.map((card, index) => {
+    clientId: clientId
+  }, cards.map((card, index) => {
     const {
       img,
       title,
@@ -444,13 +444,14 @@ const CardsRender = _ref => {
       btnLabal,
       btnUrl
     } = card;
+    const imgEl = isImg && img && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: img,
+      alt: title
+    });
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: `card card-${index}`,
       key: index
-    }, img && 'first' === imgPos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: img,
-      alt: title
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, 'first' === imgPos && imgEl, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "content"
     }, title && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
       dangerouslySetInnerHTML: {
@@ -460,17 +461,14 @@ const CardsRender = _ref => {
       dangerouslySetInnerHTML: {
         __html: desc
       }
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "btnWrapper"
-    }, btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       href: btnUrl,
       dangerouslySetInnerHTML: {
         __html: btnLabal
       }
-    }))), img && 'last' === imgPos && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: img,
-      alt: title
-    }));
+    }))), 'last' === imgPos && imgEl);
   }));
 };
 }();
