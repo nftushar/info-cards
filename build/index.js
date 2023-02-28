@@ -6123,7 +6123,7 @@ __webpack_require__.r(__webpack_exports__);
       background: {
         color: '#fff'
       },
-      img: 'https://greenaromabd.com/wp-content/uploads/2021/04/Scotch-bonnet-peppers.png',
+      img: 'https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg',
       title: 'This Is My Title',
       titleColor: '#69f70c',
       desc: 'This Is My New Description',

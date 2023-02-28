@@ -5,7 +5,6 @@ import Cards from "./Components/Cards";
 
 import {
 	useBlockProps,
-	blockProps,
 	RichText,
 } from "@wordpress/block-editor";
 
