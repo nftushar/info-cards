@@ -4,7 +4,8 @@ import { getBoxValue } from "../utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, layout, background, btnPadding, columns, padding, titleTypo, descTypo, btnTypo, contentPadding, cardPadding, cardShadow, columnGap, rowGap, btnAlign } = attributes;
+    const { cards, layout, background, btnPadding, columns, padding, titleTypo, descTypo, btnTypo, contentPadding, cardPadding, cardShadow, imgHeight, columnGap, rowGap, btnAlign } = attributes;
+    // console.log(imgHeight);
 
     return <>
 
@@ -23,6 +24,9 @@ const Cards = (props) => {
                 #icbCards-${clientId} .icbCards .card{
                     padding: ${getBoxValue(cardPadding)};
                     box-shadow: ${getMultiShadowCSS(cardShadow)};
+                }
+                .wp-block-icb-cards .icbCards .card img{
+                    height: ${imgHeight};
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${getBoxValue(contentPadding)};
@@ -43,6 +47,7 @@ const Cards = (props) => {
             `}
 
             {cards.map((card, index) => {
+             
                 const { background, titleColor, btnHovColors, descColor, btnColors } = card;
 
                 return `

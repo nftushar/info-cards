@@ -20,7 +20,7 @@ import { InlineMediaUpload } from "../../Components/MediaControl";
 import { gearIcon } from "../../Components/Helper/icons";
 
 export default function ({ attributes, setAttributes, updateCard }) {
-    const { cards, layout, theme, columns, columnGap, rowGap, isImg, imgPos, background, padding, cardPadding, cardShadow, contentPadding, titleTypo, descTypo, btnAlign, btnTypo, btnPadding } = attributes;
+    const { cards, layout, theme, columns, columnGap, rowGap, isImg, imgPos, background, padding, cardPadding, cardShadow, imgHeight, contentPadding, titleTypo, descTypo, btnAlign, btnTypo, btnPadding } = attributes;
 
     const [device, setDevice] = useState("desktop");
 
@@ -277,6 +277,14 @@ export default function ({ attributes, setAttributes, updateCard }) {
                             } />
 
                         <MultiShadowControl className='mt20' value={cardShadow} onChange={val => setAttributes({ cardShadow: val })} produce={produce} />
+
+                        <UnitControl
+                            className='mt20'
+                            label={__("Image Height", "info-cards")}
+                            labelPosition='left'
+                            value={imgHeight}
+                            onChange={(val) => setAttributes({ imgHeight: val })}
+                        />
                     </PanelBody>
 
 

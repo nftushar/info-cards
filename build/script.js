@@ -229,10 +229,13 @@ const Cards = props => {
     contentPadding,
     cardPadding,
     cardShadow,
+    imgHeight,
     columnGap,
     rowGap,
     btnAlign
   } = attributes;
+  // console.log(imgHeight);
+
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.googleFontLink}
@@ -247,6 +250,9 @@ const Cards = props => {
                 #icbCards-${clientId} .icbCards .card{
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(cardPadding)};
                     box-shadow: ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)};
+                }
+                .wp-block-icb-cards .icbCards .card img{
+                    height: ${imgHeight};
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};

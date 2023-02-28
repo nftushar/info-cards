@@ -12,6 +12,7 @@ import "./editor.scss";
 
 
 export default function ({ attributes, setAttributes, clientId, ...rest }) {
+	// console.log(imgHeight);
 	const { cards, imgPos, isImg } = attributes;
 
 	useEffect(() => {

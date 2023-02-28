@@ -10,6 +10,7 @@
 	.columns-#{$i} {
 		grid-template-columns: repeat(#{$i}, 1fr);
 	}
+
 	.cols-#{$i} {
 		columns: #{$i};
 	}
@@ -20,6 +21,7 @@
 		.columns-tablet-#{$i} {
 			grid-template-columns: repeat(#{$i}, 1fr);
 		}
+
 		.cols-tablet-#{$i} {
 			columns: #{$i};
 		}
@@ -67,7 +69,8 @@
 				object-fit: cover;
 				width: 100%;
 				max-width: 100%;
-				height: 211px;
+				// height: 250px;
+				min-height: 100%;
 				overflow: hidden;
 			}
 

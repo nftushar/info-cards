@@ -1,1 +1,3 @@
-isImg is false image will hide
+Take an attribute called 'imgHeight'
+give the image height with dynamic css
+Take a UnitControl option in Card panel (under the shadow option). Label it with 'Image Height'

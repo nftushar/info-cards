@@ -112,6 +112,10 @@
 			"type": "boolean",
 			"default": true
 		},
+		"imgHeight":{
+			"type": "string",
+			"default": "250px"
+		},
 		"imgPos": {
 			"type": "string",
 			"default": "first"
