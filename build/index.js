@@ -6256,13 +6256,25 @@ __webpack_require__.r(__webpack_exports__);
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", 'info-cards'),
     labelPosition: "left",
     value: layout,
-    onChange: val => setAttributes({
-      layout: val,
-      columns: {
-        ...columns,
-        desktop: 2
+    onChange: val => {
+      // 'vertical' === val && setAttributes({ columns: { ...columns, desktop: 3 }, layout: 'vertical', });
+
+      // 'horizontal' === val && setAttributes({ columns: { ...columns, desktop: 2 }, layout: 'horizontal', });
+
+      // setAttributes({ layout: layout, columns: { ...columns, desktop: layout === 'vertical' ? 3 : 2 }, })
+
+      let column = 2;
+      if (val === 'vertical') {
+        column = 3;
       }
-    }),
+      setAttributes({
+        layout: val,
+        columns: {
+          ...columns,
+          desktop: column
+        }
+      });
+    },
     options: [{
       label: "Vertical",
       value: "vertical"
