@@ -6131,22 +6131,22 @@ __webpack_require__.r(__webpack_exports__);
   const onAddCard = () => {
     const newCrads = [...cards, {
       background: {
-        color: '#fff'
+        color: "#fff"
       },
-      img: 'https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg',
-      title: 'This Is My Titlez',
-      titleColor: '#69f70c',
-      desc: 'This Is My New Descriptionz',
-      descColor: '#69f70c',
-      btnLabal: 'Button',
-      btnUrl: 'https://www.google.com',
+      img: "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
+      title: "This Is My Titlez",
+      titleColor: "#69f70c",
+      desc: "This Is My New Descriptionz",
+      descColor: "#69f70c",
+      btnLabal: "Button",
+      btnUrl: "https://www.google.com",
       btnColors: {
-        color: '#fff',
-        bg: '#4527a4'
+        color: "#fff",
+        bg: "#4527a4"
       },
       btnHovColors: {
-        color: '#fff',
-        bg: '#fe6601'
+        color: "#fff",
+        bg: "#fe6601"
       }
     }];
     setAttributes({
@@ -6187,7 +6187,7 @@ __webpack_require__.r(__webpack_exports__);
       name: "style",
       title: "Style"
     }]
-  }, tab => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, 'general' === tab.name && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  }, tab => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "general" === tab.name && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add or Remove Cards", "info-cards")
   }, cards.map((card, index) => {
@@ -6205,33 +6205,33 @@ __webpack_require__.r(__webpack_exports__);
       title: `This is card ${index + 1}`,
       initialOpen: false
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Background__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background', 'info-cards'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background", "info-cards"),
       value: background,
       onChange: val => updateCard(index, "background", val),
       isImage: false
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_MediaControl__WEBPACK_IMPORTED_MODULE_13__.InlineMediaUpload, {
       value: img,
-      onChange: val => updateCard(index, 'img', val),
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enter Image URL', 'info-cards')
+      onChange: val => updateCard(index, "img", val),
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter Image URL", "info-cards")
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Title Color', 'info-cards'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Color", "info-cards"),
       value: titleColor,
-      onChange: val => updateCard(index, 'titleColor', val)
+      onChange: val => updateCard(index, "titleColor", val)
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Description Color', 'info-cards'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Color", "info-cards"),
       value: descColor,
-      onChange: val => updateCard(index, 'descColor', val)
+      onChange: val => updateCard(index, "descColor", val)
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Title__WEBPACK_IMPORTED_MODULE_6__["default"], null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Url:", "info-cards")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
       value: btnUrl,
       onChange: content => updateCard(index, "btnUrl", content)
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Button Colors', 'info-cards'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Colors", "info-cards"),
       value: btnColors,
-      onChange: val => updateCard(index, 'btnColors', val)
+      onChange: val => updateCard(index, "btnColors", val)
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Button Hover Colors', 'info-cards'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Hover Colors", "info-cards"),
       value: btnHovColors,
-      onChange: val => updateCard(index, 'btnHovColors', val)
+      onChange: val => updateCard(index, "btnHovColors", val)
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, {
       className: "itemAction mt20"
     }, 1 < cards?.length && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
@@ -6253,16 +6253,25 @@ __webpack_require__.r(__webpack_exports__);
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", "info-cards"),
     className: "bPlPanelBody"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", 'info-cards'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", "info-cards"),
     labelPosition: "left",
-    value: layout,
-    onChange: val => setAttributes({
-      layout: val,
-      columns: {
-        ...columns,
-        desktop: layout === "vertical" ? 3 : 2
+    value: layout
+    // onChange={(val) => setAttributes({ layout: val, columns: { ...columns, desktop: layout === "vertical" ? 3 : 2 }, })}
+    ,
+
+    onChange: val => {
+      let columns = 2;
+      if (val == "vertical") {
+        columns = 3;
       }
-    }),
+      setAttributes({
+        layout: val,
+        columns: {
+          ...columns,
+          desktop: columns
+        }
+      });
+    },
     options: [{
       label: "Vertical",
       value: "vertical"
@@ -6279,137 +6288,137 @@ __webpack_require__.r(__webpack_exports__);
       setAttributes({
         theme: val
       });
-      'default' === val && (setAttributes({
+      "default" === val && (setAttributes({
         columns: {
           ...columns,
           desktop: 3
         },
-        layout: 'vertical',
+        layout: "vertical",
         isImg: true,
-        imgPos: 'first',
+        imgPos: "first",
         cardPadding: {
-          top: '0',
-          right: '0',
-          bottom: '0',
-          left: '0'
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
         }
-      }), updateAllCard('background', {
-        color: '#fff'
-      }), updateAllCard('titleColor', '#000'), updateAllCard('descColor', '#000'), updateAllCard('btnColors', {
-        color: '#fff',
-        bg: '#4527a4'
-      }), updateAllCard('btnHovColors', {
-        color: '#fff',
-        bg: '#fe6601'
+      }), updateAllCard("background", {
+        color: "#fff"
+      }), updateAllCard("titleColor", "#000"), updateAllCard("descColor", "#000"), updateAllCard("btnColors", {
+        color: "#fff",
+        bg: "#4527a4"
+      }), updateAllCard("btnHovColors", {
+        color: "#fff",
+        bg: "#fe6601"
       }));
-      'theme1' === val && (setAttributes({
+      "theme1" === val && (setAttributes({
         columns: {
           ...columns,
           desktop: 3
         },
-        layout: 'vertical',
+        layout: "vertical",
         isImg: true,
-        imgPos: 'last',
+        imgPos: "last",
         cardPadding: {
-          top: '0',
-          right: '0',
-          bottom: '0',
-          left: '0'
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
         }
-      }), updateAllCard('background', {
-        color: '#fff'
-      }), updateAllCard('titleColor', '#000'), updateAllCard('descColor', '#000'), updateAllCard('btnColors', {
-        color: '#fff',
-        bg: '#4527a4'
-      }), updateAllCard('btnHovColors', {
-        color: '#fff',
-        bg: '#fe6601'
+      }), updateAllCard("background", {
+        color: "#fff"
+      }), updateAllCard("titleColor", "#000"), updateAllCard("descColor", "#000"), updateAllCard("btnColors", {
+        color: "#fff",
+        bg: "#4527a4"
+      }), updateAllCard("btnHovColors", {
+        color: "#fff",
+        bg: "#fe6601"
       }));
-      'theme2' === val && (setAttributes({
+      "theme2" === val && (setAttributes({
         columns: {
           ...columns,
           desktop: 3
         },
-        layout: 'vertical',
+        layout: "vertical",
         isImg: true,
-        imgPos: 'first',
+        imgPos: "first",
         cardPadding: {
-          top: '15px',
-          right: '15px',
-          bottom: '15px',
-          left: '15px'
+          top: "15px",
+          right: "15px",
+          bottom: "15px",
+          left: "15px"
         }
-      }), updateAllCard('background', {
-        color: '#fff'
-      }), updateAllCard('titleColor', '#000'), updateAllCard('descColor', '#000'), updateAllCard('btnColors', {
-        color: '#fff',
-        bg: '#4527a4'
-      }), updateAllCard('btnHovColors', {
-        color: '#fff',
-        bg: '#fe6601'
+      }), updateAllCard("background", {
+        color: "#fff"
+      }), updateAllCard("titleColor", "#000"), updateAllCard("descColor", "#000"), updateAllCard("btnColors", {
+        color: "#fff",
+        bg: "#4527a4"
+      }), updateAllCard("btnHovColors", {
+        color: "#fff",
+        bg: "#fe6601"
       }));
-      'theme3' === val && (setAttributes({
+      "theme3" === val && (setAttributes({
         columns: {
           ...columns,
           desktop: 2
         },
-        layout: 'horizontal',
+        layout: "horizontal",
         isImg: true,
-        imgPos: 'first',
+        imgPos: "first",
         cardPadding: {
-          top: '0',
-          right: '0',
-          bottom: '0',
-          left: '0'
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
         }
-      }), updateAllCard('background', {
-        color: '#fff'
-      }), updateAllCard('titleColor', '#000'), updateAllCard('descColor', '#000'), updateAllCard('btnColors', {
-        color: '#fff',
-        bg: '#4527a4'
-      }), updateAllCard('btnHovColors', {
-        color: '#fff',
-        bg: '#fe6601'
+      }), updateAllCard("background", {
+        color: "#fff"
+      }), updateAllCard("titleColor", "#000"), updateAllCard("descColor", "#000"), updateAllCard("btnColors", {
+        color: "#fff",
+        bg: "#4527a4"
+      }), updateAllCard("btnHovColors", {
+        color: "#fff",
+        bg: "#fe6601"
       }));
-      'theme4' === val && (setAttributes({
+      "theme4" === val && (setAttributes({
         columns: {
           ...columns,
           desktop: 3
         },
-        layout: 'vertical',
+        layout: "vertical",
         isImg: true,
-        imgPos: 'first',
+        imgPos: "first",
         cardPadding: {
-          top: '0',
-          right: '0',
-          bottom: '0',
-          left: '0'
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0"
         }
-      }), updateAllCard('background', {
-        color: '#570dfb'
-      }), updateAllCard('titleColor', '#fff'), updateAllCard('descColor', '#fff'), updateAllCard('btnColors', {
-        color: '#fff',
-        bg: '#000'
-      }), updateAllCard('btnHovColors', {
-        color: '#ffffffb3',
-        bg: '#000000b3'
+      }), updateAllCard("background", {
+        color: "#570dfb"
+      }), updateAllCard("titleColor", "#fff"), updateAllCard("descColor", "#fff"), updateAllCard("btnColors", {
+        color: "#fff",
+        bg: "#000"
+      }), updateAllCard("btnHovColors", {
+        color: "#ffffffb3",
+        bg: "#000000b3"
       }));
     },
     options: [{
-      label: 'Default',
-      value: 'default'
+      label: "Default",
+      value: "default"
     }, {
-      label: 'Theme 1',
-      value: 'theme1'
+      label: "Theme 1",
+      value: "theme1"
     }, {
-      label: 'Theme 2',
-      value: 'theme2'
+      label: "Theme 2",
+      value: "theme2"
     }, {
-      label: 'Theme 3',
-      value: 'theme3'
+      label: "Theme 3",
+      value: "theme3"
     }, {
-      label: 'Theme 4',
-      value: 'theme4'
+      label: "Theme 4",
+      value: "theme4"
     }]
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, {
     className: "mt20"
@@ -6450,7 +6459,7 @@ __webpack_require__.r(__webpack_exports__);
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     className: "mt20",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Show Image', 'info-cards'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Show Image", "info-cards"),
     checked: isImg,
     onChange: val => setAttributes({
       isImg: val
@@ -6474,7 +6483,7 @@ __webpack_require__.r(__webpack_exports__);
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Cards", "info-cards"),
     className: "bPlPanelBody"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Background__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('background', 'info-cards'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("background", "info-cards"),
     value: background,
     onChange: val => setAttributes({
       background: val
@@ -6546,14 +6555,14 @@ __webpack_require__.r(__webpack_exports__);
       btnAlign: val
     }),
     options: [{
-      label: 'Left',
-      value: 'left'
+      label: "Left",
+      value: "left"
     }, {
-      label: 'Center',
-      value: 'center'
+      label: "Center",
+      value: "center"
     }, {
-      label: 'Right',
-      value: 'right'
+      label: "Right",
+      value: "right"
     }]
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
     className: "mt20",
