@@ -121,28 +121,33 @@ export default function ({ attributes, setAttributes, updateCard }) {
                             label={__("Layout", 'info-cards')}
                             labelPosition='left'
                             value={layout}
-                            onChange={
+                            onChange={(val) => setAttributes({ layout: val, columns: { ...columns, desktop: layout === "vertical" ? 3 : 2 }, })}
 
-                                (val) => {
-                                    // 'vertical' === val && setAttributes({ columns: { ...columns, desktop: 3 }, layout: 'vertical', });
-
-                                    // 'horizontal' === val && setAttributes({ columns: { ...columns, desktop: 2 }, layout: 'horizontal', });
-
-                                    // setAttributes({ layout: layout, columns: { ...columns, desktop: layout === 'vertical' ? 3 : 2 }, })
-
-                                    let column = 2;
-                                    if (val === 'vertical') {
-                                        column = 3;
-                                    }
-                                    setAttributes({ layout: val, columns: { ...columns, desktop: column }, })
-                                }
-                            }
                             options={[
-
                                 { label: "Vertical", value: "vertical" },
                                 { label: "Horizontal", value: "horizontal" }
                             ]}
                         />
+
+                        {/* onChange={
+                            (val) => {
+                                // 'vertical' === val && setAttributes({ columns: { ...columns, desktop: 3 }, layout: 'vertical', });
+
+                                // 'horizontal' === val && setAttributes({ columns: { ...columns, desktop: 2 }, layout: 'horizontal', });
+
+                                // setAttributes({ layout: layout, columns: { ...columns, desktop: layout === 'vertical' ? 3 : 2 }, })
+
+                                let column = 2;
+                                if (val === 'vertical') {
+                                    column = 3;
+                                }
+                                setAttributes({ layout: val, columns: { ...columns, desktop: column }, })
+                            }
+                        } */}
+
+
+
+
 
                         <SelectControl
                             className="mt20"
@@ -304,7 +309,8 @@ export default function ({ attributes, setAttributes, updateCard }) {
                     </PanelBody>
 
 
-                    <PanelBody title={__("Content", "info-cards")} className='bPlPanelBody'>
+                    <PanelBody title={__("Content", "info-cards")}
+                        className='bPlPanelBody'>
                         <BoxControl
                             label={__("Content Paddign", "info-cards")}
                             values={contentPadding}
