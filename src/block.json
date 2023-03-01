@@ -51,7 +51,6 @@
 					"descColor": "#000",
 					"btnLabal": "Button",
 					"btnUrl": "https://www.google.com/",
-
 					"btnColors": {
 						"color": "#fff",
 						"bg": "#4527a4"
@@ -72,7 +71,6 @@
 					"descColor": "#000",
 					"btnLabal": "Button",
 					"btnUrl": "https://www.google.com/",
-
 					"btnColors": {
 						"color": "#fff",
 						"bg": "#4527a4"
@@ -114,7 +112,7 @@
 		},
 		"imgHeight":{
 			"type": "string",
-			"default": "250px"
+			"default": "200px"
 		},
 		"imgPos": {
 			"type": "string",

@@ -1,3 +1,1 @@
-Take an attribute called 'imgHeight'
-give the image height with dynamic css
-Take a UnitControl option in Card panel (under the shadow option). Label it with 'Image Height'
+If user select horizontal layout set desktop column 2. And if select vertical set desktop column 3

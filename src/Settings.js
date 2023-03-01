@@ -31,9 +31,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
                     color: '#fff',
                 },
                 img: 'https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg',
-                title: 'This Is My Title',
+                title: 'This Is My Titlez',
                 titleColor: '#69f70c',
-                desc: 'This Is My New Description',
+                desc: 'This Is My New Descriptionz',
                 descColor: '#69f70c',
                 btnLabal: 'Button',
                 btnUrl: 'https://www.google.com',
@@ -121,7 +121,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
                             label={__("Layout", 'info-cards')}
                             labelPosition='left'
                             value={layout}
-                            onChange={(val) => setAttributes({ layout: val })}
+                            onChange={(val) => setAttributes({ layout: val, columns: { ...columns, desktop: 2 } })}
                             options={[
                                 { label: "Vertical", value: "vertical" },
                                 { label: "Horizontal", value: "horizontal" }
@@ -288,7 +288,8 @@ export default function ({ attributes, setAttributes, updateCard }) {
                     </PanelBody>
 
 
-                    <PanelBody title={__("Content", "info-cards")} className='bPlPanelBody'>
+                    <PanelBody title={__("Content", "info-cards")}
+                        className='bPlPanelBody'>
                         <BoxControl
                             label={__("Content Paddign", "info-cards")}
                             values={contentPadding}

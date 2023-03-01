@@ -110,7 +110,7 @@
     },
     "imgHeight": {
       "type": "string",
-      "default": "250px"
+      "default": "200px"
     },
     "imgPos": {
       "type": "string",

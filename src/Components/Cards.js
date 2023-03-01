@@ -25,8 +25,11 @@ const Cards = (props) => {
                     padding: ${getBoxValue(cardPadding)};
                     box-shadow: ${getMultiShadowCSS(cardShadow)};
                 }
-                .wp-block-icb-cards .icbCards .card img{
+                #icbCards-${clientId} .icbCards .card img{
                     height: ${imgHeight};
+                }
+                #icbCards-${clientId} .icbCards.vertical .card img{
+                    max-height: ${imgHeight};
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${getBoxValue(contentPadding)};
@@ -47,7 +50,7 @@ const Cards = (props) => {
             `}
 
             {cards.map((card, index) => {
-             
+
                 const { background, titleColor, btnHovColors, descColor, btnColors } = card;
 
                 return `

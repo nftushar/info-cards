@@ -5996,8 +5996,11 @@ const Cards = props => {
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(cardPadding)};
                     box-shadow: ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)};
                 }
-                .wp-block-icb-cards .icbCards .card img{
+                #icbCards-${clientId} .icbCards .card img{
                     height: ${imgHeight};
+                }
+                #icbCards-${clientId} .icbCards.vertical .card img{
+                    max-height: ${imgHeight};
                 }
                 #icbCards-${clientId} .icbCards .content {
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
@@ -6131,9 +6134,9 @@ __webpack_require__.r(__webpack_exports__);
         color: '#fff'
       },
       img: 'https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg',
-      title: 'This Is My Title',
+      title: 'This Is My Titlez',
       titleColor: '#69f70c',
-      desc: 'This Is My New Description',
+      desc: 'This Is My New Descriptionz',
       descColor: '#69f70c',
       btnLabal: 'Button',
       btnUrl: 'https://www.google.com',
@@ -6254,7 +6257,11 @@ __webpack_require__.r(__webpack_exports__);
     labelPosition: "left",
     value: layout,
     onChange: val => setAttributes({
-      layout: val
+      layout: val,
+      columns: {
+        ...columns,
+        desktop: 2
+      }
     }),
     options: [{
       label: "Vertical",
@@ -6686,17 +6693,40 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/block.json");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_1__, {
-  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__, {
+  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    fill: "#4527a4",
+    width: "800px",
+    height: "800px",
+    viewBox: "0 0 256 256",
+    id: "Flat",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
+    opacity: "0.2"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M216,48H40a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8H216a8,8,0,0,0,8-8V56A8,8,0,0,0,216,48ZM92.10046,144a24,24,0,1,1,24-24A23.99994,23.99994,0,0,1,92.10046,144Z"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M192,104H152a8,8,0,0,0,0,16h40a8,8,0,0,0,0-16Z"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M192,136H152a8,8,0,0,0,0,16h40a8,8,0,0,0,0-16Z"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M114.47949,142.84375a31.99995,31.99995,0,1,0-44.75793,0,39.89549,39.89549,0,0,0-16.36023,23.16162,8.00008,8.00008,0,1,0,15.49512,3.98828,24.01011,24.01011,0,0,1,46.48779-.00146,8.0002,8.0002,0,1,0,15.49512-3.98926A39.89782,39.89782,0,0,0,114.47949,142.84375ZM76.10059,120a16,16,0,1,1,16,16A16.01833,16.01833,0,0,1,76.10059,120Z"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M216,40H40A16.01833,16.01833,0,0,0,24,56V200a16.01833,16.01833,0,0,0,16,16H216a16.01833,16.01833,0,0,0,16-16V56A16.01833,16.01833,0,0,0,216,40Zm0,160H40V56H216l.01025,143.99951Z"
+  }))),
   save: () => null
 });
 
@@ -6902,7 +6932,7 @@ function n(n){for(var r=arguments.length,t=Array(r>1?r-1:0),e=1;e<r;e++)t[e-1]=a
   \************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"icb/cards","version":"0.1.0","title":"Info Cards","category":"widgets","icon":"smiley","description":"info-card block plugin","supports":{"html":false},"attributes":{"clientId":{"type":"string","default":""},"cards":{"type":"array","default":[{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}}]},"layout":{"type":"string","default":"vertical"},"theme":{"type":"string","default":"default"},"columns":{"type":"object","default":{"desktop":3,"tablet":2,"mobile":1}},"columnGap":{"type":"string","default":"20px"},"rowGap":{"type":"string","default":"20px"},"isImg":{"type":"boolean","default":true},"imgHeight":{"type":"string","default":"250px"},"imgPos":{"type":"string","default":"first"},"background":{"type":"object","default":{"color":"#0000"}},"padding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}},"cardPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"cardShadow":{"type":"array","default":[{"hOffset":"0px","vOffset":"4px","blur":"8px","spreed":"0px","color":"#0003"}]},"contentPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}},"titleTypo":{"type":"object","default":{"fontSize":20}},"descTypo":{"type":"object","default":{"fontSize":15}},"btnAlign":{"type":"string","default":"left"},"btnTypo":{"type":"object","default":{"fontSize":15,"textDecoration":"none"}},"btnPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}}},"textdomain":"info-cards","editorScript":"file:./index.js","editorStyle":"file:./index.css","script":"file:./script.js","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"icb/cards","version":"0.1.0","title":"Info Cards","category":"widgets","icon":"smiley","description":"info-card block plugin","supports":{"html":false},"attributes":{"clientId":{"type":"string","default":""},"cards":{"type":"array","default":[{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}}]},"layout":{"type":"string","default":"vertical"},"theme":{"type":"string","default":"default"},"columns":{"type":"object","default":{"desktop":3,"tablet":2,"mobile":1}},"columnGap":{"type":"string","default":"20px"},"rowGap":{"type":"string","default":"20px"},"isImg":{"type":"boolean","default":true},"imgHeight":{"type":"string","default":"200px"},"imgPos":{"type":"string","default":"first"},"background":{"type":"object","default":{"color":"#0000"}},"padding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}},"cardPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"cardShadow":{"type":"array","default":[{"hOffset":"0px","vOffset":"4px","blur":"8px","spreed":"0px","color":"#0003"}]},"contentPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}},"titleTypo":{"type":"object","default":{"fontSize":20}},"descTypo":{"type":"object","default":{"fontSize":15}},"btnAlign":{"type":"string","default":"left"},"btnTypo":{"type":"object","default":{"fontSize":15,"textDecoration":"none"}},"btnPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}}},"textdomain":"info-cards","editorScript":"file:./index.js","editorStyle":"file:./index.css","script":"file:./script.js","style":"file:./style-index.css"}');
 
 /***/ })
 
