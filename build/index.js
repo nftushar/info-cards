@@ -5968,9 +5968,13 @@ const Cards = props => {
     btnPadding,
     columns,
     padding,
+    titleColor,
     titleTypo,
+    titleAlign,
+    descColor,
     descTypo,
     btnTypo,
+    descAlign,
     contentPadding,
     cardPadding,
     cardShadow,
@@ -5979,7 +5983,7 @@ const Cards = props => {
     rowGap,
     btnAlign
   } = attributes;
-  // console.log(imgHeight);
+  // console.log(descAlign);
 
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
@@ -6006,9 +6010,14 @@ const Cards = props => {
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
                 }
                 #icbCards-${clientId} .icbCards .content h2{
+                    text-align: ${titleAlign};
+                    color: ${titleColor};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.styles}
+                    
                 }
                 #icbCards-${clientId} .icbCards .content p{
+                    text-align: ${descAlign};
+                    color: ${descColor};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.styles}
                 }
                 #icbCards-${clientId} .icbCards .content .btnWrapper{
@@ -6026,16 +6035,15 @@ const Cards = props => {
       descColor,
       btnColors
     } = card;
+    // console.log(titleColor);
     return `
                 #icbCards-${clientId} .icbCards .card-${index}{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background, true, true, false)}
                 }
-                #icbCards-${clientId} .icbCards .card-${index} .content h2 {
-                    color: ${titleColor};
-                }
-                #icbCards-${clientId} .icbCards .card-${index} .content p {
-                    color: ${descColor};
-                }
+
+
+           
+              
                 #icbCards-${clientId} .icbCards .card-${index} .content a{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)}
                 }
@@ -6121,12 +6129,18 @@ __webpack_require__.r(__webpack_exports__);
     cardShadow,
     imgHeight,
     contentPadding,
+    titleAlign,
+    titleColor,
     titleTypo,
+    descColor,
     descTypo,
+    descAlign,
     btnAlign,
     btnTypo,
     btnPadding
   } = attributes;
+  // console.log(titleAlign)
+
   const [device, setDevice] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("desktop");
   const onAddCard = () => {
     const newCrads = [...cards, {
@@ -6134,7 +6148,7 @@ __webpack_require__.r(__webpack_exports__);
         color: "#fff"
       },
       img: "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
-      title: "This Is My Titlez",
+      title: "This Is My Title",
       titleColor: "#69f70c",
       desc: "This Is My New Descriptionz",
       descColor: "#69f70c",
@@ -6194,7 +6208,6 @@ __webpack_require__.r(__webpack_exports__);
     const {
       background,
       img,
-      titleColor,
       descColor,
       btnUrl,
       btnHovColors,
@@ -6213,14 +6226,6 @@ __webpack_require__.r(__webpack_exports__);
       value: img,
       onChange: val => updateCard(index, "img", val),
       placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter Image URL", "info-cards")
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Color", "info-cards"),
-      value: titleColor,
-      onChange: val => updateCard(index, "titleColor", val)
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Color", "info-cards"),
-      value: descColor,
-      onChange: val => updateCard(index, "descColor", val)
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Title__WEBPACK_IMPORTED_MODULE_6__["default"], null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Url:", "info-cards")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
       value: btnUrl,
       onChange: content => updateCard(index, "btnUrl", content)
@@ -6255,20 +6260,17 @@ __webpack_require__.r(__webpack_exports__);
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", "info-cards"),
     labelPosition: "left",
-    value: layout
-    // onChange={(val) => setAttributes({ layout: val, columns: { ...columns, desktop: layout === "vertical" ? 3 : 2 }, })}
-    ,
-
+    value: layout,
     onChange: val => {
-      let columns = 2;
+      let deskCol = 2;
       if (val == "vertical") {
-        columns = 3;
+        deskCol = 3;
       }
       setAttributes({
         layout: val,
         columns: {
           ...columns,
-          desktop: columns
+          desktop: deskCol
         }
       });
     },
@@ -6294,6 +6296,8 @@ __webpack_require__.r(__webpack_exports__);
           desktop: 3
         },
         layout: "vertical",
+        titleColor: "#000",
+        descColor: "#000",
         isImg: true,
         imgPos: "first",
         cardPadding: {
@@ -6304,7 +6308,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }), updateAllCard("background", {
         color: "#fff"
-      }), updateAllCard("titleColor", "#000"), updateAllCard("descColor", "#000"), updateAllCard("btnColors", {
+      }), updateAllCard("btnColors", {
         color: "#fff",
         bg: "#4527a4"
       }), updateAllCard("btnHovColors", {
@@ -6317,6 +6321,8 @@ __webpack_require__.r(__webpack_exports__);
           desktop: 3
         },
         layout: "vertical",
+        titleColor: "#000",
+        descColor: "#000",
         isImg: true,
         imgPos: "last",
         cardPadding: {
@@ -6327,7 +6333,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }), updateAllCard("background", {
         color: "#fff"
-      }), updateAllCard("titleColor", "#000"), updateAllCard("descColor", "#000"), updateAllCard("btnColors", {
+      }), updateAllCard("btnColors", {
         color: "#fff",
         bg: "#4527a4"
       }), updateAllCard("btnHovColors", {
@@ -6340,6 +6346,8 @@ __webpack_require__.r(__webpack_exports__);
           desktop: 3
         },
         layout: "vertical",
+        titleColor: "#000",
+        descColor: "#000",
         isImg: true,
         imgPos: "first",
         cardPadding: {
@@ -6350,7 +6358,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }), updateAllCard("background", {
         color: "#fff"
-      }), updateAllCard("titleColor", "#000"), updateAllCard("descColor", "#000"), updateAllCard("btnColors", {
+      }), updateAllCard("btnColors", {
         color: "#fff",
         bg: "#4527a4"
       }), updateAllCard("btnHovColors", {
@@ -6363,6 +6371,8 @@ __webpack_require__.r(__webpack_exports__);
           desktop: 2
         },
         layout: "horizontal",
+        titleColor: "#000",
+        descColor: "#000",
         isImg: true,
         imgPos: "first",
         cardPadding: {
@@ -6373,7 +6383,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }), updateAllCard("background", {
         color: "#fff"
-      }), updateAllCard("titleColor", "#000"), updateAllCard("descColor", "#000"), updateAllCard("btnColors", {
+      }), updateAllCard("btnColors", {
         color: "#fff",
         bg: "#4527a4"
       }), updateAllCard("btnHovColors", {
@@ -6388,6 +6398,8 @@ __webpack_require__.r(__webpack_exports__);
         layout: "vertical",
         isImg: true,
         imgPos: "first",
+        titleColor: "#fff",
+        descColor: "#fff",
         cardPadding: {
           top: "0",
           right: "0",
@@ -6395,10 +6407,10 @@ __webpack_require__.r(__webpack_exports__);
           left: "0"
         }
       }), updateAllCard("background", {
-        color: "#570dfb"
-      }), updateAllCard("titleColor", "#fff"), updateAllCard("descColor", "#fff"), updateAllCard("btnColors", {
+        color: "#570DF8"
+      }), updateAllCard("btnColors", {
         color: "#fff",
-        bg: "#000"
+        bg: "#570DF8"
       }), updateAllCard("btnHovColors", {
         color: "#ffffffb3",
         bg: "#000000b3"
@@ -6480,6 +6492,7 @@ __webpack_require__.r(__webpack_exports__);
       value: "last"
     }]
   }))), "style" === tab.name && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Cards", "info-cards"),
     className: "bPlPanelBody"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Background__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -6497,6 +6510,7 @@ __webpack_require__.r(__webpack_exports__);
       padding: value
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    initialOpen: false,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Card", "info-cards"),
     className: "bPlPanelBody"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.__experimentalBoxControl, {
@@ -6521,6 +6535,7 @@ __webpack_require__.r(__webpack_exports__);
       imgHeight: val
     })
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    initialOpen: false,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "info-cards"),
     className: "bPlPanelBody"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.__experimentalBoxControl, {
@@ -6529,6 +6544,36 @@ __webpack_require__.r(__webpack_exports__);
     onChange: value => setAttributes({
       contentPadding: value
     })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Colorx", "info-cards"),
+    value: titleColor,
+    onChange: val => setAttributes({
+      titleColor: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Color", "info-cards"),
+    value: descColor,
+    onChange: val => setAttributes({
+      descColor: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
+    className: "mt20",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Align", "info-cards"),
+    labelPosition: "left",
+    value: titleAlign,
+    onChange: val => setAttributes({
+      titleAlign: val
+    }),
+    options: [{
+      label: "Left",
+      value: "left"
+    }, {
+      label: "Center",
+      value: "center"
+    }, {
+      label: "Right",
+      value: "right"
+    }]
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
     className: "mt20",
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Typography", "info-cards"),
@@ -6543,7 +6588,26 @@ __webpack_require__.r(__webpack_exports__);
     onChange: val => setAttributes({
       descTypo: val
     })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
+    className: "mt20",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Align", "info-cards"),
+    labelPosition: "left",
+    value: descAlign,
+    onChange: val => setAttributes({
+      descAlign: val
+    }),
+    options: [{
+      label: "Left",
+      value: "left"
+    }, {
+      label: "Center",
+      value: "center"
+    }, {
+      label: "Right",
+      value: "right"
+    }]
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    initialOpen: false,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button", "info-cards"),
     className: "bPlPanelBody"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
@@ -6941,7 +7005,7 @@ function n(n){for(var r=arguments.length,t=Array(r>1?r-1:0),e=1;e<r;e++)t[e-1]=a
   \************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"icb/cards","version":"0.1.0","title":"Info Cards","category":"widgets","icon":"smiley","description":"info-card block plugin","supports":{"html":false},"attributes":{"clientId":{"type":"string","default":""},"cards":{"type":"array","default":[{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","titleColor":"#000","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}}]},"layout":{"type":"string","default":"vertical"},"theme":{"type":"string","default":"default"},"columns":{"type":"object","default":{"desktop":3,"tablet":2,"mobile":1}},"columnGap":{"type":"string","default":"20px"},"rowGap":{"type":"string","default":"20px"},"isImg":{"type":"boolean","default":true},"imgHeight":{"type":"string","default":"200px"},"imgPos":{"type":"string","default":"first"},"background":{"type":"object","default":{"color":"#0000"}},"padding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}},"cardPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"cardShadow":{"type":"array","default":[{"hOffset":"0px","vOffset":"4px","blur":"8px","spreed":"0px","color":"#0003"}]},"contentPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}},"titleTypo":{"type":"object","default":{"fontSize":20}},"descTypo":{"type":"object","default":{"fontSize":15}},"btnAlign":{"type":"string","default":"left"},"btnTypo":{"type":"object","default":{"fontSize":15,"textDecoration":"none"}},"btnPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}}},"textdomain":"info-cards","editorScript":"file:./index.js","editorStyle":"file:./index.css","script":"file:./script.js","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"icb/cards","version":"0.1.0","title":"Info Cards","category":"widgets","icon":"smiley","description":"info-card block plugin","supports":{"html":false},"attributes":{"clientId":{"type":"string","default":""},"cards":{"type":"array","default":[{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}}]},"layout":{"type":"string","default":"vertical"},"theme":{"type":"string","default":"default"},"columns":{"type":"object","default":{"desktop":3,"tablet":2,"mobile":1}},"columnGap":{"type":"string","default":"20px"},"rowGap":{"type":"string","default":"20px"},"isImg":{"type":"boolean","default":true},"imgHeight":{"type":"string","default":"200px"},"imgPos":{"type":"string","default":"first"},"background":{"type":"object","default":{"color":"#0000"}},"padding":{"type":"object","default":{"top":"0px","right":"0x","bottom":"0px","left":"0px"}},"cardPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"cardShadow":{"type":"array","default":[{"hOffset":"0px","vOffset":"4px","blur":"8px","spreed":"0px","color":"#0003"}]},"contentPadding":{"type":"object","default":{"top":"20px","right":"15px","bottom":"15px","left":"15px"}},"titleColor":{"type":"string","color":"#000"},"titleTypo":{"type":"object","default":{"fontSize":"20"}},"titleAlign":{"type":"string","default":"left"},"descColor":{"type":"string","color":"#000"},"descAlign":{"type":"string","default":"left"},"descTypo":{"type":"object","default":{"fontSize":"16"}},"btnAlign":{"type":"string","default":"left"},"btnTypo":{"type":"object","default":{"fontSize":15,"textDecoration":"none"}},"btnPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}}},"textdomain":"info-cards","editorScript":"file:./index.js","editorStyle":"file:./index.css","script":"file:./script.js","style":"file:./style-index.css"}');
 
 /***/ })
 

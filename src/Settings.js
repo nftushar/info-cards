@@ -32,7 +32,6 @@ import { InlineMediaUpload } from "../../Components/MediaControl";
 import { gearIcon } from "../../Components/Helper/icons";
 
 export default function ({ attributes, setAttributes, updateCard }) {
-
 	const {
 		cards,
 		layout,
@@ -48,12 +47,17 @@ export default function ({ attributes, setAttributes, updateCard }) {
 		cardShadow,
 		imgHeight,
 		contentPadding,
+		titleAlign,
+		titleColor,
 		titleTypo,
+		descColor,
 		descTypo,
+		descAlign,
 		btnAlign,
 		btnTypo,
 		btnPadding,
 	} = attributes;
+	// console.log(titleAlign)
 
 	const [device, setDevice] = useState("desktop");
 
@@ -65,7 +69,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 					color: "#fff",
 				},
 				img: "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
-				title: "This Is My Titlez",
+				title: "This Is My Title",
 				titleColor: "#69f70c",
 				desc: "This Is My New Descriptionz",
 				descColor: "#69f70c",
@@ -128,7 +132,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										const {
 											background,
 											img,
-											titleColor,
+
 											descColor,
 											btnUrl,
 											btnHovColors,
@@ -156,21 +160,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 													placeholder={__("Enter Image URL", "info-cards")}
 												/>
 
-												<BColor
-													label={__("Title Color", "info-cards")}
-													value={titleColor}
-													onChange={(val) =>
-														updateCard(index, "titleColor", val)
-													}
-												/>
-
-												<BColor
+												{/* <BColor
 													label={__("Description Color", "info-cards")}
 													value={descColor}
 													onChange={(val) =>
 														updateCard(index, "descColor", val)
 													}
-												/>
+												/> */}
 
 												<Title>{__("Button Url:", "info-cards")}</Title>
 												<TextControl
@@ -228,22 +224,19 @@ export default function ({ attributes, setAttributes, updateCard }) {
 									title={__("Layout", "info-cards")}
 									className="bPlPanelBody"
 								>
+
 									<SelectControl
 										label={__("Layout", "info-cards")}
 										labelPosition="left"
 										value={layout}
-										// onChange={(val) => setAttributes({ layout: val, columns: { ...columns, desktop: layout === "vertical" ? 3 : 2 }, })}
 
 										onChange={(val) => {
-											let columns = 2;
+											let deskCol = 2;
 											if (val == "vertical") {
-												columns = 3;
+												deskCol = 3;
 											}
 
-											setAttributes({
-												layout: val,
-												columns: { ...columns, desktop: columns },
-											});
+											setAttributes({ layout: val, columns: { ...columns, desktop: deskCol }, });
 										}}
 										options={[
 											{ label: "Vertical", value: "vertical" },
@@ -258,10 +251,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										value={theme}
 										onChange={(val) => {
 											setAttributes({ theme: val });
+
 											"default" === val &&
 												(setAttributes({
 													columns: { ...columns, desktop: 3 },
 													layout: "vertical",
+													titleColor: "#000",
+													descColor: "#000",
 													isImg: true,
 													imgPos: "first",
 													cardPadding: {
@@ -272,8 +268,6 @@ export default function ({ attributes, setAttributes, updateCard }) {
 													},
 												}),
 													updateAllCard("background", { color: "#fff" }),
-													updateAllCard("titleColor", "#000"),
-													updateAllCard("descColor", "#000"),
 													updateAllCard("btnColors", {
 														color: "#fff",
 														bg: "#4527a4",
@@ -282,10 +276,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 														color: "#fff",
 														bg: "#fe6601",
 													}));
+
 											"theme1" === val &&
 												(setAttributes({
 													columns: { ...columns, desktop: 3 },
 													layout: "vertical",
+													titleColor: "#000",
+													descColor: "#000",
 													isImg: true,
 													imgPos: "last",
 													cardPadding: {
@@ -296,8 +293,6 @@ export default function ({ attributes, setAttributes, updateCard }) {
 													},
 												}),
 													updateAllCard("background", { color: "#fff" }),
-													updateAllCard("titleColor", "#000"),
-													updateAllCard("descColor", "#000"),
 													updateAllCard("btnColors", {
 														color: "#fff",
 														bg: "#4527a4",
@@ -306,10 +301,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 														color: "#fff",
 														bg: "#fe6601",
 													}));
+
 											"theme2" === val &&
 												(setAttributes({
 													columns: { ...columns, desktop: 3 },
 													layout: "vertical",
+													titleColor: "#000",
+													descColor: "#000",
 													isImg: true,
 													imgPos: "first",
 													cardPadding: {
@@ -320,8 +318,6 @@ export default function ({ attributes, setAttributes, updateCard }) {
 													},
 												}),
 													updateAllCard("background", { color: "#fff" }),
-													updateAllCard("titleColor", "#000"),
-													updateAllCard("descColor", "#000"),
 													updateAllCard("btnColors", {
 														color: "#fff",
 														bg: "#4527a4",
@@ -330,10 +326,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 														color: "#fff",
 														bg: "#fe6601",
 													}));
+
 											"theme3" === val &&
 												(setAttributes({
 													columns: { ...columns, desktop: 2 },
 													layout: "horizontal",
+													titleColor: "#000",
+													descColor: "#000",
 													isImg: true,
 													imgPos: "first",
 													cardPadding: {
@@ -344,8 +343,6 @@ export default function ({ attributes, setAttributes, updateCard }) {
 													},
 												}),
 													updateAllCard("background", { color: "#fff" }),
-													updateAllCard("titleColor", "#000"),
-													updateAllCard("descColor", "#000"),
 													updateAllCard("btnColors", {
 														color: "#fff",
 														bg: "#4527a4",
@@ -354,12 +351,15 @@ export default function ({ attributes, setAttributes, updateCard }) {
 														color: "#fff",
 														bg: "#fe6601",
 													}));
+
 											"theme4" === val &&
 												(setAttributes({
 													columns: { ...columns, desktop: 3 },
 													layout: "vertical",
 													isImg: true,
 													imgPos: "first",
+													titleColor: "#fff",
+													descColor: "#fff",
 													cardPadding: {
 														top: "0",
 														right: "0",
@@ -367,12 +367,10 @@ export default function ({ attributes, setAttributes, updateCard }) {
 														left: "0",
 													},
 												}),
-													updateAllCard("background", { color: "#570dfb" }),
-													updateAllCard("titleColor", "#fff"),
-													updateAllCard("descColor", "#fff"),
+											    	updateAllCard("background", { color: "#570DF8" }),
 													updateAllCard("btnColors", {
 														color: "#fff",
-														bg: "#000",
+														bg: "#570DF8",
 													}),
 													updateAllCard("btnHovColors", {
 														color: "#ffffffb3",
@@ -456,55 +454,53 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
 						{"style" === tab.name && (
 							<>
-								<PanelBody
+								{/* Cards */}
+								<PanelBody initialOpen={true}
 									title={__("Cards", "info-cards")}
-									className="bPlPanelBody"
-								>
+									className="bPlPanelBody">
+
 									<Background
 										label={__("background", "info-cards")}
 										value={background}
-										onChange={(val) => setAttributes({ background: val })}
-									/>
+										onChange={(val) => setAttributes({ background: val })} />
 
 									<PanelRow className="mt20">
 										<BoxControl
 											label={__("Paddign", "info-cards")}
 											values={padding}
-											onChange={(value) => setAttributes({ padding: value })}
-										/>
+											onChange={(value) => setAttributes({ padding: value })} />
+
 									</PanelRow>
 								</PanelBody>
 
-								<PanelBody
+								{/* Card */}
+								<PanelBody initialOpen={false}
 									title={__("Card", "info-cards")}
-									className="bPlPanelBody"
-								>
+									className="bPlPanelBody">
+
 									<BoxControl
 										label={__("Card Paddign", "info-cards")}
 										values={cardPadding}
-										onChange={(value) => setAttributes({ cardPadding: value })}
-									/>
+										onChange={(value) => setAttributes({ cardPadding: value })} />
 
 									<MultiShadowControl
 										className="mt20"
 										value={cardShadow}
 										onChange={(val) => setAttributes({ cardShadow: val })}
-										produce={produce}
-									/>
+										produce={produce} />
 
 									<UnitControl
 										className="mt20"
 										label={__("Image Height", "info-cards")}
 										labelPosition="left"
 										value={imgHeight}
-										onChange={(val) => setAttributes({ imgHeight: val })}
-									/>
+										onChange={(val) => setAttributes({ imgHeight: val })} />
 								</PanelBody>
 
-								<PanelBody
+								{/* Content */}
+								<PanelBody initialOpen={false}
 									title={__("Content", "info-cards")}
-									className="bPlPanelBody"
-								>
+									className="bPlPanelBody"  >
 									<BoxControl
 										label={__("Content Paddign", "info-cards")}
 										values={contentPadding}
@@ -512,7 +508,33 @@ export default function ({ attributes, setAttributes, updateCard }) {
 											setAttributes({ contentPadding: value })
 										}
 									/>
-
+									<BColor
+										label={__("Title Colorx", "info-cards")}
+										value={titleColor}
+										onChange={(val) =>
+											setAttributes({ titleColor: val })
+										}
+									/>
+									<BColor
+										label={__("Description Color", "info-cards")}
+										value={descColor}
+										onChange={(val) =>
+											setAttributes({ descColor: val })
+										}
+									/>
+									<SelectControl
+										className="mt20"
+										label={__("Title Align", "info-cards")}
+										labelPosition="left"
+										value={titleAlign}
+										onChange={(val) => setAttributes({ titleAlign: val })}
+										options={[
+											{ label: "Left", value: "left" },
+											{ label: "Center", value: "center" },
+											{ label: "Right", value: "right" },
+										]}
+									/>
+									{/* descAlign */}
 									<Typography
 										className="mt20"
 										label={__("Title Typography", "info-cards")}
@@ -526,9 +548,22 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										value={descTypo}
 										onChange={(val) => setAttributes({ descTypo: val })}
 									/>
+									<SelectControl
+										className="mt20"
+										label={__("Description Align", "info-cards")}
+										labelPosition="left"
+										value={descAlign}
+										onChange={(val) => setAttributes({ descAlign: val })}
+										options={[
+											{ label: "Left", value: "left" },
+											{ label: "Center", value: "center" },
+											{ label: "Right", value: "right" },
+										]}
+									/>
 								</PanelBody>
 
-								<PanelBody
+								{/* Button */}
+								<PanelBody initialOpen={false}
 									title={__("Button", "info-cards")}
 									className="bPlPanelBody"
 								>

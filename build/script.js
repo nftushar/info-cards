@@ -223,9 +223,13 @@ const Cards = props => {
     btnPadding,
     columns,
     padding,
+    titleColor,
     titleTypo,
+    titleAlign,
+    descColor,
     descTypo,
     btnTypo,
+    descAlign,
     contentPadding,
     cardPadding,
     cardShadow,
@@ -234,7 +238,7 @@ const Cards = props => {
     rowGap,
     btnAlign
   } = attributes;
-  // console.log(imgHeight);
+  // console.log(descAlign);
 
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
@@ -261,9 +265,14 @@ const Cards = props => {
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
                 }
                 #icbCards-${clientId} .icbCards .content h2{
+                    text-align: ${titleAlign};
+                    color: ${titleColor};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.styles}
+                    
                 }
                 #icbCards-${clientId} .icbCards .content p{
+                    text-align: ${descAlign};
+                    color: ${descColor};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.styles}
                 }
                 #icbCards-${clientId} .icbCards .content .btnWrapper{
@@ -281,16 +290,15 @@ const Cards = props => {
       descColor,
       btnColors
     } = card;
+    // console.log(titleColor);
     return `
                 #icbCards-${clientId} .icbCards .card-${index}{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background, true, true, false)}
                 }
-                #icbCards-${clientId} .icbCards .card-${index} .content h2 {
-                    color: ${titleColor};
-                }
-                #icbCards-${clientId} .icbCards .card-${index} .content p {
-                    color: ${descColor};
-                }
+
+
+           
+              
                 #icbCards-${clientId} .icbCards .card-${index} .content a{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)}
                 }

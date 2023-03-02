@@ -4,12 +4,13 @@ import { getBoxValue } from "../utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, layout, background, btnPadding, columns, padding, titleTypo, descTypo, btnTypo, contentPadding, cardPadding, cardShadow, imgHeight, columnGap, rowGap, btnAlign } = attributes;
-    // console.log(imgHeight);
+    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, titleAlign, descColor, descTypo, btnTypo, descAlign, contentPadding, cardPadding, cardShadow, imgHeight, columnGap, rowGap, btnAlign } = attributes;
+    // console.log(descAlign);
 
     return <>
 
         <style>
+
             {`
                 ${getTypoCSS(titleTypo)?.googleFontLink}
                 ${getTypoCSS(descTypo)?.googleFontLink}
@@ -35,9 +36,14 @@ const Cards = (props) => {
                     padding: ${getBoxValue(contentPadding)};
                 }
                 #icbCards-${clientId} .icbCards .content h2{
+                    text-align: ${titleAlign};
+                    color: ${titleColor};
                     ${getTypoCSS(titleTypo)?.styles}
+                    
                 }
                 #icbCards-${clientId} .icbCards .content p{
+                    text-align: ${descAlign};
+                    color: ${descColor};
                     ${getTypoCSS(descTypo)?.styles}
                 }
                 #icbCards-${clientId} .icbCards .content .btnWrapper{
@@ -49,20 +55,26 @@ const Cards = (props) => {
                 }
             `}
 
+
+            {/* #icbCards-${clientId} .icbCards .card-${index} .content h2 {
+                color: ${titleColor};
+
+                } */}
+            {/* #icbCards-${clientId} .icbCards .card-${index} .content p {
+                color: ${descColor};
+                } */}
             {cards.map((card, index) => {
 
                 const { background, titleColor, btnHovColors, descColor, btnColors } = card;
-
+                // console.log(titleColor);
                 return `
                 #icbCards-${clientId} .icbCards .card-${index}{
                     ${getBackgroundCSS(background, true, true, false)}
                 }
-                #icbCards-${clientId} .icbCards .card-${index} .content h2 {
-                    color: ${titleColor};
-                }
-                #icbCards-${clientId} .icbCards .card-${index} .content p {
-                    color: ${descColor};
-                }
+
+
+           
+              
                 #icbCards-${clientId} .icbCards .card-${index} .content a{
                     ${getColorsCSS(btnColors)}
                 }

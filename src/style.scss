@@ -6,6 +6,7 @@
  */
 
 // Columns
+
 @for $i from 1 through 12 {
 	.columns-#{$i} {
 		grid-template-columns: repeat(#{$i}, 1fr);
@@ -75,7 +76,17 @@
 			.content {
 				display: flex;
 				flex-direction: column;
+				row-gap: 8px;
 				flex: 1;
+
+				h2 {
+					margin-top: 0px;
+					margin-bottom: 4px;
+				}
+
+				p {
+					margin-bottom: 7px;
+				}
 
 				a {
 					display: inline-block;

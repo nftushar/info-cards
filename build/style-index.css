@@ -876,7 +876,15 @@
 .wp-block-icb-cards .icbCards .card .content {
   display: flex;
   flex-direction: column;
+  row-gap: 8px;
   flex: 1;
+}
+.wp-block-icb-cards .icbCards .card .content h2 {
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+.wp-block-icb-cards .icbCards .card .content p {
+  margin-bottom: 7px;
 }
 .wp-block-icb-cards .icbCards .card .content a {
   display: inline-block;

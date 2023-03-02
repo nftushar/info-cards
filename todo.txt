@@ -1,1 +1,17 @@
 If user select horizontal layout set desktop column 2. And if select vertical set desktop column 3
+
+
+what is produce={produce} /> in react js
+
+Need to fixed-->
+
+1. add new card title & desc color manage && content aling
+
+--xxx--
+
+Todo->>>>>
+
+1. Card single all Color,
+2. Content aling title, description,
+3. Full card link, open link in new tap
+

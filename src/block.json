@@ -24,7 +24,6 @@
 					},
 					"img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
 					"title": "This Is My Title",
-					"titleColor": "#000",
 					"desc": "This Is My New Description",
 					"descColor": "#000",
 					"btnLabal": "Button",
@@ -46,7 +45,6 @@
 					},
 					"img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
 					"title": "This Is My Title",
-					"titleColor": "#000",
 					"desc": "This Is My New Description",
 					"descColor": "#000",
 					"btnLabal": "Button",
@@ -66,7 +64,6 @@
 					},
 					"img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
 					"title": "This Is My Title",
-					"titleColor": "#000",
 					"desc": "This Is My New Description",
 					"descColor": "#000",
 					"btnLabal": "Button",
@@ -110,7 +107,7 @@
 			"type": "boolean",
 			"default": true
 		},
-		"imgHeight":{
+		"imgHeight": {
 			"type": "string",
 			"default": "200px"
 		},
@@ -127,10 +124,10 @@
 		"padding": {
 			"type": "object",
 			"default": {
-				"top": "10px",
-				"right": "15px",
-				"bottom": "10px",
-				"left": "15px"
+				"top": "0px",
+				"right": "0x",
+				"bottom": "0px",
+				"left": "0px"
 			}
 		},
 		"cardPadding": {
@@ -144,33 +141,52 @@
 		},
 		"cardShadow": {
 			"type": "array",
-			"default": [{
-				"hOffset": "0px",
-				"vOffset": "4px",
-				"blur": "8px",
-				"spreed": "0px",
-				"color": "#0003"
-			}]
+			"default": [ {
+					"hOffset": "0px",
+					"vOffset": "4px",
+					"blur": "8px",
+					"spreed": "0px",
+					"color": "#0003"
+				} ]
 		},
 		"contentPadding": {
 			"type": "object",
 			"default": {
-				"top": "10px",
+				"top": "20px",
 				"right": "15px",
-				"bottom": "10px",
+				"bottom": "15px",
 				"left": "15px"
 			}
 		},
+
+		"titleColor": {
+			"type": "string",
+			"color": "#000"
+		},
+
 		"titleTypo": {
 			"type": "object",
 			"default": {
-				"fontSize": 20
+				"fontSize": "20"
 			}
+		},
+		"titleAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"descColor": {
+			"type": "string",
+			"color": "#000"
+
+		},
+		"descAlign": {
+			"type": "string",
+			"default": "left"
 		},
 		"descTypo": {
 			"type": "object",
 			"default": {
-				"fontSize": 15
+				"fontSize": "16"
 			}
 		},
 		"btnAlign": {
