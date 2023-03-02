@@ -230,15 +230,17 @@ const Cards = props => {
     descTypo,
     btnTypo,
     descAlign,
+    btnRadius,
     contentPadding,
     cardPadding,
     cardShadow,
+    cardRadius,
     imgHeight,
     columnGap,
     rowGap,
     btnAlign
   } = attributes;
-  // console.log(isImg);
+  // console.log(btnRadius);
 
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
@@ -248,21 +250,21 @@ const Cards = props => {
                 #icbCards-${clientId} .icbCards{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background)}
                     column-gap: ${columnGap};
-                    row-gap: ${rowGap};
-                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(padding)};
+                    // padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(padding)}
                 }
                 #icbCards-${clientId} .icbCards .card{
+                    border-radius: ${cardRadius};
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(cardPadding)};
-                    box-shadow: ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)};
+                    box-shadow: ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)}
                 }
                 #icbCards-${clientId} .icbCards .card img{
-                    height: ${imgHeight};
+                    height: ${imgHeight}
                 }
                 #icbCards-${clientId} .icbCards.vertical .card img{
-                    max-height: ${imgHeight};
+                    max-height: ${imgHeight}
                 }
                 #icbCards-${clientId} .icbCards .content {
-                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
+                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)}
                 }
                 #icbCards-${clientId} .icbCards .content h2{
                     text-align: ${titleAlign};
@@ -279,8 +281,9 @@ const Cards = props => {
                     text-align: ${btnAlign}
                 }
                 #icbCards-${clientId} .icbCards .content a{
-                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(btnTypo)?.styles}
-                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)};
+                    border-radius: ${btnRadius};
+                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(btnTypo)?.styles};
+                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)}
                 }
             `, cards.map((card, index) => {
     const {

@@ -87,6 +87,21 @@
 			"type": "string",
 			"default": "default"
 		},
+
+
+
+		"cardRadius": {
+			"type": "string",
+			"default": "8px"
+		},
+		"btnRadius": {
+			"type": "string",
+			"default": "8px"
+		},
+
+
+
+
 		"columns": {
 			"type": "object",
 			"default": {

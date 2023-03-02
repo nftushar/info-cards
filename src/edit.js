@@ -24,7 +24,7 @@ export default function ({ attributes, setAttributes, clientId, ...rest }) {
 		newCrads[index][property] = value;
 		setAttributes({ cards: newCrads });
 	}
-
+// console.log(clientId);
 	return (
 		<div {...useBlockProps()}>
 			<Settings attributes={attributes} setAttributes={setAttributes} updateCard={updateCard} clientId={clientId} />
@@ -71,7 +71,7 @@ export default function ({ attributes, setAttributes, clientId, ...rest }) {
 									/>
 								</div>
 							</div>
-
+							{/* cardRadius */}
 							{'last' === imgPos && imgEl}
 						</div>
 					})}

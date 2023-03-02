@@ -56,8 +56,10 @@ export default function ({ attributes, setAttributes, updateCard }) {
 		btnAlign,
 		btnTypo,
 		btnPadding,
+		cardRadius,
+		btnRadius
 	} = attributes;
-	// console.log(attributes.btnLabal)
+	// console.log(cardRadius)
 
 	const [device, setDevice] = useState("desktop");
 
@@ -476,8 +478,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 												"left": "0px"
 											}}
 											onChange={(value) => setAttributes({ padding: value })} />
-
 									</PanelRow>
+										<UnitControl
+										className="mt20"
+										label={__("Image Height", "info-cards")}
+										labelPosition="left"
+										value={imgHeight}
+										onChange={(val) => setAttributes({ imgHeight: val })} />
 								</PanelBody>
 
 								{/* Card */}
@@ -502,12 +509,23 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										onChange={(val) => setAttributes({ cardShadow: val })}
 										produce={produce} />
 
+
 									<UnitControl
 										className="mt20"
-										label={__("Image Height", "info-cards")}
+										label={__("Card border radious", "info-cards")}
 										labelPosition="left"
-										value={imgHeight}
-										onChange={(val) => setAttributes({ imgHeight: val })} />
+										value={cardRadius}
+										onChange={(val) => setAttributes({ cardRadius: val })} />
+
+									<UnitControl
+										className="mt20"
+										label={__("Button border radious", "info-cards")}
+										labelPosition="left"
+										value={btnRadius}
+										onChange={(val) => setAttributes({ btnRadius: val })} />
+
+
+
 								</PanelBody>
 
 								{/* Content */}

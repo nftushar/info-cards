@@ -4,11 +4,12 @@ import { getBoxValue } from "../utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, titleAlign, descColor, 
-        descTypo, btnTypo, descAlign, contentPadding, cardPadding, cardShadow, imgHeight, columnGap, rowGap, btnAlign } = attributes;
-    // console.log(isImg);
+    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, titleAlign, descColor,
+        descTypo, btnTypo, descAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign } = attributes;
+    // console.log(btnRadius);
 
     return <>
+        {/* {console.log(clientId)} */}
 
         <style>
 
@@ -20,21 +21,21 @@ const Cards = (props) => {
                 #icbCards-${clientId} .icbCards{
                     ${getBackgroundCSS(background)}
                     column-gap: ${columnGap};
-                    row-gap: ${rowGap};
-                    padding: ${getBoxValue(padding)};
+                    // padding: ${getBoxValue(padding)}
                 }
                 #icbCards-${clientId} .icbCards .card{
+                    border-radius: ${cardRadius};
                     padding: ${getBoxValue(cardPadding)};
-                    box-shadow: ${getMultiShadowCSS(cardShadow)};
+                    box-shadow: ${getMultiShadowCSS(cardShadow)}
                 }
                 #icbCards-${clientId} .icbCards .card img{
-                    height: ${imgHeight};
+                    height: ${imgHeight}
                 }
                 #icbCards-${clientId} .icbCards.vertical .card img{
-                    max-height: ${imgHeight};
+                    max-height: ${imgHeight}
                 }
                 #icbCards-${clientId} .icbCards .content {
-                    padding: ${getBoxValue(contentPadding)};
+                    padding: ${getBoxValue(contentPadding)}
                 }
                 #icbCards-${clientId} .icbCards .content h2{
                     text-align: ${titleAlign};
@@ -51,10 +52,13 @@ const Cards = (props) => {
                     text-align: ${btnAlign}
                 }
                 #icbCards-${clientId} .icbCards .content a{
-                    ${getTypoCSS(btnTypo)?.styles}
-                    padding: ${getBoxValue(btnPadding)};
+                    border-radius: ${btnRadius};
+                    ${getTypoCSS(btnTypo)?.styles};
+                    padding: ${getBoxValue(btnPadding)}
                 }
             `}
+            {/* {console.log(btnRadius)} */}
+
 
 
             {/* #icbCards-${clientId} .icbCards .card-${index} .content h2 {
