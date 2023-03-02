@@ -896,6 +896,9 @@
 .wp-block-icb-cards .icbCards .card .content .btnWrapper {
   margin-top: auto;
 }
+.wp-block-icb-cards .icbCards .card .content .btnWrapper button {
+  overflow-wrap: anywhere;
+}
 .wp-block-icb-cards .icbCards.horizontal .card {
   flex-direction: row;
 }

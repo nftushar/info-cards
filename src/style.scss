@@ -98,6 +98,9 @@
 
 				.btnWrapper {
 					margin-top: auto;
+					button{
+						overflow-wrap: anywhere;
+					}
 				}
 			}
 		}

@@ -4,8 +4,9 @@ import { getBoxValue } from "../utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, titleAlign, descColor, descTypo, btnTypo, descAlign, contentPadding, cardPadding, cardShadow, imgHeight, columnGap, rowGap, btnAlign } = attributes;
-    // console.log(descAlign);
+    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, titleAlign, descColor, 
+        descTypo, btnTypo, descAlign, contentPadding, cardPadding, cardShadow, imgHeight, columnGap, rowGap, btnAlign } = attributes;
+    // console.log(isImg);
 
     return <>
 
@@ -65,7 +66,7 @@ const Cards = (props) => {
                 } */}
             {cards.map((card, index) => {
 
-                const { background, titleColor, btnHovColors, descColor, btnColors } = card;
+                const { background, btnHovColors, btnColors } = card;
                 // console.log(titleColor);
                 return `
                 #icbCards-${clientId} .icbCards .card-${index}{

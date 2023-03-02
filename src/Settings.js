@@ -57,7 +57,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 		btnTypo,
 		btnPadding,
 	} = attributes;
-	// console.log(titleAlign)
+	// console.log(attributes.btnLabal)
 
 	const [device, setDevice] = useState("desktop");
 
@@ -132,13 +132,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										const {
 											background,
 											img,
-
+											btnLabal,
 											descColor,
 											btnUrl,
 											btnHovColors,
 											btnColors,
 										} = card;
-
+										// console.log(card.btnLabal)
 										return (
 											<PanelBody
 												className="bPlPanelBody"
@@ -154,11 +154,11 @@ export default function ({ attributes, setAttributes, updateCard }) {
 													isImage={false}
 												/>
 
-												<InlineMediaUpload
+												{isImg && <InlineMediaUpload
 													value={img}
 													onChange={(val) => updateCard(index, "img", val)}
 													placeholder={__("Enter Image URL", "info-cards")}
-												/>
+												/>}
 
 												{/* <BColor
 													label={__("Description Color", "info-cards")}
@@ -168,29 +168,29 @@ export default function ({ attributes, setAttributes, updateCard }) {
 													}
 												/> */}
 
-												<Title>{__("Button Url:", "info-cards")}</Title>
-												<TextControl
+												{btnLabal && <Title>{__("Button Url:", "info-cards")}</Title>}
+												{btnLabal && <TextControl
 													value={btnUrl}
 													onChange={(content) =>
 														updateCard(index, "btnUrl", content)
 													}
-												/>
+												/>}
 
-												<ColorsControl
+												{btnLabal && <ColorsControl
 													label={__("Button Colors", "info-cards")}
 													value={btnColors}
 													onChange={(val) =>
 														updateCard(index, "btnColors", val)
 													}
-												/>
+												/>}
 
-												<ColorsControl
+												{btnLabal && <ColorsControl
 													label={__("Button Hover Colors", "info-cards")}
 													value={btnHovColors}
 													onChange={(val) =>
 														updateCard(index, "btnHovColors", val)
 													}
-												/>
+												/>}
 
 												<PanelRow className="itemAction mt20">
 													{1 < cards?.length && (
@@ -367,7 +367,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 														left: "0",
 													},
 												}),
-											    	updateAllCard("background", { color: "#570DF8" }),
+													updateAllCard("background", { color: "#570DF8" }),
 													updateAllCard("btnColors", {
 														color: "#fff",
 														bg: "#570DF8",
@@ -461,13 +461,20 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
 									<Background
 										label={__("background", "info-cards")}
+										defaults={{ color: "#0000" }}
 										value={background}
 										onChange={(val) => setAttributes({ background: val })} />
 
 									<PanelRow className="mt20">
 										<BoxControl
 											label={__("Paddign", "info-cards")}
-											values={padding}
+											values={padding} 
+											resetValues={{
+												"top": "0px",
+												"right": "0x",
+												"bottom": "0px",
+												"left": "0px"
+											}}
 											onChange={(value) => setAttributes({ padding: value })} />
 
 									</PanelRow>
@@ -481,6 +488,12 @@ export default function ({ attributes, setAttributes, updateCard }) {
 									<BoxControl
 										label={__("Card Paddign", "info-cards")}
 										values={cardPadding}
+										resetValues={{
+											"top": "0px",
+											"right": "0x",
+											"bottom": "0px",
+											"left": "0px"
+										}}
 										onChange={(value) => setAttributes({ cardPadding: value })} />
 
 									<MultiShadowControl
@@ -504,12 +517,18 @@ export default function ({ attributes, setAttributes, updateCard }) {
 									<BoxControl
 										label={__("Content Paddign", "info-cards")}
 										values={contentPadding}
+										resetValues={{
+											"top": "0px",
+											"right": "0x",
+											"bottom": "0px",
+											"left": "0px"
+										}}
 										onChange={(value) =>
 											setAttributes({ contentPadding: value })
 										}
 									/>
 									<BColor
-										label={__("Title Colorx", "info-cards")}
+										label={__("Title Color", "info-cards")}
 										value={titleColor}
 										onChange={(val) =>
 											setAttributes({ titleColor: val })
@@ -591,6 +610,12 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										<BoxControl
 											label={__("Button Paddign", "info-cards")}
 											values={btnPadding}
+											resetValues={{
+												"top": "0px",
+												"right": "0x",
+												"bottom": "0px",
+												"left": "0px"
+											}}
 											onChange={(value) => setAttributes({ btnPadding: value })}
 										/>
 									</PanelRow>

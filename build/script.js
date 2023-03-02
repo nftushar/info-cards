@@ -238,7 +238,7 @@ const Cards = props => {
     rowGap,
     btnAlign
   } = attributes;
-  // console.log(descAlign);
+  // console.log(isImg);
 
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
@@ -285,9 +285,7 @@ const Cards = props => {
             `, cards.map((card, index) => {
     const {
       background,
-      titleColor,
       btnHovColors,
-      descColor,
       btnColors
     } = card;
     // console.log(titleColor);
@@ -454,6 +452,8 @@ const CardsRender = _ref => {
     attributes: attributes,
     clientId: clientId
   }, cards.map((card, index) => {
+    // console.log(card.isImg)
+
     const {
       img,
       title,

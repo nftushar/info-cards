@@ -20,6 +20,8 @@ const CardsRender = ({ attributes }) => {
     return (
         <Cards attributes={attributes} clientId={clientId}>
             {cards.map((card, index) => {
+                // console.log(card.isImg)
+
                 const { img, title, desc, btnLabal, btnUrl } = card;
 
                 const imgEl = isImg && img && <img src={img} alt={title} />
@@ -30,7 +32,6 @@ const CardsRender = ({ attributes }) => {
                     <div className="content">
                         {title && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
                         {desc && <p dangerouslySetInnerHTML={{ __html: desc }} />}
-
                         {btnLabal && <div className="btnWrapper">
                             <a href={btnUrl} dangerouslySetInnerHTML={{ __html: btnLabal }} />
                         </div>}

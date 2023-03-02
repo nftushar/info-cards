@@ -5983,7 +5983,7 @@ const Cards = props => {
     rowGap,
     btnAlign
   } = attributes;
-  // console.log(descAlign);
+  // console.log(isImg);
 
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
@@ -6030,9 +6030,7 @@ const Cards = props => {
             `, cards.map((card, index) => {
     const {
       background,
-      titleColor,
       btnHovColors,
-      descColor,
       btnColors
     } = card;
     // console.log(titleColor);
@@ -6139,7 +6137,7 @@ __webpack_require__.r(__webpack_exports__);
     btnTypo,
     btnPadding
   } = attributes;
-  // console.log(titleAlign)
+  // console.log(attributes.btnLabal)
 
   const [device, setDevice] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("desktop");
   const onAddCard = () => {
@@ -6208,11 +6206,13 @@ __webpack_require__.r(__webpack_exports__);
     const {
       background,
       img,
+      btnLabal,
       descColor,
       btnUrl,
       btnHovColors,
       btnColors
     } = card;
+    // console.log(card.btnLabal)
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
       className: "bPlPanelBody",
       title: `This is card ${index + 1}`,
@@ -6222,18 +6222,18 @@ __webpack_require__.r(__webpack_exports__);
       value: background,
       onChange: val => updateCard(index, "background", val),
       isImage: false
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_MediaControl__WEBPACK_IMPORTED_MODULE_13__.InlineMediaUpload, {
+    }), isImg && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_MediaControl__WEBPACK_IMPORTED_MODULE_13__.InlineMediaUpload, {
       value: img,
       onChange: val => updateCard(index, "img", val),
       placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enter Image URL", "info-cards")
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Title__WEBPACK_IMPORTED_MODULE_6__["default"], null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Url:", "info-cards")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    }), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Title__WEBPACK_IMPORTED_MODULE_6__["default"], null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Url:", "info-cards")), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
       value: btnUrl,
       onChange: content => updateCard(index, "btnUrl", content)
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Colors", "info-cards"),
       value: btnColors,
       onChange: val => updateCard(index, "btnColors", val)
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Hover Colors", "info-cards"),
       value: btnHovColors,
       onChange: val => updateCard(index, "btnHovColors", val)
@@ -6497,6 +6497,9 @@ __webpack_require__.r(__webpack_exports__);
     className: "bPlPanelBody"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Background__WEBPACK_IMPORTED_MODULE_8__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("background", "info-cards"),
+    defaults: {
+      color: "#0000"
+    },
     value: background,
     onChange: val => setAttributes({
       background: val
@@ -6506,6 +6509,12 @@ __webpack_require__.r(__webpack_exports__);
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.__experimentalBoxControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Paddign", "info-cards"),
     values: padding,
+    resetValues: {
+      "top": "0px",
+      "right": "0x",
+      "bottom": "0px",
+      "left": "0px"
+    },
     onChange: value => setAttributes({
       padding: value
     })
@@ -6516,6 +6525,12 @@ __webpack_require__.r(__webpack_exports__);
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.__experimentalBoxControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Card Paddign", "info-cards"),
     values: cardPadding,
+    resetValues: {
+      "top": "0px",
+      "right": "0x",
+      "bottom": "0px",
+      "left": "0px"
+    },
     onChange: value => setAttributes({
       cardPadding: value
     })
@@ -6541,11 +6556,17 @@ __webpack_require__.r(__webpack_exports__);
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.__experimentalBoxControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content Paddign", "info-cards"),
     values: contentPadding,
+    resetValues: {
+      "top": "0px",
+      "right": "0x",
+      "bottom": "0px",
+      "left": "0px"
+    },
     onChange: value => setAttributes({
       contentPadding: value
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Colorx", "info-cards"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Color", "info-cards"),
     value: titleColor,
     onChange: val => setAttributes({
       titleColor: val
@@ -6640,6 +6661,12 @@ __webpack_require__.r(__webpack_exports__);
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.__experimentalBoxControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Paddign", "info-cards"),
     values: btnPadding,
+    resetValues: {
+      "top": "0px",
+      "right": "0x",
+      "bottom": "0px",
+      "left": "0px"
+    },
     onChange: value => setAttributes({
       btnPadding: value
     })
