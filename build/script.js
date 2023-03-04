@@ -196,17 +196,17 @@ const getTypoCSS = function (typo) {
 
 /***/ }),
 
-/***/ "./src/Components/Cards.js":
-/*!*********************************!*\
-  !*** ./src/Components/Cards.js ***!
-  \*********************************/
+/***/ "./src/Cards.js":
+/*!**********************!*\
+  !*** ./src/Cards.js ***!
+  \**********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Components/Helper/getCSS */ "../Components/Helper/getCSS.js");
-/* harmony import */ var _utils_function__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/function */ "./src/utils/function.js");
+/* harmony import */ var _Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Helper/getCSS */ "../Components/Helper/getCSS.js");
+/* harmony import */ var _utils_function__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/function */ "./src/utils/function.js");
 
 
 
@@ -424,7 +424,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Components_Cards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Cards */ "./src/Components/Cards.js");
+/* harmony import */ var _Cards__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cards */ "./src/Cards.js");
 
 
 
@@ -447,7 +447,7 @@ const CardsRender = _ref => {
     isImg,
     imgPos
   } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Cards__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Cards__WEBPACK_IMPORTED_MODULE_2__["default"], {
     attributes: attributes,
     clientId: clientId
   }, cards.map((card, index) => {

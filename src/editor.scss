@@ -1,5 +1,9 @@
-button.btnAdd {
-	height: 25px;
-	width: 45px;
-	background-color: #77d8ff;
+.wp-block-icb-cards {
+	.icbCards {
+		&.horizontal {
+			.components-placeholder {
+				max-width: 50%;
+			}
+		}
+	}
 }

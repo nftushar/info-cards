@@ -68,18 +68,15 @@ export default function ({ attributes, setAttributes, updateCard }) {
 		const newCrads = [
 			...cards,
 			{
-				background: {
-					color: "#fff",
+				background: cards?.[0]?.background || {
+					color: '#fff'
 				},
-				img: "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
-				title: "This Is My Title",
-				titleColor: "#69f70c",
-				desc: "This Is My New Descriptionz",
-				descColor: "#69f70c",
-				btnLabal: "Button",
-				btnUrl: "https://www.google.com",
-
-			},
+				img: "",
+				title: `Title of the ${cards?.length + 1} number card`,
+				desc: `Description of the ${cards?.length + 1} number card`,
+				btnLabal: cards?.[0]?.btnLabal || 'Button',
+				btnUrl: "#",
+			}
 		];
 		setAttributes({ cards: newCrads });
 	};
@@ -233,16 +230,17 @@ export default function ({ attributes, setAttributes, updateCard }) {
 											bottom: "0",
 											left: "0",
 										},
-									}),
-										updateAllCard("background", { color: "#fff" }),
-										updateAllCard("btnColors", {
+										btnColors: {
 											color: "#fff",
 											bg: "#4527a4",
-										}),
-										updateAllCard("btnHovColors", {
+										},
+										btnHovColors: {
 											color: "#fff",
 											bg: "#fe6601",
-										}));
+										}
+									}),
+										updateAllCard("background", { color: "#fff" })
+									);
 
 								"theme1" === val &&
 									(setAttributes({
@@ -258,16 +256,17 @@ export default function ({ attributes, setAttributes, updateCard }) {
 											bottom: "0",
 											left: "0",
 										},
-									}),
-										updateAllCard("background", { color: "#fff" }),
-										updateAllCard("btnColors", {
+										btnColors: {
 											color: "#fff",
 											bg: "#4527a4",
-										}),
-										updateAllCard("btnHovColors", {
+										},
+										btnHovColors: {
 											color: "#fff",
 											bg: "#fe6601",
-										}));
+										}
+									}),
+										updateAllCard("background", { color: "#fff" })
+									);
 
 								"theme2" === val &&
 									(setAttributes({
@@ -283,16 +282,17 @@ export default function ({ attributes, setAttributes, updateCard }) {
 											bottom: "15px",
 											left: "15px",
 										},
-									}),
-										updateAllCard("background", { color: "#fff" }),
-										updateAllCard("btnColors", {
+										btnColors: {
 											color: "#fff",
 											bg: "#4527a4",
-										}),
-										updateAllCard("btnHovColors", {
+										},
+										btnHovColors: {
 											color: "#fff",
 											bg: "#fe6601",
-										}));
+										}
+									}),
+										updateAllCard("background", { color: "#fff" })
+									);
 
 								"theme3" === val &&
 									(setAttributes({
@@ -308,16 +308,17 @@ export default function ({ attributes, setAttributes, updateCard }) {
 											bottom: "0",
 											left: "0",
 										},
-									}),
-										updateAllCard("background", { color: "#fff" }),
-										updateAllCard("btnColors", {
+										btnColors: {
 											color: "#fff",
 											bg: "#4527a4",
-										}),
-										updateAllCard("btnHovColors", {
+										},
+										btnHovColors: {
 											color: "#fff",
 											bg: "#fe6601",
-										}));
+										}
+									}),
+										updateAllCard("background", { color: "#fff" })
+									);
 
 								"theme4" === val &&
 									(setAttributes({
@@ -333,17 +334,17 @@ export default function ({ attributes, setAttributes, updateCard }) {
 											bottom: "0",
 											left: "0",
 										},
-									}),
-										updateAllCard("background", { color: "#570DF8" }),
-										updateAllCard("btnColors", {
+										btnColors: {
 											color: "#fff",
 											bg: "#000",
-										}),
-
-										updateAllCard("btnHovColors", {
+										},
+										btnHovColors: {
 											color: "#ffffffb3",
 											bg: "#000000b3",
-										}));
+										}
+									}),
+										updateAllCard("background", { color: "#570DF8" })
+									);
 							}}
 							options={[
 								{ label: "Default", value: "default" },
@@ -486,8 +487,21 @@ export default function ({ attributes, setAttributes, updateCard }) {
 					{/* Content */}
 					<PanelBody initialOpen={false}
 						title={__("Content", "info-cards")}
-						className="bPlPanelBody"  >
+						className="bPlPanelBody">
+						<SelectControl
+							label={__("Content Align", "info-cards")}
+							labelPosition="left"
+							value={contentAlign}
+							onChange={(val) => setAttributes({ contentAlign: val })}
+							options={[
+								{ label: "Left", value: "left" },
+								{ label: "Center", value: "center" },
+								{ label: "Right", value: "right" },
+							]}
+						/>
+
 						<BoxControl
+							className="mt20"
 							label={__("Content Paddign", "info-cards")}
 							values={contentPadding}
 							resetValues={{
@@ -526,21 +540,6 @@ export default function ({ attributes, setAttributes, updateCard }) {
 								setAttributes({ descColor: val })
 							}
 						/>
-						<SelectControl
-							className="mt20"
-							label={__("Content Align", "info-cards")}
-							labelPosition="left"
-							value={contentAlign}
-							onChange={(val) => setAttributes({ contentAlign: val })}
-							options={[
-								{ label: "Left", value: "left" },
-								{ label: "Center", value: "center" },
-								{ label: "Right", value: "right" },
-							]}
-						/>
-						{/* descAlign */}
-
-
 					</PanelBody>
 
 					{/* Button */}
@@ -567,7 +566,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 							value={btnTypo}
 							onChange={(val) => setAttributes({ btnTypo: val })}
 						/>
-						
+
 						<SelectControl
 							className="mt20"
 							label={__("Align", "info-cards")}
@@ -587,7 +586,6 @@ export default function ({ attributes, setAttributes, updateCard }) {
 							labelPosition="left"
 							value={btnRadius}
 							onChange={(val) => setAttributes({ btnRadius: val })} />
-
 
 
 						<PanelRow className="mt20">

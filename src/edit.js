@@ -1,13 +1,11 @@
 import { __ } from "@wordpress/i18n";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Settings from './Settings';
-import Cards from "./Components/Cards";
+import { useBlockProps, RichText } from "@wordpress/block-editor";
 
-import {
-	useBlockProps,
-	RichText,
-} from "@wordpress/block-editor";
+import { ImagePlaceholder } from '../../Components/ImageControl';
 
+import Cards from "./Cards";
 import "./editor.scss";
 
 
@@ -24,7 +22,7 @@ export default function ({ attributes, setAttributes, clientId, ...rest }) {
 		newCrads[index][property] = value;
 		setAttributes({ cards: newCrads });
 	}
-// console.log(clientId);
+	// console.log(clientId);
 	return (
 		<div {...useBlockProps()}>
 			<Settings attributes={attributes} setAttributes={setAttributes} updateCard={updateCard} clientId={clientId} />
@@ -35,7 +33,9 @@ export default function ({ attributes, setAttributes, clientId, ...rest }) {
 					{cards.map((card, index) => {
 						const { img, title, desc, btnLabal, btnUrl } = card;
 
-						const imgEl = isImg && img && <img src={img} alt={title} />
+						const imgEl = isImg && <>
+							{img ? <img src={img} alt={title} /> : <ImagePlaceholder label={__(' Card Image:', 'info-cards')} value={{ url: img }} onChange={val => updateCard(index, 'img', val?.url)} />}
+						</>
 
 						return <div className={`card card-${index}`} key={index} >
 							{'first' === imgPos && imgEl}

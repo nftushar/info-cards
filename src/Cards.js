@@ -1,18 +1,13 @@
-import { getBackgroundCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS } from '../../../Components/Helper/getCSS';
+import { getBackgroundCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS } from '../../Components/Helper/getCSS';
 
-import { getBoxValue } from "../utils/function";
+import { getBoxValue } from "./utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, descColor, descTypo, btnTypo, 
-        contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
-
+    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, descColor, descTypo, btnTypo, contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
 
     return <>
-        {/* {console.log(clientId)} */}
-
         <style>
-
             {`
                 ${getTypoCSS(titleTypo)?.googleFontLink}
                 ${getTypoCSS(descTypo)?.googleFontLink}

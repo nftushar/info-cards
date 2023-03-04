@@ -22,34 +22,32 @@
 					"background": {
 						"color": "#fff"
 					},
-					"img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
-					"title": "This Is My Title",
-					"desc": "This Is My New Description",
+					"img": "",
+					"title": "Title of the 1 number card",
+					"desc": "Description of the 1 number card",
 					"btnLabal": "Button",
-					"btnUrl": "https://www.google.com/"
+					"btnUrl": "#"
 				},
 
 				{
 					"background": {
 						"color": "#fff"
 					},
-					"img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
-					"title": "This Is My Title",
-					"desc": "This Is My New Description",
+					"img": "",
+					"title": "Title of the 2 number card",
+					"desc": "Description of the 2 number card",
 					"btnLabal": "Button",
-					"btnUrl": "https://www.google.com/"
+					"btnUrl": "#"
 				},
 				{
 					"background": {
 						"color": "#fff"
 					},
-					"img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
-					"title": "This Is My Title",
-					"desc": "This Is My New Description",
-					"descColor": "#000",
+					"img": "",
+					"title": "Title of the 3 number card",
+					"desc": "Description of the 3 number card",
 					"btnLabal": "Button",
-					"btnUrl": "https://www.google.com/"
-
+					"btnUrl": "#"
 				}
 			]
 		},

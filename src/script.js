@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
-import Cards from "./Components/Cards";
+
+import Cards from "./Cards";
 
 window.addEventListener('DOMContentLoaded', () => {
     const allCards = document.querySelectorAll('.wp-block-icb-cards');

@@ -1,10 +1,8 @@
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/editor.scss ***!
   \****************************************************************************************************************************************************************************************************************************************/
-button.btnAdd {
-  height: 25px;
-  width: 45px;
-  background-color: #77d8ff;
+.wp-block-icb-cards .icbCards.horizontal .components-placeholder {
+  max-width: 50%;
 }
 /*!************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!../Components/BColor.scss ***!
@@ -201,6 +199,46 @@ button.btnAdd {
 .bPlPanelBody .iconButton span:before,
 .bPlDropdownPopover .components-popover__content .iconButton span:before {
   font-size: inherit;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!../Components/ImageControl.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+.editImageHolder {
+  position: relative;
+  min-height: 40px;
+  text-align: center;
+}
+.editImageHolder .mediaControl {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 100;
+}
+.editImageHolder .mediaControl .btnControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0 10px;
+  border-radius: 3px;
+  width: -moz-max-content;
+  width: max-content;
+}
+.editImageHolder .mediaControl .btnControl button {
+  color: #4527a4;
+  font-weight: bold;
+}
+.editImageHolder .mediaControl .btnControl button.btnRed {
+  color: red;
+}
+.editImageHolder img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /*# sourceMappingURL=index.css.map*/
