@@ -5970,11 +5970,10 @@ const Cards = props => {
     padding,
     titleColor,
     titleTypo,
-    titleAlign,
     descColor,
     descTypo,
     btnTypo,
-    descAlign,
+    contentAlign,
     btnRadius,
     contentPadding,
     cardPadding,
@@ -5983,10 +5982,10 @@ const Cards = props => {
     imgHeight,
     columnGap,
     rowGap,
-    btnAlign
+    btnAlign,
+    btnColors,
+    btnHovColors
   } = attributes;
-  // console.log(btnRadius);
-
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.googleFontLink}
@@ -6010,16 +6009,18 @@ const Cards = props => {
                     max-height: ${imgHeight}
                 }
                 #icbCards-${clientId} .icbCards .content {
-                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)}
+                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
+                    text-align: ${contentAlign};
+                    
                 }
                 #icbCards-${clientId} .icbCards .content h2{
-                    text-align: ${titleAlign};
                     color: ${titleColor};
+                    text-align: ${contentAlign};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.styles}
                     
                 }
                 #icbCards-${clientId} .icbCards .content p{
-                    text-align: ${descAlign};
+                    text-align: ${contentAlign};
                     color: ${descColor};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.styles}
                 }
@@ -6027,15 +6028,17 @@ const Cards = props => {
                     text-align: ${btnAlign}
                 }
                 #icbCards-${clientId} .icbCards .content a{
+                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)};
                     border-radius: ${btnRadius};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(btnTypo)?.styles};
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)}
                 }
+                #icbCards-${clientId} .icbCards .content a:hover{
+                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnHovColors)}
+                }
             `, cards.map((card, index) => {
     const {
-      background,
-      btnHovColors,
-      btnColors
+      background
     } = card;
     // console.log(titleColor);
     return `
@@ -6043,15 +6046,7 @@ const Cards = props => {
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background, true, true, false)}
                 }
 
-
-           
-              
-                #icbCards-${clientId} .icbCards .card-${index} .content a{
-                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)}
-                }
-                 #icbCards-${clientId} .icbCards .card-${index} .content a:hover{
-                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnHovColors)}
-                }
+               
             `;
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `icbCards columns-${columns.desktop} columns-tablet-${columns.tablet} columns-mobile-${columns.mobile} ${layout}`
@@ -6131,12 +6126,12 @@ __webpack_require__.r(__webpack_exports__);
     cardShadow,
     imgHeight,
     contentPadding,
-    titleAlign,
     titleColor,
     titleTypo,
     descColor,
     descTypo,
-    descAlign,
+    btnColors,
+    btnHovColors,
     btnAlign,
     btnTypo,
     btnPadding,
@@ -6157,15 +6152,7 @@ __webpack_require__.r(__webpack_exports__);
       desc: "This Is My New Descriptionz",
       descColor: "#69f70c",
       btnLabal: "Button",
-      btnUrl: "https://www.google.com",
-      btnColors: {
-        color: "#fff",
-        bg: "#4527a4"
-      },
-      btnHovColors: {
-        color: "#fff",
-        bg: "#fe6601"
-      }
+      btnUrl: "https://www.google.com"
     }];
     setAttributes({
       cards: newCrads
@@ -6213,10 +6200,7 @@ __webpack_require__.r(__webpack_exports__);
       background,
       img,
       btnLabal,
-      descColor,
-      btnUrl,
-      btnHovColors,
-      btnColors
+      btnUrl
     } = card;
     // console.log(card.btnLabal)
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
@@ -6235,14 +6219,6 @@ __webpack_require__.r(__webpack_exports__);
     }), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Title__WEBPACK_IMPORTED_MODULE_6__["default"], null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Url:", "info-cards")), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
       value: btnUrl,
       onChange: content => updateCard(index, "btnUrl", content)
-    }), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Colors", "info-cards"),
-      value: btnColors,
-      onChange: val => updateCard(index, "btnColors", val)
-    }), btnLabal && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Hover Colors", "info-cards"),
-      value: btnHovColors,
-      onChange: val => updateCard(index, "btnHovColors", val)
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, {
       className: "itemAction mt20"
     }, 1 < cards?.length && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
@@ -6580,11 +6556,25 @@ __webpack_require__.r(__webpack_exports__);
     onChange: value => setAttributes({
       contentPadding: value
     })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "mt20",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Typography", "info-cards"),
+    value: titleTypo,
+    onChange: val => setAttributes({
+      titleTypo: val
+    })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Color", "info-cards"),
     value: titleColor,
     onChange: val => setAttributes({
       titleColor: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "mt20",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Typography", "info-cards"),
+    value: descTypo,
+    onChange: val => setAttributes({
+      descTypo: val
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_BColor__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Color", "info-cards"),
@@ -6594,43 +6584,11 @@ __webpack_require__.r(__webpack_exports__);
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
     className: "mt20",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Align", "info-cards"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content Align", "info-cards"),
     labelPosition: "left",
-    value: titleAlign,
+    value: _wordpress_components__WEBPACK_IMPORTED_MODULE_4__.contentAlign,
     onChange: val => setAttributes({
-      titleAlign: val
-    }),
-    options: [{
-      label: "Left",
-      value: "left"
-    }, {
-      label: "Center",
-      value: "center"
-    }, {
-      label: "Right",
-      value: "right"
-    }]
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    className: "mt20",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Title Typography", "info-cards"),
-    value: titleTypo,
-    onChange: val => setAttributes({
-      titleTypo: val
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    className: "mt20",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Typography", "info-cards"),
-    value: descTypo,
-    onChange: val => setAttributes({
-      descTypo: val
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
-    className: "mt20",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Description Align", "info-cards"),
-    labelPosition: "left",
-    value: descAlign,
-    onChange: val => setAttributes({
-      descAlign: val
+      contentAlign: val
     }),
     options: [{
       label: "Left",
@@ -6646,7 +6604,26 @@ __webpack_require__.r(__webpack_exports__);
     initialOpen: false,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button", "info-cards"),
     className: "bPlPanelBody"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Colors", "info-cards"),
+    value: btnColors,
+    onChange: val => setAttributes({
+      btnColors: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_ColorsControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button Hover Colors", "info-cards"),
+    value: btnHovColors,
+    onChange: val => setAttributes({
+      btnHovColors: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "mt20",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Typography", "info-cards"),
+    value: btnTypo,
+    onChange: val => setAttributes({
+      btnTypo: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
     className: "mt20",
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Align", "info-cards"),
     labelPosition: "left",
@@ -6671,13 +6648,6 @@ __webpack_require__.r(__webpack_exports__);
     value: btnRadius,
     onChange: val => setAttributes({
       btnRadius: val
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    className: "mt20",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Typography", "info-cards"),
-    value: btnTypo,
-    onChange: val => setAttributes({
-      btnTypo: val
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, {
     className: "mt20"
@@ -7056,7 +7026,7 @@ function n(n){for(var r=arguments.length,t=Array(r>1?r-1:0),e=1;e<r;e++)t[e-1]=a
   \************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"icb/cards","version":"0.1.0","title":"Info Cards","category":"widgets","icon":"smiley","description":"info-card block plugin","supports":{"html":false},"attributes":{"clientId":{"type":"string","default":""},"cards":{"type":"array","default":[{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/","btnColors":{"color":"#fff","bg":"#4527a4"},"btnHovColors":{"color":"#fff","bg":"#fe6601"}}]},"layout":{"type":"string","default":"vertical"},"theme":{"type":"string","default":"default"},"cardRadius":{"type":"string","default":"8px"},"btnRadius":{"type":"string","default":"8px"},"columns":{"type":"object","default":{"desktop":3,"tablet":2,"mobile":1}},"columnGap":{"type":"string","default":"20px"},"rowGap":{"type":"string","default":"20px"},"isImg":{"type":"boolean","default":true},"imgHeight":{"type":"string","default":"200px"},"imgPos":{"type":"string","default":"first"},"background":{"type":"object","default":{"color":"#0000"}},"padding":{"type":"object","default":{"top":"0px","right":"0x","bottom":"0px","left":"0px"}},"cardPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"cardShadow":{"type":"array","default":[{"hOffset":"0px","vOffset":"4px","blur":"8px","spreed":"0px","color":"#0003"}]},"contentPadding":{"type":"object","default":{"top":"20px","right":"15px","bottom":"15px","left":"15px"}},"titleColor":{"type":"string","color":"#000"},"titleTypo":{"type":"object","default":{"fontSize":"20"}},"titleAlign":{"type":"string","default":"left"},"descColor":{"type":"string","color":"#000"},"descAlign":{"type":"string","default":"left"},"descTypo":{"type":"object","default":{"fontSize":"16"}},"btnAlign":{"type":"string","default":"left"},"btnTypo":{"type":"object","default":{"fontSize":15,"textDecoration":"none"}},"btnPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}}},"textdomain":"info-cards","editorScript":"file:./index.js","editorStyle":"file:./index.css","script":"file:./script.js","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"icb/cards","version":"0.1.0","title":"Info Cards","category":"widgets","icon":"smiley","description":"info-card block plugin","supports":{"html":false},"attributes":{"clientId":{"type":"string","default":""},"cards":{"type":"array","default":[{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","btnLabal":"Button","btnUrl":"https://www.google.com/"},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","btnLabal":"Button","btnUrl":"https://www.google.com/"},{"background":{"color":"#fff"},"img":"https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg","title":"This Is My Title","desc":"This Is My New Description","descColor":"#000","btnLabal":"Button","btnUrl":"https://www.google.com/"}]},"layout":{"type":"string","default":"vertical"},"theme":{"type":"string","default":"default"},"columns":{"type":"object","default":{"desktop":3,"tablet":2,"mobile":1}},"columnGap":{"type":"string","default":"20px"},"rowGap":{"type":"string","default":"20px"},"isImg":{"type":"boolean","default":true},"imgHeight":{"type":"string","default":"200px"},"imgPos":{"type":"string","default":"first"},"background":{"type":"object","default":{"color":"#0000"}},"padding":{"type":"object","default":{"top":"0px","right":"0x","bottom":"0px","left":"0px"}},"cardPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"cardRadius":{"type":"string","default":"8px"},"cardShadow":{"type":"array","default":[{"hOffset":"0px","vOffset":"4px","blur":"8px","spreed":"0px","color":"#0003"}]},"contentAlign":{"type":"string","default":"left"},"contentPadding":{"type":"object","default":{"top":"20px","right":"15px","bottom":"15px","left":"15px"}},"titleTypo":{"type":"object","default":{"fontSize":"20"}},"titleColor":{"type":"string","color":"#000"},"descTypo":{"type":"object","default":{"fontSize":"16"}},"descColor":{"type":"string","color":"#000"},"btnTypo":{"type":"object","default":{"fontSize":15,"textDecoration":"none"}},"btnAlign":{"type":"string","default":"left"},"btnColors":{"type":"object","default":{"color":"#fff","bg":"#4527a4"}},"btnHovColors":{"type":"object","default":{"color":"#fff","bg":"#fe6601"}},"btnPadding":{"type":"object","default":{"top":"10px","right":"15px","bottom":"10px","left":"15px"}},"btnRadius":{"type":"string","default":"8px"}},"textdomain":"info-cards","editorScript":"file:./index.js","editorStyle":"file:./index.css","script":"file:./script.js","style":"file:./style-index.css"}');
 
 /***/ })
 

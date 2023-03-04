@@ -25,17 +25,18 @@
           "img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
           "title": "This Is My Title",
           "desc": "This Is My New Description",
-          "descColor": "#000",
           "btnLabal": "Button",
-          "btnUrl": "https://www.google.com/",
-          "btnColors": {
-            "color": "#fff",
-            "bg": "#4527a4"
+          "btnUrl": "https://www.google.com/"
+        },
+        {
+          "background": {
+            "color": "#fff"
           },
-          "btnHovColors": {
-            "color": "#fff",
-            "bg": "#fe6601"
-          }
+          "img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
+          "title": "This Is My Title",
+          "desc": "This Is My New Description",
+          "btnLabal": "Button",
+          "btnUrl": "https://www.google.com/"
         },
         {
           "background": {
@@ -46,34 +47,7 @@
           "desc": "This Is My New Description",
           "descColor": "#000",
           "btnLabal": "Button",
-          "btnUrl": "https://www.google.com/",
-          "btnColors": {
-            "color": "#fff",
-            "bg": "#4527a4"
-          },
-          "btnHovColors": {
-            "color": "#fff",
-            "bg": "#fe6601"
-          }
-        },
-        {
-          "background": {
-            "color": "#fff"
-          },
-          "img": "https://thumbs.dreamstime.com/b/two-lorikeet-birds-2293918.jpg",
-          "title": "This Is My Title",
-          "desc": "This Is My New Description",
-          "descColor": "#000",
-          "btnLabal": "Button",
-          "btnUrl": "https://www.google.com/",
-          "btnColors": {
-            "color": "#fff",
-            "bg": "#4527a4"
-          },
-          "btnHovColors": {
-            "color": "#fff",
-            "bg": "#fe6601"
-          }
+          "btnUrl": "https://www.google.com/"
         }
       ]
     },
@@ -84,14 +58,6 @@
     "theme": {
       "type": "string",
       "default": "default"
-    },
-    "cardRadius": {
-      "type": "string",
-      "default": "8px"
-    },
-    "btnRadius": {
-      "type": "string",
-      "default": "8px"
     },
     "columns": {
       "type": "object",
@@ -145,6 +111,10 @@
         "left": "0px"
       }
     },
+    "cardRadius": {
+      "type": "string",
+      "default": "8px"
+    },
     "cardShadow": {
       "type": "array",
       "default": [
@@ -157,6 +127,10 @@
         }
       ]
     },
+    "contentAlign": {
+      "type": "string",
+      "default": "left"
+    },
     "contentPadding": {
       "type": "object",
       "default": {
@@ -166,27 +140,15 @@
         "left": "15px"
       }
     },
-    "titleColor": {
-      "type": "string",
-      "color": "#000"
-    },
     "titleTypo": {
       "type": "object",
       "default": {
         "fontSize": "20"
       }
     },
-    "titleAlign": {
-      "type": "string",
-      "default": "left"
-    },
-    "descColor": {
+    "titleColor": {
       "type": "string",
       "color": "#000"
-    },
-    "descAlign": {
-      "type": "string",
-      "default": "left"
     },
     "descTypo": {
       "type": "object",
@@ -194,15 +156,33 @@
         "fontSize": "16"
       }
     },
-    "btnAlign": {
+    "descColor": {
       "type": "string",
-      "default": "left"
+      "color": "#000"
     },
     "btnTypo": {
       "type": "object",
       "default": {
         "fontSize": 15,
         "textDecoration": "none"
+      }
+    },
+    "btnAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "btnColors": {
+      "type": "object",
+      "default": {
+        "color": "#fff",
+        "bg": "#4527a4"
+      }
+    },
+    "btnHovColors": {
+      "type": "object",
+      "default": {
+        "color": "#fff",
+        "bg": "#fe6601"
       }
     },
     "btnPadding": {
@@ -213,6 +193,10 @@
         "bottom": "10px",
         "left": "15px"
       }
+    },
+    "btnRadius": {
+      "type": "string",
+      "default": "8px"
     }
   },
   "textdomain": "info-cards",

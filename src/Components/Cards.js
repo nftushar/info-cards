@@ -4,9 +4,9 @@ import { getBoxValue } from "../utils/function";
 
 const Cards = (props) => {
     const { attributes, clientId, children } = props;
-    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, titleAlign, descColor,
-        descTypo, btnTypo, descAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign } = attributes;
-    // console.log(btnRadius);
+    const { cards, layout, background, btnPadding, columns, padding, titleColor, titleTypo, descColor, descTypo, btnTypo, 
+        contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
+
 
     return <>
         {/* {console.log(clientId)} */}
@@ -36,16 +36,18 @@ const Cards = (props) => {
                     max-height: ${imgHeight}
                 }
                 #icbCards-${clientId} .icbCards .content {
-                    padding: ${getBoxValue(contentPadding)}
+                    padding: ${getBoxValue(contentPadding)};
+                    text-align: ${contentAlign};
+                    
                 }
                 #icbCards-${clientId} .icbCards .content h2{
-                    text-align: ${titleAlign};
                     color: ${titleColor};
+                    text-align: ${contentAlign};
                     ${getTypoCSS(titleTypo)?.styles}
                     
                 }
                 #icbCards-${clientId} .icbCards .content p{
-                    text-align: ${descAlign};
+                    text-align: ${contentAlign};
                     color: ${descColor};
                     ${getTypoCSS(descTypo)?.styles}
                 }
@@ -53,9 +55,13 @@ const Cards = (props) => {
                     text-align: ${btnAlign}
                 }
                 #icbCards-${clientId} .icbCards .content a{
+                    ${getColorsCSS(btnColors)};
                     border-radius: ${btnRadius};
                     ${getTypoCSS(btnTypo)?.styles};
                     padding: ${getBoxValue(btnPadding)}
+                }
+                #icbCards-${clientId} .icbCards .content a:hover{
+                     ${getColorsCSS(btnHovColors)}
                 }
             `}
             {/* {console.log(btnRadius)} */}
@@ -71,22 +77,14 @@ const Cards = (props) => {
                 } */}
             {cards.map((card, index) => {
 
-                const { background, btnHovColors, btnColors } = card;
+                const { background } = card;
                 // console.log(titleColor);
                 return `
                 #icbCards-${clientId} .icbCards .card-${index}{
                     ${getBackgroundCSS(background, true, true, false)}
                 }
 
-
-           
-              
-                #icbCards-${clientId} .icbCards .card-${index} .content a{
-                    ${getColorsCSS(btnColors)}
-                }
-                 #icbCards-${clientId} .icbCards .card-${index} .content a:hover{
-                    ${getColorsCSS(btnHovColors)}
-                }
+               
             `})}
         </style>
         {/* {console.log(getColorsCSS(btnHovColors))} */}

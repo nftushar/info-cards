@@ -225,11 +225,10 @@ const Cards = props => {
     padding,
     titleColor,
     titleTypo,
-    titleAlign,
     descColor,
     descTypo,
     btnTypo,
-    descAlign,
+    contentAlign,
     btnRadius,
     contentPadding,
     cardPadding,
@@ -238,10 +237,10 @@ const Cards = props => {
     imgHeight,
     columnGap,
     rowGap,
-    btnAlign
+    btnAlign,
+    btnColors,
+    btnHovColors
   } = attributes;
-  // console.log(btnRadius);
-
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
                 ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.googleFontLink}
@@ -265,16 +264,18 @@ const Cards = props => {
                     max-height: ${imgHeight}
                 }
                 #icbCards-${clientId} .icbCards .content {
-                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)}
+                    padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
+                    text-align: ${contentAlign};
+                    
                 }
                 #icbCards-${clientId} .icbCards .content h2{
-                    text-align: ${titleAlign};
                     color: ${titleColor};
+                    text-align: ${contentAlign};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.styles}
                     
                 }
                 #icbCards-${clientId} .icbCards .content p{
-                    text-align: ${descAlign};
+                    text-align: ${contentAlign};
                     color: ${descColor};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.styles}
                 }
@@ -282,15 +283,17 @@ const Cards = props => {
                     text-align: ${btnAlign}
                 }
                 #icbCards-${clientId} .icbCards .content a{
+                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)};
                     border-radius: ${btnRadius};
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(btnTypo)?.styles};
                     padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)}
                 }
+                #icbCards-${clientId} .icbCards .content a:hover{
+                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnHovColors)}
+                }
             `, cards.map((card, index) => {
     const {
-      background,
-      btnHovColors,
-      btnColors
+      background
     } = card;
     // console.log(titleColor);
     return `
@@ -298,15 +301,7 @@ const Cards = props => {
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background, true, true, false)}
                 }
 
-
-           
-              
-                #icbCards-${clientId} .icbCards .card-${index} .content a{
-                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)}
-                }
-                 #icbCards-${clientId} .icbCards .card-${index} .content a:hover{
-                    ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnHovColors)}
-                }
+               
             `;
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `icbCards columns-${columns.desktop} columns-tablet-${columns.tablet} columns-mobile-${columns.mobile} ${layout}`
