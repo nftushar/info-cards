@@ -183,12 +183,8 @@ export default function ({ attributes, setAttributes, updateCard }) {
 						</div>
 					</PanelBody>
 
-					<PanelBody
-						title={__("Layout", "info-cards")}
-						className="bPlPanelBody"
-						initialOpen={false}
-					>
 
+					<PanelBody title={__("Layout", "info-cards")} className="bPlPanelBody" initialOpen={false}>
 						<SelectControl
 							label={__("Layout", "info-cards")}
 							labelPosition="left"
@@ -199,8 +195,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 								if (val == "vertical") {
 									deskCol = 3;
 								}
-
-								setAttributes({ layout: val, columns: { ...columns, desktop: deskCol }, });
+								setAttributes({ layout: val, columns: { ...columns, desktop: deskCol } });
 							}}
 							options={[
 								{ label: "Vertical", value: "vertical" },
@@ -224,20 +219,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										descColor: "#000",
 										isImg: true,
 										imgPos: "first",
-										cardPadding: {
-											top: "0",
-											right: "0",
-											bottom: "0",
-											left: "0",
-										},
-										btnColors: {
-											color: "#fff",
-											bg: "#4527a4",
-										},
-										btnHovColors: {
-											color: "#fff",
-											bg: "#fe6601",
-										}
+										cardPadding: { top: "0", right: "0", bottom: "0", left: "0" },
+										btnColors: { color: "#fff", bg: "#4527a4", },
+										btnHovColors: { color: "#fff", bg: "#fe6601", }
 									}),
 										updateAllCard("background", { color: "#fff" })
 									);
@@ -250,20 +234,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										descColor: "#000",
 										isImg: true,
 										imgPos: "last",
-										cardPadding: {
-											top: "0",
-											right: "0",
-											bottom: "0",
-											left: "0",
-										},
-										btnColors: {
-											color: "#fff",
-											bg: "#4527a4",
-										},
-										btnHovColors: {
-											color: "#fff",
-											bg: "#fe6601",
-										}
+										cardPadding: { top: "0", right: "0", bottom: "0", left: "0" },
+										btnColors: { color: "#fff", bg: "#4527a4", },
+										btnHovColors: { color: "#fff", bg: "#fe6601", }
 									}),
 										updateAllCard("background", { color: "#fff" })
 									);
@@ -276,20 +249,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										descColor: "#000",
 										isImg: true,
 										imgPos: "first",
-										cardPadding: {
-											top: "15px",
-											right: "15px",
-											bottom: "15px",
-											left: "15px",
-										},
-										btnColors: {
-											color: "#fff",
-											bg: "#4527a4",
-										},
-										btnHovColors: {
-											color: "#fff",
-											bg: "#fe6601",
-										}
+										cardPadding: { top: "15px", right: "15px", bottom: "15px", left: "15px" },
+										btnColors: { color: "#fff", bg: "#4527a4", },
+										btnHovColors: { color: "#fff", bg: "#fe6601", }
 									}),
 										updateAllCard("background", { color: "#fff" })
 									);
@@ -302,20 +264,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										descColor: "#000",
 										isImg: true,
 										imgPos: "first",
-										cardPadding: {
-											top: "0",
-											right: "0",
-											bottom: "0",
-											left: "0",
-										},
-										btnColors: {
-											color: "#fff",
-											bg: "#4527a4",
-										},
-										btnHovColors: {
-											color: "#fff",
-											bg: "#fe6601",
-										}
+										cardPadding: { top: "0", right: "0", bottom: "0", left: "0" },
+										btnColors: { color: "#fff", bg: "#4527a4", },
+										btnHovColors: { color: "#fff", bg: "#fe6601", }
 									}),
 										updateAllCard("background", { color: "#fff" })
 									);
@@ -328,20 +279,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										imgPos: "first",
 										titleColor: "#fff",
 										descColor: "#fff",
-										cardPadding: {
-											top: "0",
-											right: "0",
-											bottom: "0",
-											left: "0",
-										},
-										btnColors: {
-											color: "#fff",
-											bg: "#000",
-										},
-										btnHovColors: {
-											color: "#ffffffb3",
-											bg: "#000000b3",
-										}
+										cardPadding: { top: "0", right: "0", bottom: "0", left: "0" },
+										btnColors: { color: "#fff", bg: "#000", },
+										btnHovColors: { color: "#ffffffb3", bg: "#000000b3", }
 									}),
 										updateAllCard("background", { color: "#570DF8" })
 									);
@@ -390,15 +330,17 @@ export default function ({ attributes, setAttributes, updateCard }) {
 							value={rowGap}
 							onChange={(val) => setAttributes({ rowGap: val })}
 						/>
+					</PanelBody>
 
+
+					<PanelBody title={__("Elements", "info-cards")} className="bPlPanelBody" initialOpen={false}>
 						<ToggleControl
-							className="mt20"
 							label={__("Show Image", "info-cards")}
 							checked={isImg}
 							onChange={(val) => setAttributes({ isImg: val })}
 						/>
 
-						{isImg && (
+						{isImg && <>
 							<SelectControl
 								className="mt20"
 								label={__("Image Position", "info-cards")}
@@ -416,16 +358,19 @@ export default function ({ attributes, setAttributes, updateCard }) {
 									},
 								]}
 							/>
-						)}
+
+							<UnitControl
+								className="mt20"
+								label={__("Image Height", "info-cards")}
+								labelPosition="left"
+								value={imgHeight}
+								onChange={(val) => setAttributes({ imgHeight: val })} />
+						</>}
 					</PanelBody>
 				</>}
 
 				{"style" === tab.name && <>
-					{/* Cards */}
-					<PanelBody initialOpen={true}
-						title={__("Cards", "info-cards")}
-						className="bPlPanelBody">
-
+					<PanelBody className="bPlPanelBody" title={__("Cards", "info-cards")} initialOpen={true}>
 						<Background
 							label={__("background", "info-cards")}
 							defaults={{ color: "#0000" }}
@@ -444,13 +389,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
 								}}
 								onChange={(value) => setAttributes({ padding: value })} />
 						</PanelRow>
-						<UnitControl
-							className="mt20"
-							label={__("Image Height", "info-cards")}
-							labelPosition="left"
-							value={imgHeight}
-							onChange={(val) => setAttributes({ imgHeight: val })} />
+
 					</PanelBody>
+
 
 					{/* Card */}
 					<PanelBody initialOpen={false}
@@ -458,7 +399,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 						className="bPlPanelBody">
 
 						<BoxControl
-							label={__("Card Paddign", "info-cards")}
+							label={__("Paddign", "info-cards")}
 							values={cardPadding}
 							resetValues={{
 								"top": "0px",
@@ -468,28 +409,27 @@ export default function ({ attributes, setAttributes, updateCard }) {
 							}}
 							onChange={(value) => setAttributes({ cardPadding: value })} />
 
+						<UnitControl
+							className="mt20"
+							label={__("Border radious", "info-cards")}
+							labelPosition="left"
+							value={cardRadius}
+							onChange={(val) => setAttributes({ cardRadius: val })} />
+
 						<MultiShadowControl
 							className="mt20"
 							value={cardShadow}
 							onChange={(val) => setAttributes({ cardShadow: val })}
 							produce={produce} />
-
-
-						<UnitControl
-							className="mt20"
-							label={__("Card border radious", "info-cards")}
-							labelPosition="left"
-							value={cardRadius}
-							onChange={(val) => setAttributes({ cardRadius: val })} />
-
 					</PanelBody>
+
 
 					{/* Content */}
 					<PanelBody initialOpen={false}
 						title={__("Content", "info-cards")}
 						className="bPlPanelBody">
 						<SelectControl
-							label={__("Content Align", "info-cards")}
+							label={__("Alignment", "info-cards")}
 							labelPosition="left"
 							value={contentAlign}
 							onChange={(val) => setAttributes({ contentAlign: val })}
@@ -500,41 +440,50 @@ export default function ({ attributes, setAttributes, updateCard }) {
 							]}
 						/>
 
-						<BoxControl
-							className="mt20"
-							label={__("Content Paddign", "info-cards")}
-							values={contentPadding}
-							resetValues={{
-								"top": "0px",
-								"right": "0x",
-								"bottom": "0px",
-								"left": "0px"
-							}}
-							onChange={(value) =>
-								setAttributes({ contentPadding: value })
-							}
-						/>
+						<PanelRow className="mt20">
+							<BoxControl
+								label={__("Paddign", "info-cards")}
+								values={contentPadding}
+								resetValues={{
+									"top": "0px",
+									"right": "0x",
+									"bottom": "0px",
+									"left": "0px"
+								}}
+								onChange={(value) =>
+									setAttributes({ contentPadding: value })
+								}
+							/>
+						</PanelRow>
+					</PanelBody>
+
+
+					<PanelBody className="bPlPanelBody" title={__("Title", "info-cards")} initialOpen={false}>
 						<Typography
-							className="mt20"
-							label={__("Title Typography", "info-cards")}
+							label={__("Typography", "info-cards")}
 							value={titleTypo}
 							onChange={(val) => setAttributes({ titleTypo: val })}
 						/>
+
 						<BColor
-							label={__("Title Color", "info-cards")}
+							label={__("Color", "info-cards")}
 							value={titleColor}
 							onChange={(val) =>
 								setAttributes({ titleColor: val })
 							}
 						/>
+					</PanelBody>
+
+
+					<PanelBody className="bPlPanelBody" title={__("Description", "info-cards")} initialOpen={false}>
 						<Typography
-							className="mt20"
-							label={__("Description Typography", "info-cards")}
+							label={__("Typography", "info-cards")}
 							value={descTypo}
 							onChange={(val) => setAttributes({ descTypo: val })}
 						/>
+						
 						<BColor
-							label={__("Description Color", "info-cards")}
+							label={__("Color", "info-cards")}
 							value={descColor}
 							onChange={(val) =>
 								setAttributes({ descColor: val })
@@ -542,26 +491,10 @@ export default function ({ attributes, setAttributes, updateCard }) {
 						/>
 					</PanelBody>
 
+
 					{/* Button */}
-					<PanelBody initialOpen={false}
-						title={__("Button", "info-cards")}
-						className="bPlPanelBody" >
-
-						<ColorsControl
-							label={__("Button Colors", "info-cards")}
-							value={btnColors}
-							onChange={(val) => setAttributes({ btnColors: val })}
-
-						/>
-
-						<ColorsControl
-							label={__("Button Hover Colors", "info-cards")}
-							value={btnHovColors}
-							onChange={(val) => setAttributes({ btnHovColors: val })}
-
-						/>
+					<PanelBody initialOpen={false} title={__("Button", "info-cards")} className="bPlPanelBody">
 						<Typography
-							className="mt20"
 							label={__("Typography", "info-cards")}
 							value={btnTypo}
 							onChange={(val) => setAttributes({ btnTypo: val })}
@@ -569,7 +502,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
 						<SelectControl
 							className="mt20"
-							label={__("Align", "info-cards")}
+							label={__("Alignment", "info-cards")}
 							labelPosition="left"
 							value={btnAlign}
 							onChange={(val) => setAttributes({ btnAlign: val })}
@@ -580,17 +513,24 @@ export default function ({ attributes, setAttributes, updateCard }) {
 							]}
 						/>
 
-						<UnitControl
+						<ColorsControl
 							className="mt20"
-							label={__("Button border radious", "info-cards")}
-							labelPosition="left"
-							value={btnRadius}
-							onChange={(val) => setAttributes({ btnRadius: val })} />
+							label={__("Colors", "info-cards")}
+							value={btnColors}
+							onChange={(val) => setAttributes({ btnColors: val })}
 
+						/>
+
+						<ColorsControl
+							label={__("Hover Colors", "info-cards")}
+							value={btnHovColors}
+							onChange={(val) => setAttributes({ btnHovColors: val })}
+
+						/>
 
 						<PanelRow className="mt20">
 							<BoxControl
-								label={__("Button Paddign", "info-cards")}
+								label={__("Paddign", "info-cards")}
 								values={btnPadding}
 								resetValues={{
 									"top": "0px",
@@ -601,6 +541,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 								onChange={(value) => setAttributes({ btnPadding: value })}
 							/>
 						</PanelRow>
+
+						<UnitControl
+							className="mt20"
+							label={__("Border Radious", "info-cards")}
+							labelPosition="left"
+							value={btnRadius}
+							onChange={(val) => setAttributes({ btnRadius: val })} />
 					</PanelBody>
 				</>}
 			</>}

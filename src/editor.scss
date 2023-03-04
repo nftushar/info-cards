@@ -1,5 +1,9 @@
 .wp-block-icb-cards {
 	.icbCards {
+		.components-placeholder {
+			border-radius: inherit;
+		}
+
 		&.horizontal {
 			.components-placeholder {
 				max-width: 50%;

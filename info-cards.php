@@ -17,9 +17,11 @@ function create_block_card_block_init() {
     register_block_type( __DIR__ . "/build", [
         "render_callback" => function ( $attributes ) {
             extract( $attributes );
+
+            $blockClassName = 'wp-block-icb-cards ' . $className . ' align' . $align;
         
             ob_start(); ?>
-            <div class="wp-block-icb-cards" id='icbCards-<?php echo esc_attr( $clientId ); ?>' data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'></div>
+            <div class="<?php echo esc_attr( $blockClassName ); ?>" id='icbCards-<?php echo esc_attr( $clientId ); ?>' data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'></div>
 
             <?php return ob_get_clean();
         }

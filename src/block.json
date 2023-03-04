@@ -7,10 +7,16 @@
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "info-card block plugin",
-	"supports": {
-		"html": false
-	},
+	"textdomain": "info-cards",
 	"attributes": {
+		"className": {
+			"type": "string",
+			"default": ""
+		},
+		"align": {
+			"type": "string",
+			"default": ""
+		},
 		"clientId": {
 			"type": "string",
 			"default": ""
@@ -199,7 +205,34 @@
 			"default": "8px"
 		}
 	},
-	"textdomain": "info-cards",
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {
+			"cards": [
+				{
+					"background": {
+						"color": "#fff"
+					},
+					"img": "https://i.ibb.co/cTjwpDT/pexels-photo-97533.jpg",
+					"title": "Title of the 1 number card",
+					"desc": "Description of the 1 number card",
+					"btnLabal": "Button",
+					"btnUrl": "#"
+				}
+			],
+			"columns": {
+				"desktop": 1,
+				"tablet": 1,
+				"mobile": 1
+			}
+		}
+	},
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"script": "file:./script.js",

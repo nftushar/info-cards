@@ -8,7 +8,6 @@ import { ImagePlaceholder } from '../../Components/ImageControl';
 import Cards from "./Cards";
 import "./editor.scss";
 
-
 export default function ({ attributes, setAttributes, clientId, ...rest }) {
 	// console.log(imgHeight);
 	const { cards, imgPos, isImg } = attributes;
