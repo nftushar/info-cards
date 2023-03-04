@@ -21,6 +21,7 @@ const Cards = (props) => {
                 #icbCards-${clientId} .icbCards{
                     ${getBackgroundCSS(background)}
                     column-gap: ${columnGap};
+                    row-gap: ${rowGap};
                     // padding: ${getBoxValue(padding)}
                 }
                 #icbCards-${clientId} .icbCards .card{

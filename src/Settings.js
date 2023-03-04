@@ -225,6 +225,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 								<PanelBody
 									title={__("Layout", "info-cards")}
 									className="bPlPanelBody"
+							       	initialOpen={false}
 								>
 
 									<SelectControl
@@ -372,8 +373,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
 													updateAllCard("background", { color: "#570DF8" }),
 													updateAllCard("btnColors", {
 														color: "#fff",
-														bg: "#570DF8",
+														bg: "#000",
 													}),
+													
 													updateAllCard("btnHovColors", {
 														color: "#ffffffb3",
 														bg: "#000000b3",
@@ -517,15 +519,6 @@ export default function ({ attributes, setAttributes, updateCard }) {
 										value={cardRadius}
 										onChange={(val) => setAttributes({ cardRadius: val })} />
 
-									<UnitControl
-										className="mt20"
-										label={__("Button border radious", "info-cards")}
-										labelPosition="left"
-										value={btnRadius}
-										onChange={(val) => setAttributes({ btnRadius: val })} />
-
-
-
 								</PanelBody>
 
 								{/* Content */}
@@ -616,6 +609,14 @@ export default function ({ attributes, setAttributes, updateCard }) {
 											{ label: "Right", value: "right" },
 										]}
 									/>
+
+									<UnitControl
+										className="mt20"
+										label={__("Button border radious", "info-cards")}
+										labelPosition="left"
+										value={btnRadius}
+										onChange={(val) => setAttributes({ btnRadius: val })} />
+
 
 									<Typography
 										className="mt20"

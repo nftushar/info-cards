@@ -5995,6 +5995,7 @@ const Cards = props => {
                 #icbCards-${clientId} .icbCards{
                     ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background)}
                     column-gap: ${columnGap};
+                    row-gap: ${rowGap};
                     // padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(padding)}
                 }
                 #icbCards-${clientId} .icbCards .card{
@@ -6261,7 +6262,8 @@ __webpack_require__.r(__webpack_exports__);
     icon: "plus"
   }), " Add New Card"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", "info-cards"),
-    className: "bPlPanelBody"
+    className: "bPlPanelBody",
+    initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Layout", "info-cards"),
     labelPosition: "left",
@@ -6415,7 +6417,7 @@ __webpack_require__.r(__webpack_exports__);
         color: "#570DF8"
       }), updateAllCard("btnColors", {
         color: "#fff",
-        bg: "#570DF8"
+        bg: "#000"
       }), updateAllCard("btnHovColors", {
         color: "#ffffffb3",
         bg: "#000000b3"
@@ -6562,14 +6564,6 @@ __webpack_require__.r(__webpack_exports__);
     onChange: val => setAttributes({
       cardRadius: val
     })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.__experimentalUnitControl, {
-    className: "mt20",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button border radious", "info-cards"),
-    labelPosition: "left",
-    value: btnRadius,
-    onChange: val => setAttributes({
-      btnRadius: val
-    })
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: false,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Content", "info-cards"),
@@ -6670,6 +6664,14 @@ __webpack_require__.r(__webpack_exports__);
       label: "Right",
       value: "right"
     }]
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.__experimentalUnitControl, {
+    className: "mt20",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Button border radious", "info-cards"),
+    labelPosition: "left",
+    value: btnRadius,
+    onChange: val => setAttributes({
+      btnRadius: val
+    })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
     className: "mt20",
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Typography", "info-cards"),
