@@ -4,18 +4,7 @@ import { InspectorControls } from "@wordpress/block-editor";
 import produce from "immer";
 
 import {
-	RangeControl,
-	TabPanel,
-	PanelBody,
-	PanelRow,
-	TextControl,
-	__experimentalBoxControl as BoxControl,
-	__experimentalUnitControl as UnitControl,
-	Button,
-	Dashicon,
-	SelectControl,
-	ToggleControl,
-	contentAlign
+	RangeControl, TabPanel, PanelBody, PanelRow, TextControl, __experimentalBoxControl as BoxControl, __experimentalUnitControl as UnitControl, Button, Dashicon, SelectControl, ToggleControl, contentAlign
 } from "@wordpress/components";
 
 import "./editor.scss";
@@ -27,38 +16,14 @@ import { gearIcon } from "../../Components/utils/icons";
 
 export default function ({ attributes, setAttributes, updateCard }) {
 	const {
-		cards,
-		layout,
-		theme,
-		columns,
-		columnGap,
-		rowGap,
-		isImg,
-		imgPos,
-		background,
-		padding,
-		cardPadding,
-		cardShadow,
-		imgHeight,
-		contentPadding,
-		titleColor,
-		titleTypo,
-		descColor,
-		descTypo,
-		btnColors,
-		btnHovColors,
-		btnAlign,
-		btnTypo,
-		btnPadding,
-		cardRadius,
-		btnRadius
+		cards, layout, theme, columns, columnGap, rowGap, isImg, imgPos, background, padding, cardPadding, cardShadow, imgHeight, contentPadding, titleColor, titleTypo, descColor, descTypo, btnColors, btnHovColors, btnAlign, btnTypo, btnPadding, cardRadius, btnRadius
 	} = attributes;
 
 
 	const [device, setDevice] = useState("desktop");
 
 	const onAddCard = () => {
-		const newCrads = [
+		const newCards = [
 			...cards,
 			{
 				background: cards?.[0]?.background || {
@@ -71,13 +36,13 @@ export default function ({ attributes, setAttributes, updateCard }) {
 				btnUrl: "#",
 			}
 		];
-		setAttributes({ cards: newCrads });
+		setAttributes({ cards: newCards });
 	};
 
 	function handleCardDelete(index) {
-		const newCrads = [...cards];
-		newCrads.splice(index, 1);
-		setAttributes({ cards: newCrads });
+		const newCards = [...cards];
+		newCards.splice(index, 1);
+		setAttributes({ cards: newCards });
 	}
 
 	const onDuplicateCard = (e, index) => {
@@ -119,7 +84,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 								btnUrl
 							} = card;
 							// console.log(card.btnLabal)
-							return <PanelBody
+							return <PanelBody key={index}
 								className="bPlPanelBody"
 								title={`This is card ${index + 1}`}
 								initialOpen={false}
@@ -278,13 +243,30 @@ export default function ({ attributes, setAttributes, updateCard }) {
 									}),
 										updateAllCard("background", { color: "#570DF8" })
 									);
+
+								"theme5" === val &&
+									(setAttributes({
+										columns: { ...columns, desktop: 3 },
+										layout: "vertical",
+										isImg: true,
+										imgPos: "first",
+										titleColor: "#fff",
+										descColor: "#fff",
+										cardPadding: { top: "0", right: "0", bottom: "0", left: "0" },
+										btnColors: { color: "#fff", bg: "#000", },
+										btnHovColors: { color: "#ffffffb3", bg: "#000000b3", }
+									}),
+										updateAllCard("background", { color: "#570DF8" })
+									);
 							}}
+
 							options={[
 								{ label: "Default", value: "default" },
 								{ label: "Theme 1", value: "theme1" },
 								{ label: "Theme 2", value: "theme2" },
 								{ label: "Theme 3", value: "theme3" },
 								{ label: "Theme 4", value: "theme4" },
+								{ label: "Theme 5", value: "theme5" },
 							]}
 						/>
 

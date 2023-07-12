@@ -42,7 +42,7 @@
 		display: grid;
 		box-sizing: border-box;
 
-		.card {
+		.first4Theme {
 			min-width: auto;
 			max-width: initial;
 			display: flex;
@@ -90,7 +90,7 @@
 
 				.btnWrapper {
 					margin-top: auto;
-					button{
+					button {
 						overflow-wrap: anywhere;
 					}
 				}
@@ -106,6 +106,97 @@
 					min-height: 100%;
 				}
 			}
+		}
+
+		.theme5 {
+			position: relative;
+			width: 350px;
+			height: 190px;
+			/* height: 450px; */
+			background: #fff;
+			border-radius: 20px;
+			box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+			transition: 0.5s;
+		}
+		.theme5:hover {
+			height: 450px;
+		}
+
+		.imgBox {
+			position: absolute;
+			left: 50%;
+			top: -50px;
+			transform: translateX(-50%);
+			width: 150px;
+			height: 150px;
+			background: #fff;
+			border-radius: 20px;
+			box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+			overflow: hidden;
+			transition: 0.5s;
+			z-index: 1;
+		}
+		.theme5:hover .imgBox {
+			width: 250px;
+			height: 250px;
+		}
+		.imgBox img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.theme5 .content {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			overflow: hidden;
+		}
+
+		.theme5 .content .details {
+			padding-bottom: 35px;
+			text-align: center;
+			width: 100%;
+			transition: 0.5s;
+			transform: translateY(100px);
+		}
+		.theme5:hover .content .details {
+			transform: translateY(0px);
+		}
+		.theme5 .content .details h2 {
+			font-size: 1.25em;
+			font-weight: 600;
+			color: #d81d1d;
+			line-height: 1.2em;
+			padding-bottom: 35px;
+		}
+
+		.theme5 .content .details h2 span {
+			font-size: 0.75em;
+			font-weight: 500;
+			opacity: 0.5;
+		}
+
+		.theme5 .content .details .actionBtn {
+			display: flex;
+			gap: 20px;
+			justify-content: space-around;
+		}
+		.theme5 .content .details .actionBtn button {
+			padding: 10px 30px;
+			border-radius: 5px;
+			border: none;
+			outline: none;
+			font-size: 1em;
+			font-weight: 500;
+			background: #ff5acd;
+			color: #fff;
+			cursor: pointer;
 		}
 	}
 }
