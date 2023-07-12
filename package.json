@@ -15,7 +15,8 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^25.3.0"
+		"@wordpress/scripts": "^25.3.0",
+		"wp-scripts": "^0.0.1-security"
 	},
 	"dependencies": {
 		"immer": "^9.0.19"

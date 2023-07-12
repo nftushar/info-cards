@@ -21,16 +21,9 @@ import {
 import "./editor.scss";
 
 // import { getBoxValue } from "../src/utils/function";
-import Title from "../../Components/Title";
-import BColor from "../../Components/BColor";
-import Background from "../../Components/Background";
-import ColorsControl from "../../Components/ColorsControl";
-import Typography from "../../Components/Typography";
-import MultiShadowControl from "../../Components/MultiShadowControl";
+import { Label, BColor, Background, BDevice, ColorsControl, InlineMediaUpload, Typography, MultiShadowControl } from "../../Components";
 
-import BDevice from "../../Components/BDevice";
-import { InlineMediaUpload } from "../../Components/MediaControl";
-import { gearIcon } from "../../Components/Helper/icons";
+import { gearIcon } from "../../Components/utils/icons";
 
 export default function ({ attributes, setAttributes, updateCard }) {
 	const {
@@ -60,7 +53,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 		cardRadius,
 		btnRadius
 	} = attributes;
-	// console.log(cardRadius)
+
 
 	const [device, setDevice] = useState("desktop");
 
@@ -154,7 +147,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 									}
 								/> */}
 
-								{btnLabal && <Title>{__("Button Url:", "info-cards")}</Title>}
+								{btnLabal && <Label>{__("Button Url:", "info-cards")}</Label>}
 								{btnLabal && <TextControl
 									value={btnUrl}
 									onChange={(content) =>
@@ -296,9 +289,9 @@ export default function ({ attributes, setAttributes, updateCard }) {
 						/>
 
 						<PanelRow className="mt20">
-							<Title className="mb5">
+							<Label className="mb5">
 								{__("Columns:", "info-cards")}
-							</Title>
+							</Label>
 							<BDevice
 								device={device}
 								onChange={(val) => setDevice(val)}
@@ -481,7 +474,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 							value={descTypo}
 							onChange={(val) => setAttributes({ descTypo: val })}
 						/>
-						
+
 						<BColor
 							label={__("Color", "info-cards")}
 							value={descColor}

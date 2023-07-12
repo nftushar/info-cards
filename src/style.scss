@@ -12,19 +12,15 @@
 		grid-template-columns: repeat(#{$i}, 1fr);
 	}
 
-	.cols-#{$i} {
-		columns: #{$i};
-	}
+	// .cols-#{$i} {
+	// 	columns: #{$i};
+	// }
 }
 
 @media (max-width: 768px) {
 	@for $i from 1 through 12 {
 		.columns-tablet-#{$i} {
 			grid-template-columns: repeat(#{$i}, 1fr);
-		}
-
-		.cols-tablet-#{$i} {
-			columns: #{$i};
 		}
 	}
 }
@@ -33,10 +29,6 @@
 	@for $i from 1 through 12 {
 		.columns-mobile-#{$i} {
 			grid-template-columns: repeat(#{$i}, 1fr);
-		}
-
-		.cols-mobile-#{$i} {
-			columns: #{$i};
 		}
 	}
 }
