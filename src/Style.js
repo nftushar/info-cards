@@ -74,6 +74,7 @@ const Style = ({ attributes, clientId }) => {
         {cards.map((card, index) => {
 
             const { background } = card;
+            console.log();
             // console.log(titleColor);
             return `
         ${cardsSl} .first4Theme.card-${index}, ${cardsSl} .theme5.card-${index} .content{

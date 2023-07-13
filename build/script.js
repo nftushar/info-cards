@@ -506,6 +506,7 @@ const Style = _ref => {
     const {
       background
     } = card;
+    console.log();
     // console.log(titleColor);
     return `
         ${cardsSl} .first4Theme.card-${index}, ${cardsSl} .theme5.card-${index} .content{
