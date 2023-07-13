@@ -12322,7 +12322,7 @@ const Theme5 = _ref => {
     className: "content"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "details"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, title, " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, desc)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, title, " "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, desc), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "actionBtn"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     href: btnUrl
@@ -13061,7 +13061,7 @@ const Style = _ref => {
             color: ${titleColor};
             text-align: ${contentAlign};
         }
-        ${cardsSl} .first4Theme .content p{
+        ${cardsSl} .first4Theme .content p, ${cardsSl} .theme5 .content .details h2 p{
             text-align: ${contentAlign};
             color: ${descTypo};
         }

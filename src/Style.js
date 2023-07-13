@@ -43,7 +43,7 @@ const Style = ({ attributes, clientId }) => {
             color: ${titleColor};
             text-align: ${contentAlign};
         }
-        ${cardsSl} .first4Theme .content p{
+        ${cardsSl} .first4Theme .content p, ${cardsSl} .theme5 .content .details h2 p{
             text-align: ${contentAlign};
             color: ${descTypo};
         }

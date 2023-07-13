@@ -835,10 +835,7 @@
 .wp-block-icb-cards .icbCards .theme5:hover .content .details {
   transform: translateY(0px);
 }
-.wp-block-icb-cards .icbCards .theme5 .content .details h2 {
-  padding-bottom: 35px;
-}
-.wp-block-icb-cards .icbCards .theme5 .content .details h2 span {
+.wp-block-icb-cards .icbCards .theme5 .content .details h2 p {
   font-size: 0.75em;
   font-weight: 500;
   opacity: 0.5;

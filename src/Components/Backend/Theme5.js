@@ -17,7 +17,8 @@ const Theme5 = ({ attributes, card, index, updateCard }) => {
         </div>
         <div className="content">
             <div className="details">
-                <h2>{title} <br /> <span>{desc}</span></h2>
+                <h2>{title} </h2>
+                <p>{desc}</p>
                 <div className="actionBtn">
                     <button href={btnUrl} >{btnLabal}</button>
                 </div>
