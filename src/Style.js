@@ -1,17 +1,22 @@
-import { getBackgroundCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS } from '../../Components/Helper/getCSS';
+import { getBackgroundCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS } from '../../Components/utils/getCSS';
 
-import { getBoxValue } from "./utils/function";
+import { getBoxValue } from "../../Components/utils/functions";
 
 const Style = ({ attributes, clientId }) => {
-    const { cards, background, btnPadding, padding, titleColor, titleTypo, descColor, descTypo, btnTypo, contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
-
+    const { cards, background, btnPadding, padding, titleColor, titleTypo, descTypo, btnTypo, contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
     const cardsSl = `#icbCards-${clientId} .icbCards`;
+
+    // ${getTypoCSS('', typography)?.googleFontLink}
+    // ${getTypoCSS('selector', typography)?.styles}
 
     return <style>
         {`
-        ${getTypoCSS(titleTypo)?.googleFontLink}
-        ${getTypoCSS(descTypo)?.googleFontLink}
-        ${getTypoCSS(btnTypo)?.googleFontLink}
+        ${getTypoCSS('', titleTypo)?.googleFontLink}
+        ${getTypoCSS('', descTypo)?.googleFontLink}
+        ${getTypoCSS('', btnTypo)?.googleFontLink}
+        ${getTypoCSS(`${cardsSl} .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2`, titleTypo)?.styles}
+        ${getTypoCSS(`${cardsSl} .first4Theme .content h2 p, ${cardsSl} .theme5 .content .details h2 span`, descTypo)?.styles}
+        ${getTypoCSS(`${cardsSl} .theme5 .content .details .actionBtn button`, btnTypo)?.styles}
 
         ${cardsSl}{
             ${getBackgroundCSS(background)}
@@ -27,31 +32,27 @@ const Style = ({ attributes, clientId }) => {
         ${cardsSl} .first4Theme img{
             height: ${imgHeight}
         }
-        ${cardsSl}.vertical .card img{
+        ${cardsSl} .vertical .card img{
             max-height: ${imgHeight}
         }
-        ${cardsSl} .first4Theme .content {
+        ${cardsSl} .first4Theme .content, ${cardsSl} .theme5 .content {
             padding: ${getBoxValue(contentPadding)};
             text-align: ${contentAlign};
         }
-        ${cardsSl}  .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2{
+        ${cardsSl} .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2{
             color: ${titleColor};
             text-align: ${contentAlign};
-            ${getTypoCSS(titleTypo)?.styles}
-            
         }
-        ${cardsSl}  .first4Theme .content p{
+        ${cardsSl} .first4Theme .content p{
             text-align: ${contentAlign};
-            color: ${descColor};
-            ${getTypoCSS(descTypo)?.styles}
+            color: ${descTypo};
         }
-        ${cardsSl}  .first4Theme .content .btnWrapper{
+        ${cardsSl} .first4Theme .content .btnWrapper{
             text-align: ${btnAlign}
         }
         ${cardsSl}  .first4Theme .content a{
             ${getColorsCSS(btnColors)};
             border-radius: ${btnRadius};
-            ${getTypoCSS(btnTypo)?.styles};
             padding: ${getBoxValue(btnPadding)}
         }
         ${cardsSl}  .first4Theme .content a:hover{

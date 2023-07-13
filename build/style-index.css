@@ -151,6 +151,31 @@
   margin-right: 0 !important;
 }
 
+.bPlPanelBody .components-notice,
+.bPlDropdownPopover .components-popover__content .components-notice {
+  margin: 0;
+}
+.bPlPanelBody .components-notice.is-dismissible,
+.bPlDropdownPopover .components-popover__content .components-notice.is-dismissible {
+  position: relative;
+  padding-right: 36px;
+}
+.bPlPanelBody .components-notice.is-dismissible .components-notice__dismiss,
+.bPlDropdownPopover .components-popover__content .components-notice.is-dismissible .components-notice__dismiss {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bPlPanelBody .components-notice .components-notice__content,
+.bPlDropdownPopover .components-popover__content .components-notice .components-notice__content {
+  margin: 0;
+}
+.bPlPanelBody hr,
+.bPlDropdownPopover .components-popover__content hr {
+  border-bottom: 1px solid #f0f0f0;
+  border-top: none;
+  margin: 20px 0;
+}
 .bPlPanelBody.components-panel__body .components-base-control__field,
 .bPlDropdownPopover .components-popover__content.components-panel__body .components-base-control__field {
   padding: 0;
@@ -164,26 +189,26 @@
   color: #fff !important;
   background-color: #4527a4 !important;
 }
-.bPlPanelBody .components-base-control__field,
-.bPlDropdownPopover .components-popover__content .components-base-control__field {
+.bPlPanelBody .components-checkbox-control .components-base-control__field,
+.bPlDropdownPopover .components-popover__content .components-checkbox-control .components-base-control__field {
   display: flex;
 }
-.bPlPanelBody .components-base-control__field .components-checkbox-control__input[type=checkbox],
-.bPlDropdownPopover .components-popover__content .components-base-control__field .components-checkbox-control__input[type=checkbox] {
+.bPlPanelBody .components-checkbox-control .components-base-control__field .components-checkbox-control__input[type=checkbox],
+.bPlDropdownPopover .components-popover__content .components-checkbox-control .components-base-control__field .components-checkbox-control__input[type=checkbox] {
   border-radius: 4px;
   border-color: #4527a4;
 }
-.bPlPanelBody .components-base-control__field .components-checkbox-control__input[type=checkbox]:checked,
-.bPlDropdownPopover .components-popover__content .components-base-control__field .components-checkbox-control__input[type=checkbox]:checked {
+.bPlPanelBody .components-checkbox-control .components-base-control__field .components-checkbox-control__input[type=checkbox]:checked,
+.bPlDropdownPopover .components-popover__content .components-checkbox-control .components-base-control__field .components-checkbox-control__input[type=checkbox]:checked {
   background-color: #8344c5;
   border-color: #4527a4;
 }
-.bPlPanelBody .components-base-control__field .components-checkbox-control__input[type=checkbox]:focus,
-.bPlDropdownPopover .components-popover__content .components-base-control__field .components-checkbox-control__input[type=checkbox]:focus {
+.bPlPanelBody .components-checkbox-control .components-base-control__field .components-checkbox-control__input[type=checkbox]:focus,
+.bPlDropdownPopover .components-popover__content .components-checkbox-control .components-base-control__field .components-checkbox-control__input[type=checkbox]:focus {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #4527a4;
 }
-.bPlPanelBody .components-base-control__field label,
-.bPlDropdownPopover .components-popover__content .components-base-control__field label {
+.bPlPanelBody .components-checkbox-control .components-base-control__field label,
+.bPlDropdownPopover .components-popover__content .components-checkbox-control .components-base-control__field label {
   margin-right: 0;
 }
 .bPlPanelBody .components-base-control.css-wdf2ti-Wrapper,
@@ -232,31 +257,22 @@
   background-color: #8344c5;
 }
 .bPlPanelBody .components-range-control__wrapper .css-5p7d2w-ThumbWrapper,
-.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .css-5p7d2w-ThumbWrapper {
+.bPlPanelBody .components-range-control__wrapper .components-range-control__thumb-wrapper,
+.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .css-5p7d2w-ThumbWrapper,
+.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .components-range-control__thumb-wrapper {
   width: 14px;
   height: 14px;
   margin-top: 8px;
 }
-.bPlPanelBody .components-range-control__wrapper .css-5p7d2w-ThumbWrapper .css-hdouys-Thumb,
-.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .css-5p7d2w-ThumbWrapper .css-hdouys-Thumb {
+.bPlPanelBody .components-range-control__wrapper .css-5p7d2w-ThumbWrapper > *,
+.bPlPanelBody .components-range-control__wrapper .components-range-control__thumb-wrapper > *,
+.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .css-5p7d2w-ThumbWrapper > *,
+.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .components-range-control__thumb-wrapper > * {
   background-color: #4527a4;
   border: 1px solid #4527a4;
 }
-.bPlPanelBody .components-range-control__wrapper .css-5p7d2w-ThumbWrapper .css-3llzg4-Thumb,
-.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .css-5p7d2w-ThumbWrapper .css-3llzg4-Thumb {
-  border: 2px solid #4527a4;
-  box-shadow: none;
-}
-.bPlPanelBody .components-range-control__wrapper .css-5p7d2w-ThumbWrapper .css-ckoo7b-Thumb,
-.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .css-5p7d2w-ThumbWrapper .css-ckoo7b-Thumb {
-  border: 1px solid #4527a4;
-}
 .bPlPanelBody .components-range-control__wrapper .components-range-control__tooltip,
-.bPlPanelBody .components-range-control__wrapper .exqw8y25,
-.bPlPanelBody .components-range-control__wrapper .exqw8y24,
-.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .components-range-control__tooltip,
-.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .exqw8y25,
-.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .exqw8y24 {
+.bPlDropdownPopover .components-popover__content .components-range-control__wrapper .components-range-control__tooltip {
   background-color: #4527a4;
 }
 .bPlPanelBody .components-radio-control__option,
@@ -702,6 +718,7 @@
 .wp-block-icb-cards .icbCards {
   display: grid;
   box-sizing: border-box;
+  gap: 20px;
 }
 .wp-block-icb-cards .icbCards .first4Theme {
   min-width: auto;
@@ -760,8 +777,7 @@
 .wp-block-icb-cards .icbCards .theme5 {
   position: relative;
   width: 350px;
-  height: 190px;
-  /* height: 450px; */
+  height: 220px;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
@@ -807,7 +823,7 @@
   overflow: hidden;
 }
 .wp-block-icb-cards .icbCards .theme5 .content .details {
-  padding-bottom: 35px;
+  padding: 0 0 40px 0;
   text-align: center;
   width: 100%;
   transition: 0.5s;
@@ -817,10 +833,6 @@
   transform: translateY(0px);
 }
 .wp-block-icb-cards .icbCards .theme5 .content .details h2 {
-  font-size: 1.25em;
-  font-weight: 600;
-  color: #d81d1d;
-  line-height: 1.2em;
   padding-bottom: 35px;
 }
 .wp-block-icb-cards .icbCards .theme5 .content .details h2 span {

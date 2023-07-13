@@ -19,7 +19,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 		cards, layout, theme, columns, columnGap, rowGap, isImg, imgPos, background, padding, cardPadding, cardShadow, imgHeight, contentPadding, titleColor, titleTypo, descColor, descTypo, btnColors, btnHovColors, btnAlign, btnTypo, btnPadding, cardRadius, btnRadius
 	} = attributes;
 
-
+console.log(contentPadding);
 	const [device, setDevice] = useState("desktop");
 
 	const onAddCard = () => {

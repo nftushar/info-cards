@@ -41,6 +41,7 @@
 	.icbCards {
 		display: grid;
 		box-sizing: border-box;
+		gap: 20px;
 
 		.first4Theme {
 			min-width: auto;
@@ -111,8 +112,7 @@
 		.theme5 {
 			position: relative;
 			width: 350px;
-			height: 190px;
-			/* height: 450px; */
+			height: 220px;
 			background: #fff;
 			border-radius: 20px;
 			box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
@@ -159,7 +159,7 @@
 		}
 
 		.theme5 .content .details {
-			padding-bottom: 35px;
+			padding: 0 0 40px 0;
 			text-align: center;
 			width: 100%;
 			transition: 0.5s;
@@ -169,10 +169,10 @@
 			transform: translateY(0px);
 		}
 		.theme5 .content .details h2 {
-			font-size: 1.25em;
-			font-weight: 600;
-			color: #d81d1d;
-			line-height: 1.2em;
+			// font-size: 1.25em;
+			// font-weight: 600;
+			// color: #d81d1d;
+			// line-height: 1.2em;
 			padding-bottom: 35px;
 		}
 

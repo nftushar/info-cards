@@ -2,16 +2,67 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "../Components/Helper/getCSS.js":
-/*!**************************************!*\
-  !*** ../Components/Helper/getCSS.js ***!
-  \**************************************/
+/***/ "../Components/utils/functions.js":
+/*!****************************************!*\
+  !*** ../Components/utils/functions.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getBoxValue": function() { return /* binding */ getBoxValue; },
+/* harmony export */   "getImageSizes": function() { return /* binding */ getImageSizes; },
+/* harmony export */   "tabController": function() { return /* binding */ tabController; }
+/* harmony export */ });
+const getBoxValue = object => Object.values(object).join(' ');
+const getImageSizes = (image, imageSizes) => {
+  if (!image) return [];
+  let options = [];
+  const sizes = image.media_details.sizes;
+  for (const key in sizes) {
+    const imageSize = imageSizes.find(s => s.slug === key);
+    if (imageSize) {
+      options.push({
+        label: imageSize.name,
+        value: sizes[key].source_url
+      });
+    }
+  }
+  return options;
+};
+const tabController = () => {
+  setTimeout(() => {
+    const panelBodies = document.querySelectorAll('.components-panel__body-title button');
+    panelBodies.forEach(item => {
+      item.addEventListener('click', clickEveryItem);
+    });
+    function clickEveryItem() {
+      this.removeEventListener('click', clickEveryItem);
+      panelBodies.forEach(item => {
+        if (item.getAttribute('aria-expanded') === 'true' && !item.isEqualNode(this)) {
+          item.click();
+        }
+      });
+      setTimeout(() => {
+        this.addEventListener('click', clickEveryItem);
+      }, 500);
+    }
+  }, 500);
+};
+
+/***/ }),
+
+/***/ "../Components/utils/getCSS.js":
+/*!*************************************!*\
+  !*** ../Components/utils/getCSS.js ***!
+  \*************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getBackgroundCSS": function() { return /* binding */ getBackgroundCSS; },
 /* harmony export */   "getBorderCSS": function() { return /* binding */ getBorderCSS; },
+/* harmony export */   "getBoxCSS": function() { return /* binding */ getBoxCSS; },
 /* harmony export */   "getColorsCSS": function() { return /* binding */ getColorsCSS; },
 /* harmony export */   "getIconCSS": function() { return /* binding */ getIconCSS; },
 /* harmony export */   "getMultiShadowCSS": function() { return /* binding */ getMultiShadowCSS; },
@@ -34,7 +85,7 @@ const getBackgroundCSS = function (bg) {
     repeat = 'no-repeat',
     size = 'cover',
     overlayColor = '#000000b3'
-  } = bg;
+  } = bg || {};
   const styles = 'gradient' === type && isGradient ? `background: ${gradient};` : 'image' === type && isImage ? `background: url(${image?.url});
 				background-color: ${overlayColor};
 				background-position: ${position};
@@ -52,7 +103,7 @@ const getBorderCSS = border => {
     color = '#0000',
     side = 'all',
     radius = '0px'
-  } = border;
+  } = border || {};
   const borderSideCheck = s => {
     const bSide = side?.toLowerCase();
     return bSide?.includes('all') || bSide?.includes(s);
@@ -60,10 +111,7 @@ const getBorderCSS = border => {
   const noWidth = width === '0px' || !width;
   const borderCSS = `${width} ${style} ${color}`;
   const styles = `
-		${noWidth ? '' : borderSideCheck('top') ? `border-top: ${borderCSS};` : ''}
-		${noWidth ? '' : borderSideCheck('right') ? `border-right: ${borderCSS};` : ''}
-		${noWidth ? '' : borderSideCheck('bottom') ? `border-bottom: ${borderCSS};` : ''}
-		${noWidth ? '' : borderSideCheck('left') ? `border-left: ${borderCSS};` : ''}
+		${noWidth ? '' : ['top', 'right', 'bottom', 'left'].map(side => borderSideCheck(side) ? `border-${side}: ${borderCSS};` : '').join('')}
 		${!radius ? '' : `border-radius: ${radius};`}
 	`;
   return styles;
@@ -74,7 +122,7 @@ const getColorsCSS = colors => {
     bgType = 'solid',
     bg = '#0000',
     gradient = 'linear-gradient(135deg, #4527a4, #8344c5)'
-  } = colors;
+  } = colors || {};
   const styles = `
 		${color ? `color: ${color};` : ''}
 		${gradient || bg ? `background: ${'gradient' === bgType ? gradient : bg};` : ''}
@@ -89,7 +137,7 @@ const getIconCSS = function (icon) {
     colorType = 'solid',
     color = 'inherit',
     gradient = 'linear-gradient(135deg, #4527a4, #8344c5)'
-  } = icon;
+  } = icon || {};
   const colorCSS = 'gradient' === colorType ? `color: transparent; background-image: ${gradient}; -webkit-background-clip: text; background-clip: text;` : `color: ${color};`;
   const styles = `
 		${!fontSize || !isSize ? '' : `font-size: ${fontSize}px;`}
@@ -108,11 +156,11 @@ const getMultiShadowCSS = function (value) {
       spreed = '0px',
       color = '#7090b0',
       isInset = false
-    } = item;
+    } = item || {};
     const inset = isInset ? 'inset' : '';
-    const offsetBlur = `${hOffset || ''} ${vOffset || ''} ${blur || ''}`;
+    const offsetBlur = `${hOffset} ${vOffset} ${blur}`;
     const isComa = index + 1 >= value.length ? '' : ', ';
-    styles += 'text' === type ? `${offsetBlur} ${color || ''}${isComa}` : `${offsetBlur} ${spreed || ''} ${color || ''} ${inset}${isComa}`;
+    styles += 'text' === type ? `${offsetBlur} ${color}${isComa}` : `${offsetBlur} ${spreed} ${color} ${inset}${isComa}`;
   });
   return styles || 'none';
 };
@@ -122,7 +170,7 @@ const getSeparatorCSS = separator => {
     height = '2px',
     style = 'solid',
     color = '#bbb'
-  } = separator;
+  } = separator || {};
   const styles = `
 		width: ${width};
 		${'0px' === height && '0em' === height && '0rem' === height ? '' : `border-top: ${height} ${style} ${color};`}
@@ -138,7 +186,7 @@ const getShadowCSS = shadow => {
     spreed = '0px',
     color = '#7090b0',
     isInset = false
-  } = shadow;
+  } = shadow || {};
   const inset = isInset ? 'inset' : '';
   const offsetBlur = `${hOffset} ${vOffset} ${blur}`;
   const styles = 'text' === type ? `${offsetBlur} ${color}` : `${offsetBlur} ${spreed} ${color} ${inset}`;
@@ -153,31 +201,38 @@ const getSpaceCSS = space => {
     right = '0px',
     bottom = '0px',
     left = '0px'
-  } = space;
+  } = space || {};
   const styles = 2 === side ? `${vertical} ${horizontal}` : `${top} ${right} ${bottom} ${left}`;
   return styles;
 };
-const getTypoCSS = function (typo) {
-  let isFamily = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+const getTypoCSS = function (selector, typo) {
+  let isFamily = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
   const {
     fontFamily = 'Default',
     fontCategory = 'sans-serif',
     fontVariant = 400,
     fontWeight = 400,
     isUploadFont = true,
-    fontSize = 15,
+    fontSize = {
+      desktop: 15,
+      tablet: 15,
+      mobile: 15
+    },
     fontStyle = 'normal',
     textTransform = 'none',
     textDecoration = 'auto',
     lineHeight = '135%',
     letterSpace = '0px'
-  } = typo;
+  } = typo || {};
   const generateCss = (value, cssProperty) => !value ? '' : `${cssProperty}: ${value};`;
   const isEmptyFamily = !isFamily || !fontFamily || 'Default' === fontFamily;
+  const desktopFontSize = fontSize?.desktop || fontSize;
+  const tabletFontSize = fontSize?.tablet || desktopFontSize;
+  const mobileFontSize = fontSize?.mobile || tabletFontSize;
   const styles = `
 		${isEmptyFamily ? '' : `font-family: '${fontFamily}', ${fontCategory};`}
 		${generateCss(fontWeight, 'font-weight')}
-		${!fontSize ? '' : `font-size: ${fontSize}px;`}
+		${`font-size: ${desktopFontSize}px;`}
 		${generateCss(fontStyle, 'font-style')}
 		${generateCss(textTransform, 'text-transform')}
 		${generateCss(textDecoration, 'text-decoration')}
@@ -189,9 +244,25 @@ const getTypoCSS = function (typo) {
   const linkQuery = !fontVariant || 400 === fontVariant ? '' : '400i' === fontVariant ? ':ital@1' : fontVariant?.includes('00i') ? `: ital, wght@1, ${fontVariant?.replace('00i', '00')} ` : `: wght@${fontVariant} `;
   const link = isEmptyFamily ? '' : `https://fonts.googleapis.com/css2?family=${fontFamily?.split(' ').join('+')}${linkQuery.replace(/ /g, '')}&display=swap`;
   return {
-    styles: styles.replace(/\s+/g, ' ').trim(),
-    googleFontLink: !isUploadFont || isEmptyFamily ? '' : `@import url(${link});`
+    googleFontLink: !isUploadFont || isEmptyFamily ? '' : `@import url(${link});`,
+    styles: `${selector}{
+			${styles}
+		}
+		@media (max-width: 768px) {
+			${selector}{
+				${`font-size: ${tabletFontSize}px;`}
+			}
+		}
+		@media (max-width: 576px) {
+			${selector}{
+				${`font-size: ${mobileFontSize}px;`}
+			}
+		}`.replace(/\s+/g, ' ').trim()
   };
+};
+const getBoxCSS = function () {
+  let val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return Object.values(val).join(' ');
 };
 
 /***/ }),
@@ -345,8 +416,8 @@ const Theme5 = _ref => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/Helper/getCSS */ "../Components/Helper/getCSS.js");
-/* harmony import */ var _utils_function__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/function */ "./src/utils/function.js");
+/* harmony import */ var _Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Components/utils/getCSS */ "../Components/utils/getCSS.js");
+/* harmony import */ var _Components_utils_functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/utils/functions */ "../Components/utils/functions.js");
 
 
 
@@ -362,7 +433,6 @@ const Style = _ref => {
     padding,
     titleColor,
     titleTypo,
-    descColor,
     descTypo,
     btnTypo,
     contentAlign,
@@ -379,54 +449,57 @@ const Style = _ref => {
     btnHovColors
   } = attributes;
   const cardsSl = `#icbCards-${clientId} .icbCards`;
+
+  // ${getTypoCSS('', typography)?.googleFontLink}
+  // ${getTypoCSS('selector', typography)?.styles}
+
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
-        ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.googleFontLink}
-        ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.googleFontLink}
-        ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(btnTypo)?.googleFontLink}
+        ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', titleTypo)?.googleFontLink}
+        ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', descTypo)?.googleFontLink}
+        ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)('', btnTypo)?.googleFontLink}
+        ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(`${cardsSl} .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2`, titleTypo)?.styles}
+        ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(`${cardsSl} .first4Theme .content h2 p, ${cardsSl} .theme5 .content .details h2 span`, descTypo)?.styles}
+        ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(`${cardsSl} .theme5 .content .details .actionBtn button`, btnTypo)?.styles}
 
         ${cardsSl}{
-            ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background)}
+            ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background)}
             column-gap: ${columnGap};
             row-gap: ${rowGap};
-            padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(padding)}
+            padding: ${(0,_Components_utils_functions__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(padding)}
         }
         ${cardsSl} .first4Theme, ${cardsSl} .theme5 .content{
             border-radius: ${cardRadius};
-            padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(cardPadding)};
-            box-shadow: ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)}
+            padding: ${(0,_Components_utils_functions__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(cardPadding)};
+            box-shadow: ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getMultiShadowCSS)(cardShadow)}
         }
         ${cardsSl} .first4Theme img{
             height: ${imgHeight}
         }
-        ${cardsSl}.vertical .card img{
+        ${cardsSl} .vertical .card img{
             max-height: ${imgHeight}
         }
-        ${cardsSl} .first4Theme .content {
-            padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
+        ${cardsSl} .first4Theme .content, ${cardsSl} .theme5 .content {
+            padding: ${(0,_Components_utils_functions__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
             text-align: ${contentAlign};
         }
-        ${cardsSl}  .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2{
+        ${cardsSl} .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2{
             color: ${titleColor};
             text-align: ${contentAlign};
-            ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.styles}
-            
         }
-        ${cardsSl}  .first4Theme .content p{
+        ${cardsSl} .first4Theme .content p{
             text-align: ${contentAlign};
-            color: ${descColor};
-            ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(descTypo)?.styles}
+            color: ${descTypo};
         }
-        ${cardsSl}  .first4Theme .content .btnWrapper{
+        ${cardsSl} .first4Theme .content .btnWrapper{
             text-align: ${btnAlign}
         }
         ${cardsSl}  .first4Theme .content a{
-            ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)};
+            ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)};
             border-radius: ${btnRadius};
-            ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(btnTypo)?.styles};
-            padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)}
+            padding: ${(0,_Components_utils_functions__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)}
         }
         ${cardsSl}  .first4Theme .content a:hover{
-            ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnHovColors)}
+            ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnHovColors)}
         }
     `, cards.map((card, index) => {
     const {
@@ -435,7 +508,7 @@ const Style = _ref => {
     // console.log(titleColor);
     return `
         ${cardsSl} .first4Theme.card-${index}, ${cardsSl} .theme5.card-${index} .content{
-            ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background, true, true, false)}
+            ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background, true, true, false)}
         }
 
         
@@ -443,20 +516,6 @@ const Style = _ref => {
   }));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Style);
-
-/***/ }),
-
-/***/ "./src/utils/function.js":
-/*!*******************************!*\
-  !*** ./src/utils/function.js ***!
-  \*******************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getBoxValue": function() { return /* binding */ getBoxValue; }
-/* harmony export */ });
-const getBoxValue = object => Object.values(object).join(" ");
 
 /***/ }),
 
