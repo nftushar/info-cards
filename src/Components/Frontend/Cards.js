@@ -1,7 +1,7 @@
 import First4Theme from './First4Theme';
 import Theme5 from './Theme5';
 
-const Cards = ({ attributes, clientId }) => {
+const Cards = ({ attributes }) => {
     const { cards, theme, layout, columns } = attributes;
 
     return <>

@@ -1,24 +1,75 @@
 {
-	"name": "info-cards",
-	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
-	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
-	"scripts": {
-		"build": "wp-scripts build",
-		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
-		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
-	},
-	"devDependencies": {
-		"@wordpress/scripts": "^25.3.0",
-		"wp-scripts": "^0.0.1-security"
-	},
-	"dependencies": {
-		"immer": "^9.0.21"
-	}
+  "name": "info-cards",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "scripts": {
+    "lint": "eslint src",
+    "start": "webpack --mode=development --watch",
+    "sync": "browser-sync start -p 'http://localhost/' --files '**/*.php' 'dist/*.js' 'dist/*.css'",
+    "preview": "npm-run-all --parallel sync start",
+    "i18n-pot": "wp i18n make-pot . languages/info-cards.pot --exclude=\"src\" && cp ./languages/info-cards.pot ./languages/info-cards-en_US.po",
+    "i18n-json": "wp i18n make-json languages/ --no-purge",
+    "i18n-mo": "wp i18n make-mo languages/",
+    "i18n": "npm run i18n-pot && npm run i18n-json && npm run i18n-mo",
+    "build": "gulp clean && npm run lint && webpack --mode=production && gulp bundle"
+  },
+  "author": "bPlugins",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "font-awesome": "^4.7.0",
+    "immer": "^9.0.19",
+    "jquery": "^3.7.0",
+    "popper.js": "^1.16.1",
+    "produce": "^0.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "@wordpress/blob": "^3.32.0",
+    "@wordpress/block-editor": "^12.0.0",
+    "@wordpress/blocks": "^12.9.0",
+    "@wordpress/components": "^23.9.0",
+    "@wordpress/compose": "^6.9.0",
+    "@wordpress/data": "^9.2.0",
+    "@wordpress/element": "^5.9.0",
+    "@wordpress/html-entities": "^3.32.0",
+    "@wordpress/i18n": "^4.32.0",
+    "@wordpress/rich-text": "^6.9.0",
+    "@wordpress/server-side-render": "^4.9.0",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "browser-sync": "^2.29.1",
+    "browserslist": "^4.21.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^5.0.0",
+    "del": "^6.1.1",
+    "eslint": "^8.40.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-webpack-plugin": "^4.0.1",
+    "file-loader": "^6.2.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-zip": "^4.2.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "node-sass": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-loader": "^7.3.0",
+    "rimraf": "^5.0.0",
+    "sass-loader": "^13.2.2",
+    "webpack": "^5.82.0",
+    "webpack-cli": "^5.1.1"
+  },
+  "browserslist": [
+    "> 1% or last 5 versions"
+  ],
+  "description": ""
 }

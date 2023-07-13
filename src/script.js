@@ -1,5 +1,6 @@
 import { render } from "react-dom";
 
+import './style.scss';
 import Style from "./Style";
 import Cards from "./Components/Frontend/Cards";
 

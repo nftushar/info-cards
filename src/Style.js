@@ -5,9 +5,6 @@ import { getBoxValue } from "../../Components/utils/functions";
 const Style = ({ attributes, clientId }) => {
     const { cards, background, btnPadding, padding, titleColor, titleTypo, descTypo, btnTypo, contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
     const cardsSl = `#icbCards-${clientId} .icbCards`;
-// console.log(btnTypo);
-    // ${getTypoCSS('', typography)?.googleFontLink}
-    // ${getTypoCSS('selector', typography)?.styles}
 
     return <style>
         {`
@@ -60,22 +57,9 @@ const Style = ({ attributes, clientId }) => {
             ${getColorsCSS(btnHovColors)}
         }
     `}
-        {/* {console.log(btnRadius)} */}
-
-
-
-        {/* ${cardsSl} .card-${index} .content h2 {
-        color: ${titleColor};
-
-        } */}
-        {/* ${cardsSl} .card-${index} .content p {
-        color: ${descColor};
-        } */}
         {cards.map((card, index) => {
 
             const { background } = card;
-            console.log();
-            // console.log(titleColor);
             return `
         ${cardsSl} .first4Theme.card-${index}, ${cardsSl} .theme5.card-${index} .content{
             ${getBackgroundCSS(background, true, true, false)}

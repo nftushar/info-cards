@@ -7,7 +7,7 @@ import "./editor.scss";
 import Style from "./Style";
 
 export default function ({ attributes, setAttributes, clientId }) {
-	const { layout, columns, cards } = attributes;
+	const {  cards } = attributes;
 
 	useEffect(() => {
 		clientId && setAttributes({ clientId })
