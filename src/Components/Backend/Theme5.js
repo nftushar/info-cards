@@ -11,20 +11,20 @@ const Theme5 = ({ attributes, card, index, updateCard }) => {
         {img ? <img src={img} alt={title} /> : <ImagePlaceholder label={__(' Card Image:', 'imgBox')} value={{ url: img }} onChange={val => updateCard(index, 'img', val?.url)} />}
     </>
 
-    return <div className={`theme5 card-${index} ${theme}`} key={index} >
-            <div className="imgBox">
-              {'first' === imgPos && imgEl}
-            </div>
-            <div className="content">
-                <div className="details">
-                    <h2>{title} <br/> <span>{desc}</span></h2>
-                    <div className="actionBtn">
-                        <button href={btnUrl} >{btnLabal}</button>
-                    </div>
+    return <div className="theme5-cards"> <div className={`theme5 card-${index} ${theme}`} key={index} >
+        <div className="imgBox">
+            {'first' === imgPos && imgEl}
+        </div>
+        <div className="content">
+            <div className="details">
+                <h2>{title} <br /> <span>{desc}</span></h2>
+                <div className="actionBtn">
+                    <button href={btnUrl} >{btnLabal}</button>
                 </div>
             </div>
+        </div>
         {/* cardRadius */}
         {'last' === imgPos && imgEl}
-    </div>
+    </div></div>
 }
 export default Theme5;

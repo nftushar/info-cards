@@ -5,7 +5,7 @@ import { getBoxValue } from "../../Components/utils/functions";
 const Style = ({ attributes, clientId }) => {
     const { cards, background, btnPadding, padding, titleColor, titleTypo, descTypo, btnTypo, contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
     const cardsSl = `#icbCards-${clientId} .icbCards`;
-
+// console.log(btnTypo);
     // ${getTypoCSS('', typography)?.googleFontLink}
     // ${getTypoCSS('selector', typography)?.styles}
 
@@ -17,7 +17,7 @@ const Style = ({ attributes, clientId }) => {
         ${getTypoCSS(`${cardsSl} .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2`, titleTypo)?.styles}
         ${getTypoCSS(`${cardsSl} .first4Theme .content h2 p, ${cardsSl} .theme5 .content .details h2 span`, descTypo)?.styles}
         ${getTypoCSS(`${cardsSl} .theme5 .content .details .actionBtn button`, btnTypo)?.styles}
-
+        
         ${cardsSl}{
             ${getBackgroundCSS(background)}
             column-gap: ${columnGap};
@@ -47,10 +47,11 @@ const Style = ({ attributes, clientId }) => {
             text-align: ${contentAlign};
             color: ${descTypo};
         }
-        ${cardsSl} .first4Theme .content .btnWrapper{
-            text-align: ${btnAlign}
+        ${cardsSl} .first4Theme .content .btnWrapper, ${cardsSl} .theme5 .content .details .actionBtn{
+            justify-content: ${btnAlign}
         }
         ${cardsSl}  .first4Theme .content a{
+
             ${getColorsCSS(btnColors)};
             border-radius: ${btnRadius};
             padding: ${getBoxValue(btnPadding)}

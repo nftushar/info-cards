@@ -449,7 +449,7 @@ const Style = _ref => {
     btnHovColors
   } = attributes;
   const cardsSl = `#icbCards-${clientId} .icbCards`;
-
+  // console.log(btnTypo);
   // ${getTypoCSS('', typography)?.googleFontLink}
   // ${getTypoCSS('selector', typography)?.styles}
 
@@ -460,7 +460,7 @@ const Style = _ref => {
         ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(`${cardsSl} .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2`, titleTypo)?.styles}
         ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(`${cardsSl} .first4Theme .content h2 p, ${cardsSl} .theme5 .content .details h2 span`, descTypo)?.styles}
         ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(`${cardsSl} .theme5 .content .details .actionBtn button`, btnTypo)?.styles}
-
+        
         ${cardsSl}{
             ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(background)}
             column-gap: ${columnGap};
@@ -490,10 +490,11 @@ const Style = _ref => {
             text-align: ${contentAlign};
             color: ${descTypo};
         }
-        ${cardsSl} .first4Theme .content .btnWrapper{
-            text-align: ${btnAlign}
+        ${cardsSl} .first4Theme .content .btnWrapper, ${cardsSl} .theme5 .content .details .actionBtn{
+            justify-content: ${btnAlign}
         }
         ${cardsSl}  .first4Theme .content a{
+
             ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)};
             border-radius: ${btnRadius};
             padding: ${(0,_Components_utils_functions__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(btnPadding)}

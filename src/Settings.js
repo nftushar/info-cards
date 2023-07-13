@@ -19,7 +19,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 		cards, layout, theme, columns, columnGap, rowGap, isImg, imgPos, background, padding, cardPadding, cardShadow, imgHeight, contentPadding, titleColor, titleTypo, descColor, descTypo, btnColors, btnHovColors, btnAlign, btnTypo, btnPadding, cardRadius, btnRadius
 	} = attributes;
 
-console.log(contentPadding);
+	console.log(contentPadding);
 	const [device, setDevice] = useState("desktop");
 
 	const onAddCard = () => {
@@ -434,7 +434,7 @@ console.log(contentPadding);
 
 
 					<PanelBody className="bPlPanelBody" title={__("Title", "info-cards")} initialOpen={false}>
-					<Typography label={__('Typography', 'info-cards')} value={titleTypo} onChange={val => setAttributes({ titleTypo: val })} defaults={{ fontSize: 16 }} produce={produce} />
+						<Typography label={__('Typography', 'info-cards')} value={titleTypo} onChange={val => setAttributes({ titleTypo: val })} defaults={{ fontSize: 16 }} produce={produce} />
 						{/* <Typography
 							label={__("Typography", "info-cards")}
 							value={titleTypo}
