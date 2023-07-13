@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Info Cards for update
+ * Plugin Name:       Info Cards BlockPlugin
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0

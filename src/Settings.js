@@ -434,11 +434,12 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
 
 					<PanelBody className="bPlPanelBody" title={__("Title", "info-cards")} initialOpen={false}>
-						<Typography
+					<Typography label={__('Typography', 'info-cards')} value={titleTypo} onChange={val => setAttributes({ titleTypo: val })} defaults={{ fontSize: 16 }} produce={produce} />
+						{/* <Typography
 							label={__("Typography", "info-cards")}
 							value={titleTypo}
 							onChange={(val) => setAttributes({ titleTypo: val })}
-						/>
+						/> */}
 
 						<BColor
 							label={__("Color", "info-cards")}

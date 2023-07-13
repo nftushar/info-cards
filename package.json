@@ -19,6 +19,6 @@
 		"wp-scripts": "^0.0.1-security"
 	},
 	"dependencies": {
-		"immer": "^9.0.19"
+		"immer": "^9.0.21"
 	}
 }
