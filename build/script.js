@@ -493,7 +493,7 @@ const Style = _ref => {
         ${cardsSl} .first4Theme .content .btnWrapper, ${cardsSl} .theme5 .content .details .actionBtn{
             justify-content: ${btnAlign}
         }
-        ${cardsSl}  .first4Theme .content a{
+        ${cardsSl}  .first4Theme .content a, ${cardsSl} .theme5 .content .details .actionBtn button{
 
             ${(0,_Components_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(btnColors)};
             border-radius: ${btnRadius};

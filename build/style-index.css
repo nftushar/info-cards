@@ -762,7 +762,6 @@
   border: none;
 }
 .wp-block-icb-cards .icbCards .first4Theme .content .btnWrapper {
-  display: flex;
   margin-top: auto;
 }
 .wp-block-icb-cards .icbCards .first4Theme .content .btnWrapper button {
@@ -776,7 +775,7 @@
   min-height: 100%;
 }
 .wp-block-icb-cards .icbCards .theme5-cards {
-  height: 495px;
+  min-height: 495px;
 }
 .wp-block-icb-cards .icbCards .theme5 {
   position: relative;
@@ -788,7 +787,7 @@
   transition: 0.5s;
 }
 .wp-block-icb-cards .icbCards .theme5:hover {
-  min-height: 450px;
+  height: 450px;
 }
 .wp-block-icb-cards .icbCards .imgBox {
   position: absolute;
@@ -846,6 +845,7 @@
 }
 .wp-block-icb-cards .icbCards .theme5 .content .details .actionBtn {
   display: flex;
+  justify-content: space-around;
 }
 .wp-block-icb-cards .icbCards .theme5 .content .details .actionBtn button {
   padding: 10px 30px;
