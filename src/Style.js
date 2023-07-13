@@ -33,9 +33,8 @@ const Style = ({ attributes, clientId }) => {
         ${cardsSl} .first4Theme .content {
             padding: ${getBoxValue(contentPadding)};
             text-align: ${contentAlign};
-            
         }
-        ${cardsSl}  .first4Theme .content h2{
+        ${cardsSl}  .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2{
             color: ${titleColor};
             text-align: ${contentAlign};
             ${getTypoCSS(titleTypo)?.styles}

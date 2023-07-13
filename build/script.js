@@ -404,9 +404,8 @@ const Style = _ref => {
         ${cardsSl} .first4Theme .content {
             padding: ${(0,_utils_function__WEBPACK_IMPORTED_MODULE_2__.getBoxValue)(contentPadding)};
             text-align: ${contentAlign};
-            
         }
-        ${cardsSl}  .first4Theme .content h2{
+        ${cardsSl}  .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2{
             color: ${titleColor};
             text-align: ${contentAlign};
             ${(0,_Components_Helper_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(titleTypo)?.styles}

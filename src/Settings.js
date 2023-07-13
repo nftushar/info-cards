@@ -354,7 +354,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
 						<PanelRow className="mt20">
 							<BoxControl
-								label={__("Paddign", "info-cards")}
+								label={__("Padding", "info-cards")}
 								values={padding}
 								resetValues={{
 									"top": "0px",
@@ -374,7 +374,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 						className="bPlPanelBody">
 
 						<BoxControl
-							label={__("Paddign", "info-cards")}
+							label={__("Padding", "info-cards")}
 							values={cardPadding}
 							resetValues={{
 								"top": "0px",
@@ -417,7 +417,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
 						<PanelRow className="mt20">
 							<BoxControl
-								label={__("Paddign", "info-cards")}
+								label={__("Padding", "info-cards")}
 								values={contentPadding}
 								resetValues={{
 									"top": "0px",
@@ -505,7 +505,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 
 						<PanelRow className="mt20">
 							<BoxControl
-								label={__("Paddign", "info-cards")}
+								label={__("Padding", "info-cards")}
 								values={btnPadding}
 								resetValues={{
 									"top": "0px",
