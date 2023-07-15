@@ -15,4 +15,8 @@ Todo->>>>>
 2. Content aling title, description,
 3. Full card link, open link in new tap
 
+new Theme5
+1. Button Hover Color,
+2. description typo,
+
 languages will do in later

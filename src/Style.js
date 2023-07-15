@@ -3,7 +3,8 @@ import { getBackgroundCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS } from '.
 import { getBoxValue } from "../../Components/utils/functions";
 
 const Style = ({ attributes, clientId }) => {
-    const { cards, background, btnPadding, padding, titleColor, titleTypo, descTypo, btnTypo, contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
+    const { cards, background, btnPadding, padding, titleColor, titleTypo, descColor, descTypo, btnTypo, contentAlign, btnRadius, contentPadding, cardPadding, cardShadow, cardRadius, imgHeight, columnGap, rowGap, btnAlign, btnColors, btnHovColors } = attributes;
+
     const cardsSl = `#icbCards-${clientId} .icbCards`;
 
     return <style>
@@ -40,9 +41,9 @@ const Style = ({ attributes, clientId }) => {
             color: ${titleColor};
             text-align: ${contentAlign};
         }
-        ${cardsSl} .first4Theme .content p, ${cardsSl} .theme5 .content .details h2 p{
+        ${cardsSl} .first4Theme .content p, ${cardsSl} .theme5 .content .details  p{
             text-align: ${contentAlign};
-            color: ${descTypo};
+            color: ${descColor};
         }
         ${cardsSl} .first4Theme .content .btnWrapper, ${cardsSl} .theme5 .content .details .actionBtn{
             justify-content: ${btnAlign}
@@ -53,7 +54,7 @@ const Style = ({ attributes, clientId }) => {
             border-radius: ${btnRadius};
             padding: ${getBoxValue(btnPadding)}
         }
-        ${cardsSl}  .first4Theme .content a:hover{
+        ${cardsSl}  .first4Theme .content a:hover, ${cardsSl} .theme5 .content .details .actionBtn button:hover {
             ${getColorsCSS(btnHovColors)}
         }
     `}

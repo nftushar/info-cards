@@ -10,10 +10,10 @@ const Theme5 = ({ attributes, card, index }) => {
         </div>
         <div className="content">
             <div className="details">
-                <h2>{title}</h2>
-                <p>{desc}</p>
+            {title && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
+            {desc && <p dangerouslySetInnerHTML={{ __html: desc }} />}
                 <div className="actionBtn">
-                    <button href={btnUrl} >{btnLabal}</button>
+                <button href={btnUrl} dangerouslySetInnerHTML={{ __html: btnLabal }} />
                 </div>
             </div>
         </div>
