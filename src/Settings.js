@@ -454,7 +454,7 @@ export default function ({ attributes, setAttributes, updateCard }) {
 						<Typography
 							label={__("Typography", "info-cards")}
 							value={descTypo}
-							onChange={(val) => setAttributes({ descTypo: val })}
+							onChange={(val) => setAttributes({ descTypo: val })} produce={produce}
 						/>
 
 						<BColor
