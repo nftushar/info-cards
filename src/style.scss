@@ -41,9 +41,9 @@
     }
 
     .icbCards {
-        margin-top: 25px;
+        // margin-top: 25px;
         display: grid;
-        // justify-content: space-around;
+        justify-content: space-around;
         box-sizing: border-box;
         // gap: 20px;
 
@@ -114,7 +114,7 @@
             }
         }
         .theme5-cards {
-            min-height: 495px;
+            min-height: 515px;
             
         }
         .theme5 {
@@ -128,7 +128,7 @@
             transition: 0.5s;
         }
         .theme5:hover {
-            height: 450px;
+            height: 415px;
         }
 
         .imgBox {
@@ -175,7 +175,8 @@
             transform: translateY(100px);
         }
         .theme5:hover .content .details {
-            transform: translateY(0px);
+            transform: translateY(30px);
+            // transform: translateY(0px);
         }
         // .theme5 .content .details h2 {
         //     font-size: 1.25em;
