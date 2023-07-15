@@ -4,19 +4,17 @@
  * Description:       Info Cards block plugin for wordpress website.
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.1
+ * Version:           1.0.1
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       info-cards
- *
- * @package           create-block
  */
 
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Constant
-define( 'ICB_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
+define( 'ICB_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.1' );
 define( 'ICB_DIR', plugin_dir_url( __FILE__ ) );
 
 function icbCardsEnqueueBlockAssets(){

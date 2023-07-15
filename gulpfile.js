@@ -21,6 +21,7 @@ exports.bundle = () => (
 		'!package.json',
 		'!package-lock.json',
 		'!readme.md',
+		'!README.md',
 		'!todo.txt',
 		'!webpack.config.js',
 	])

@@ -1,55 +1,150 @@
 === Info Cards ===
-Contributors:      The WordPress Contributors
-Tags:              block
-Tested up to:      6.1
-Stable tag:        0.1.0
-License:           GPL-2.0-or-later
-License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Contributors: abuhayat, nftushar
+Donate link: https://www.buymeacoffee.com/abuhayat
+Tags: block, cards, gutenberg, info, section  
+Buy me a coffee: https://www.buymeacoffee.com/abuhayat
+Requires at least: 5.8+
+Tested up to: 6.2.2
+Stable tag: 1.0.1
+Requires PHP: 7.1
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Example block scaffolded with Create Block tool.
+Simple and easy way to create and display information cards anywhere. 
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+👉 [Plugin Demo](https://bblockswp.com/demo/info-cards) | [Documentation](https://bplugins.com/docs/)  👈
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+The Info Cards Block Plugin for WordPress allows you to create beautifully designed and informative cards within your content. With this plugin, you can present your content interactively and engagingly, making it easier for your audience to consume and understand your message.
+
+The plugin is a Gutenberg block, which means you can easily add it to your content using the Gutenberg editor. Once you've added the Info Card block, you can customize it with a variety of content types, including images, text, and links. You can also choose from a range of pre-designed templates or create your own custom layout to fit your unique branding.
+
+The Info Cards Block Plugin is designed to be user-friendly, even for those with limited technical knowledge. You don't need to write any code or install any additional software to use it. Additionally, the plugin is fully responsive, ensuring that your Info Cards look great and function perfectly across all devices and screen sizes.
+
+With the Info Cards Block Plugin, you can create engaging and visually appealing content that will help you stand out in a crowded digital landscape. Whether you're creating product cards, team member profiles, or informational cards, this plugin is an essential tool for your WordPress site.
+
+In conclusion, the Info Cards Block Plugin is an excellent choice for anyone looking to create beautiful, informative cards within their WordPress content. Download the plugin today and start creating engaging content that will captivate your audience!
+
+
+= Features =
+
+-  Fully customizable
+-  Set custom color
+-  Build-in templates
+-  Set Columns, column gap and row gap 
+-  Use an image in the card
+-  Support links
+-  Typography 
+-  Responsive layout
+-  Easy to use. 
+
+
+
+= How to use =
+- Install the plugin.
+- Go to the page/posts where you want to embed the info cards.
+- Search Info Cards by clicking on the + button on the Gutenberg block editor. 
+- Select Info Cards block
+- Create and customize the cards. 
+- Enjoy!
+
+* For installation help click on Installation Tab
+
+
+= Feedback =
+- Liked that plugin? Hate it? Want a new feature? [Send me some feedback](mailto:support@bplugins.com 'Send feedback')
+
+
+= ⭐ Check out the Parent Plugin of this plugin- =
+
+🔥 **[b Blocks](https://bblockswp.com/)** – Best gutenberg blocks collections for WordPress.
+
+
+= ⭐ Check out our other WordPress Plugins- =
+
+🔥 **[Html5 Audio Player](https://bplugins.com/products/html5-audio-player)** – Best audio player plugin for WordPress.
+
+🔥 **[Html5 Video Player](https://bplugins.com/products/html5-video-player)** – Best video player plugin for WordPress.
+
+🔥 **[PDF Poster](https://bplugins.com/products/pdf-poster)** – A fully-featured PDF Viewer Plugin for WordPress.
+
+🔥 **[StreamCast](https://bplugins.com/products/streamcast-radio-player)** – A fully-featured Radio Player Plugin for WordPress.
+
+🔥 **[3D Viewer](https://bplugins.com/products/3d-viewer)** – Display interactive 3D models on the webs.
+
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+= From Gutenberg Editor: =
+1. Go to the page/posts where you want to embed the review.
+2. Search 'Info Cards' by clicking on the + button on the Gutenberg block editor. 
+3. Gutenberg will suggest some of the related blocks from the block directory. 
+4. Click on the **Info Cards Block** by bPlugins to install and add the block. 
+5. Enjoy!
 
-e.g.
+= Through Plugins Manager  =
+1. Go to Plugins > Add New from the WordPress admin dashboard. 
+2. Search "Info Cards" In the search field.  
+3. Install the Info Cards plugin 
+4. Activate the plugin and Enjoy!
 
-1. Upload the plugin files to the `/wp-content/plugins/info-cards` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
+= Manually: =
+1. Download the plugin zip file from wordpress.org website and upload the **business-review.zip**  to the **`/wp-content/plugins/`** directory
+2. Activate the plugin through the Plugins menu in WordPress
 
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= What does it mean by block plugin? =
 
-An answer to that question.
+Block plugin add additonal gutenberg block into the Block editor.
 
-= What about foo bar? =
+= Do you offer the plugin customization service? =
 
-Answer to foo bar dilemma.
+Yes, If you need any service from us please email at support[https://bplugins.com]
+
+= Can I use my brand's color? =
+Yes, Its a fully customizable.
+
+= Does it work with any WordPress theme? =
+
+Yes, it will work with any standard WordPress theme.
+
+= Can I change block settings? =
+
+Yes, you can change block settings from the Gutenberg block editor's right sidebar.
+
+= How many times can I reuse a block? =
+
+You can use unlimited times as you want.
+
+= Where can I get support? =
+
+You can post your questions on the [support forum here](https://wordpress.org/support/plugin/info-cards/)
+
 
 == Screenshots ==
+1. Theme 1
+2. Theme 2
+3. Theme 3
+4. Theme 4
+5. Theme 5
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
 
 == Changelog ==
 
-= 0.1.0 =
-* Release
+= 1.0.1 =
+* Add a New Theme
 
-== Arbitrary section ==
+= 1.0.0 =
+* Initial Release
 
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
+
+== Upgrade Notice ==
+
+= 1.0.1 =
+* Add a New Theme
+
+= 1.0.0 =
+* Initial Release
