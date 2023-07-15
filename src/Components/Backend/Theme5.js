@@ -1,4 +1,5 @@
 import { __ } from "@wordpress/i18n";
+import { RichText } from "@wordpress/block-editor";
 import { ImagePlaceholder } from '../../../../Components';
 
 const Theme5 = ({ attributes, card, index, updateCard }) => {
@@ -14,10 +15,38 @@ const Theme5 = ({ attributes, card, index, updateCard }) => {
         </div>
         <div className="content">
             <div className="details">
-                <h2>{title}</h2>
-                <p>{desc}</p>
+
+
+            <RichText
+                tagName="h2"
+                value={title}
+                onChange={(content) => updateCard(index, "title", content)}
+                placeholder={__("Enter Title", 'info-cards')}
+                inlineToolbar
+                allowedFormats={["core/bold", "core/italic"]}
+            />
+
+            <RichText
+                tagName="p"
+                value={desc}
+                onChange={(content) => updateCard(index, "desc", content)}
+                placeholder={__("Enter Description", 'info-cards')}
+                inlineToolbar
+                allowedFormats={["core/bold", "core/italic"]}
+            />
+
+                {/* <h2>{title}</h2>
+                <p>{desc}</p> */}
                 <div className="actionBtn">
-                    <button href={btnUrl} >{btnLabal}</button>
+                <RichText
+                    tagName="button"
+                    href={btnUrl}
+                    value={btnLabal}
+                    onChange={(content) => updateCard(index, "btnLabal", content)}
+                    placeholder={__("Button", 'info-cards')}
+                    inlineToolbar
+                    allowedFormats={["core/bold", "core/italic"]}
+                />
                 </div>
             </div>
         </div>

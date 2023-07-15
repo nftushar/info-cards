@@ -13,6 +13,8 @@ const Theme5 = ({ attributes, card, index }) => {
             {title && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
             {desc && <p dangerouslySetInnerHTML={{ __html: desc }} />}
                 <div className="actionBtn">
+
+                
                 <button href={btnUrl} dangerouslySetInnerHTML={{ __html: btnLabal }} />
                 </div>
             </div>
