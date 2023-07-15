@@ -13,7 +13,7 @@ const Style = ({ attributes, clientId }) => {
         ${getTypoCSS('', descTypo)?.googleFontLink}
         ${getTypoCSS('', btnTypo)?.googleFontLink}
         ${getTypoCSS(`${cardsSl} .first4Theme .content h2, ${cardsSl} .theme5 .content .details h2`, titleTypo)?.styles}
-        ${getTypoCSS(`${cardsSl} .first4Theme .content h2 p, ${cardsSl} .theme5 .content .details h2 span`, descTypo)?.styles}
+        ${getTypoCSS(`${cardsSl} .first4Theme .content h2 p, ${cardsSl} .theme5 .content .details p`, descTypo)?.styles}
         ${getTypoCSS(`${cardsSl} .theme5 .content .details .actionBtn button`, btnTypo)?.styles}
         
         ${cardsSl}{
