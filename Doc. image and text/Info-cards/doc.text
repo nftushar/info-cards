@@ -1,0 +1,59 @@
+How to Install
+
+There are four ways to install and activate the Info Cards plugin on your WordPress site.
+
+1st Way: Install from Gutenberg Editor
+Go to your Gutenberg editor and click on the plus icon in the top left corner.
+Then search for Info Cards Block, and you will see the Info Cards in the Available to Install area.
+Click on that. It will add the block to your editor.
+
+Guides
+After adding the Advanced Post Block, select the block you will see the settings in the sidebar. How sidebar settings will appear for a block.
+
+General
+In your sidebar settings, you will see the General tab is selected, if not select the General tab. Then you will see bellow options.
+
+
+-Add or Remove Cards
+
+background, button Url, delete or dublicate, add new card
+
+-Layout
+In layout, change Layout, Verticle, Horizontal   and others(by layout change, some options will appear and disappear).
+
+-Columns
+You can set different columns in different devices for responsiveness. column gpa, row gap Just click on the device(desktop, tablet, or mobile) icon to select the device, and set the column count.
+
+
+-Elements
+
+Show Hide image
+
+image possiton, Top, Bottom,
+image height 
+
+ 
+--Style--
+
+-Content
+For Content Background, Padding.
+
+-Card
+From here, Padding, Border radious, Shadow.
+
+-Content
+Alignment, Padding,
+
+-Title 
+From here, set the Typography, Color.
+
+-Description
+From here, set the Typography, Color. 
+
+-button
+From here, set the Typography, Alignment, Colors, Hover Colors, Padding, Border radious
+
+
+
+
+
