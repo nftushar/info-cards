@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Info Cards
  * Description:       Info Cards block plugin for wordpress website.
- * Requires at least: 6.1
+ * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           1.0.1
  * Author:            The WordPress Contributors

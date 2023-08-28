@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 5.8+
-Tested up to: 6.2.2
+Tested up to: 6.3
 Stable tag: 1.0.1
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -41,8 +41,8 @@ In conclusion, the Info Cards Block Plugin is an excellent choice for anyone loo
 
 
 
-= How to use =
-- Install the plugin.
+= How to use info cards =
+- Install the info cards plugin.
 - Go to the page/posts where you want to embed the info cards.
 - Search Info Cards by clicking on the + button on the Gutenberg block editor. 
 - Select Info Cards block
